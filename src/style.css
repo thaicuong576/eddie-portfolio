@@ -553,7 +553,7 @@ h4, h5, h6 {
   position: relative !important;
   padding-top: 120px !important;
   padding-bottom: 30px !important;
-  background-color: var(--bg-primary) !important;
+  background-color: transparent !important;
   background-image: none !important;
   color: var(--text-primary) !important;
 }
@@ -630,7 +630,7 @@ blockquote {
   position: relative !important;
   padding-top: 120px !important;
   padding-bottom: 30px !important;
-  background-color: var(--bg-primary) !important;
+  background-color: transparent !important;
   background-image: none !important;
 }
 
@@ -710,7 +710,7 @@ blockquote {
   position: relative !important;
   padding-top: 110px !important;
   padding-bottom: 30px !important;
-  background-color: var(--bg-primary) !important;
+  background-color: transparent !important;
   background-image: none !important;
   color: var(--text-primary) !important;
 }
@@ -757,7 +757,7 @@ blockquote {
 
 /* ---------- FOOTER ---------- */
 .footer {
-  background-color: var(--bg-primary) !important;
+  background-color: transparent !important;
   bottom: 0 !important;
   padding-top: 10px !important;
   padding-bottom: 8px !important;
