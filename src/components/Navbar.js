@@ -5,15 +5,12 @@ import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
+import { CgGitFork, CgFileDocument } from "react-icons/cg";
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-
-import { CgFileDocument } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -91,19 +88,9 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ImBlog style={{ marginBottom: "2px" }} /> Writings
-              </Nav.Link>
-            </Nav.Item>
-
             <Nav.Item className="fork-btn">
               <Button
-                href="#"
+                href="https://github.com/thaicuong576/eddie-portfolio"
                 target="_blank"
                 className="fork-btn-inner"
               >

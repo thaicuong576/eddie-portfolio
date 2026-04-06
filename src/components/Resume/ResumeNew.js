@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 
-const resumeLink = "#";
+const resumeLink = "https://github.com/thaicuong576";
 
 function ResumeNew() {
   return (

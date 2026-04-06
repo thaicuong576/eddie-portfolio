@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { SiN8N } from "react-icons/si";
 import Node from "../../Assets/TechIcons/Node.svg";
 import Python from "../../Assets/TechIcons/Python.svg";
 import Javascript from "../../Assets/TechIcons/Javascript.svg";
