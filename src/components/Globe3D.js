@@ -290,6 +290,8 @@ function Globe3D() {
         width: "100%",
         height: "450px",
         cursor: "grab",
+        position: "relative",
+        zIndex: 2,
       }}
     />
   );
