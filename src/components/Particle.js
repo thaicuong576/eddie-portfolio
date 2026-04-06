@@ -8,41 +8,78 @@ function Particle() {
       params={{
         particles: {
           number: {
-            value: 160,
+            value: 100,
             density: {
               enable: true,
-              value_area: 1500,
+              value_area: 1200,
+            },
+          },
+          color: {
+            value: ["#60a5fa", "#fbbf24", "#ffffff"],
+          },
+          shape: {
+            type: "circle",
+          },
+          opacity: {
+            value: 0.5,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 0.8,
+              opacity_min: 0.1,
+              sync: false,
+            },
+          },
+          size: {
+            value: 2.5,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 1.5,
+              size_min: 0.5,
+              sync: false,
             },
           },
           line_linked: {
-            enable: false,
-            opacity: 0.03,
+            enable: true,
+            distance: 150,
+            color: "#3b82f6",
+            opacity: 0.12,
+            width: 1,
           },
           move: {
-            direction: "right",
-            speed: 0.05,
-          },
-          size: {
-            value: 1,
-          },
-          opacity: {
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.05,
+            enable: true,
+            speed: 0.8,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
             },
           },
         },
         interactivity: {
+          detect_on: "canvas",
           events: {
+            onhover: {
+              enable: true,
+              mode: "repulse",
+            },
             onclick: {
               enable: true,
               mode: "push",
             },
+            resize: true,
           },
           modes: {
+            repulse: {
+              distance: 100,
+              duration: 0.4,
+            },
             push: {
-              particles_nb: 1,
+              particles_nb: 3,
             },
           },
         },
