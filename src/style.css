@@ -41,13 +41,13 @@
 html {
   --section-background-color: linear-gradient(
     to bottom left,
-    rgba(15, 23, 42, 0.75),
-    rgba(15, 23, 42, 0.85)
+    rgba(15, 23, 42, 0.95),
+    rgba(15, 23, 42, 0.98)
   );
   --image-gradient: linear-gradient(
     to bottom left,
-    rgba(15, 23, 42, 0.85),
-    rgba(15, 23, 42, 0.95)
+    rgba(15, 23, 42, 0.92),
+    rgba(15, 23, 42, 0.97)
   );
   --imp-text-color: var(--accent-yellow);
   scroll-behavior: smooth;
