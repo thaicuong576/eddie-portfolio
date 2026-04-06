@@ -41,8 +41,8 @@
 html {
   --section-background-color: linear-gradient(
     to bottom left,
-    var(--bg-primary),
-    rgba(15, 23, 42, 0.95)
+    rgba(15, 23, 42, 0.75),
+    rgba(15, 23, 42, 0.85)
   );
   --image-gradient: linear-gradient(
     to bottom left,
@@ -558,19 +558,37 @@ h4, h5, h6 {
 }
 
 .tech-icons {
-  font-size: 4.5em !important;
+  font-size: 1em !important;
   margin: 16px !important;
-  padding: 10px !important;
+  padding: 24px 16px !important;
   opacity: 0.85 !important;
   border: 1px solid var(--border-subtle) !important;
   border-radius: var(--radius-sm) !important;
-  display: table !important;
-  vertical-align: middle !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
   text-align: center !important;
   box-shadow: var(--shadow-card);
   overflow: hidden !important;
   transition: all var(--transition-base) !important;
   background: var(--bg-card);
+  min-height: 120px;
+}
+
+.tech-icons img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.tech-icons-text {
+  font-family: var(--font-body);
+  font-size: 0.95em;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-top: 4px;
 }
 
 .tech-icons:hover {
