@@ -553,7 +553,8 @@ h4, h5, h6 {
   position: relative !important;
   padding-top: 120px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  background-color: var(--bg-primary) !important;
+  background-image: none !important;
   color: var(--text-primary) !important;
 }
 
@@ -629,7 +630,8 @@ blockquote {
   position: relative !important;
   padding-top: 120px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  background-color: var(--bg-primary) !important;
+  background-image: none !important;
 }
 
 .project-card {
@@ -708,7 +710,8 @@ blockquote {
   position: relative !important;
   padding-top: 110px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  background-color: var(--bg-primary) !important;
+  background-image: none !important;
   color: var(--text-primary) !important;
 }
 
