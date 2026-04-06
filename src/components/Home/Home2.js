@@ -46,7 +46,17 @@ function Home2() {
             </p>
           </Col>
           <Col md={4} className="myAvtar">
-            <img src={myImg} className="img-fluid" alt="avatar" />
+            <div className="avatar-wrapper">
+              <div className="avatar-dots avatar-dots-top"></div>
+              <div className="avatar-border">
+                <img src={myImg} className="img-fluid avatar-img" alt="avatar" />
+              </div>
+              <div className="avatar-dots avatar-dots-bottom"></div>
+              <div className="avatar-status">
+                <span className="avatar-status-dot"></span>
+                Currently working on <b>Fintech & AI</b>
+              </div>
+            </div>
           </Col>
         </Row>
       </Container>
