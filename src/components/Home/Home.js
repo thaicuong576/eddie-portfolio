@@ -63,7 +63,7 @@ function Home() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://twitter.com/"
+                  href="https://x.com/0xeddiephung"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -73,7 +73,7 @@ function Home() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://linkedin.com/"
+                  href="https://www.linkedin.com/in/phungthaicuong/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
