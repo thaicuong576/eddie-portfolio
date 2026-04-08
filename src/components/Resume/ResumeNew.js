@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
@@ -7,8 +7,6 @@ import { AiOutlineDownload } from "react-icons/ai";
 const pdfUrl = process.env.PUBLIC_URL + "/eddie-cv.pdf";
 
 function ResumeNew() {
-  const [numPages] = useState(null);
-
   return (
     <div>
       <Container fluid className="resume-section">
