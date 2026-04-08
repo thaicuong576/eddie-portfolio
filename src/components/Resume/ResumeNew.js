@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 
-const resumeLink = "https://github.com/thaicuong576";
+const pdfUrl = process.env.PUBLIC_URL + "/eddie-cv.pdf";
 
 function ResumeNew() {
+  const [numPages] = useState(null);
+
   return (
     <div>
       <Container fluid className="resume-section">
@@ -14,7 +16,7 @@ function ResumeNew() {
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href={resumeLink}
+            href={pdfUrl}
             target="_blank"
             style={{ maxWidth: "250px" }}
           >
@@ -23,50 +25,27 @@ function ResumeNew() {
           </Button>
         </Row>
 
-        <Row className="resume">
-          <div
+        <Row className="resume" style={{ justifyContent: "center" }}>
+          <iframe
+            src={pdfUrl}
+            title="Eddie Phung CV"
             style={{
-              display: "flex",
-              justifyContent: "center",
-              padding: "50px 0",
-              color: "white",
-              textAlign: "center",
+              width: "100%",
+              maxWidth: "800px",
+              height: "1150px",
+              border: "none",
+              borderRadius: "12px",
+              background: "rgba(255, 255, 255, 0.03)",
+              boxShadow:
+                "0 2px 4px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.1)",
             }}
-          >
-            <div style={{ maxWidth: "600px" }}>
-              <h2 style={{ color: "#60a5fa", marginBottom: "20px" }}>
-                Eddie Phung
-              </h2>
-              <h4 style={{ color: "#fbbf24", marginBottom: "30px" }}>
-                Fintech Researcher | Crypto Writer | Automation Builder
-              </h4>
-              <p style={{ fontSize: "1.1em", lineHeight: "1.8" }}>
-                Ho Chi Minh City, Vietnam
-                <br />
-                UEH University - Fintech, Class of 2024
-                <br />
-                <br />
-                8 Research Papers Published | 42 n8n Workflows Built | 150+
-                Crypto Articles Written
-              </p>
-              <p
-                style={{
-                  color: "#94a3b8",
-                  fontStyle: "italic",
-                  marginTop: "20px",
-                }}
-              >
-                Full PDF resume coming soon. Please use the contact form to
-                request a copy.
-              </p>
-            </div>
-          </div>
+          />
         </Row>
 
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href={resumeLink}
+            href={pdfUrl}
             target="_blank"
             style={{ maxWidth: "250px" }}
           >
