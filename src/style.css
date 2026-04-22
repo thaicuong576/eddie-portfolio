@@ -100,7 +100,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 999999;
-  background-color: var(--bg-primary);
+  background-color: var(--accent-blue);
   background-image: url(./Assets/pre.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -364,6 +364,16 @@ h4, h5, h6 {
 }
 
 /* Find me on section */
+.home-about-social h1 {
+  color: #fff !important;
+  font-size: 2.8em !important;
+}
+
+.home-about-social p {
+  color: #f8fafc !important; 
+  font-size: 1.25em !important;
+}
+
 .home-about-social {
   text-align: center !important;
   padding-top: 24px !important;
@@ -371,7 +381,7 @@ h4, h5, h6 {
 
 .home-about-social-links {
   justify-content: center !important;
-  padding-top: 16px !important;
+  padding-top: 24px !important;
   display: inline-flex !important;
   position: relative !important;
   padding-inline-start: 0 !important;
@@ -380,14 +390,14 @@ h4, h5, h6 {
 .home-social-icons {
   position: relative !important;
   display: inline-block !important;
-  width: 40px !important;
-  height: 40px !important;
+  width: 55px !important;
+  height: 55px !important;
   text-align: center !important;
-  font-size: 1.2em !important;
-  line-height: 42px !important;
-  background: rgba(255, 255, 255, 0.04) !important;
+  font-size: 1.6em !important;
+  line-height: 58px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
   border-radius: 50% !important;
-  border: 1px solid var(--border-subtle) !important;
+  border: 1px solid var(--border-hover) !important;
   transition: all var(--transition-base) !important;
 }
 
@@ -408,20 +418,20 @@ h4, h5, h6 {
 
 .home-social-icons:hover::before {
   transform: scale(1.1);
-  opacity: 0.15;
+  opacity: 0.25;
 }
 
 .home-social-icons:hover {
   color: var(--accent-blue) !important;
   border-color: var(--accent-blue) !important;
-  box-shadow: 0 0 16px var(--glow-blue);
-  transform: translateY(-2px);
+  box-shadow: 0 0 24px var(--glow-blue);
+  transform: translateY(-4px);
 }
 
 .social-icons {
   display: inline-block !important;
-  padding-right: 15px !important;
-  padding-left: 15px !important;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
 }
 
 .icon-colour {

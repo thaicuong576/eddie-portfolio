@@ -6,11 +6,12 @@ import Home2 from "./Home2";
 import Type from "./Type";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
 import { identity } from "../../data/identity";
+
+import xLogo from "../../Assets/x-logo.svg";
 
 function Home() {
   return (
@@ -70,7 +71,7 @@ function Home() {
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
-                  <AiOutlineTwitter />
+                  <img src={xLogo} alt="X" style={{ width: "24px", height: "24px", filter: "invert(1)" }} />
                 </a>
               </li>
               <li className="social-icons">

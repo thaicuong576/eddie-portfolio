@@ -8,6 +8,7 @@ import Docker from "../../Assets/TechIcons/Docker.svg";
 import SQL from "../../Assets/TechIcons/SQL.svg";
 import AWS from "../../Assets/TechIcons/AWS.svg";
 import ReactIcon from "../../Assets/TechIcons/React.svg";
+import n8n from "../../Assets/TechIcons/n8n.svg";
 
 function Techstack() {
   return (
@@ -45,8 +46,8 @@ function Techstack() {
         <div className="tech-icons-text">Git</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <div className="tech-icons-text" style={{ fontSize: "1.5em", fontWeight: "bold" }}>n8n</div>
-        <div className="tech-icons-text">Automation</div>
+        <img src={n8n} alt="n8n" style={{ width: "65px", height: "65px" }} />
+        <div className="tech-icons-text" style={{ marginTop: "10px" }}>n8n</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <div className="tech-icons-text" style={{ fontSize: "1.5em", fontWeight: "bold" }}>AI</div>
