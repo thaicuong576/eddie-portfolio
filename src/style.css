@@ -104,6 +104,7 @@ body {
   background-image: url(./Assets/pre.svg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 60px; /* Reduced to ~20-30% of its perceived oversized state */
 }
 
 #preloader-none {
