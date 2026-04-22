@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/eddie-cutout.png";
+import { identity } from "../../data/identity";
 
 function Home2() {
   return (
@@ -9,40 +10,31 @@ function Home2() {
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              THE <span className="purple"> FOUNDER-BUILDER </span> ESSENCE
             </h1>
             <p className="home-about-body">
-              I'm a Fintech Researcher who loves turning emerging technology
-              into real, practical solutions. Over time, I've explored several
-              domains and found my passion at the intersection of finance,
-              blockchain, and intelligent automation.
+              {identity.basics.unfair_advantage}
               <br />
               <br />
-              I'm experienced in
-              <i>
-                <b className="purple">
-                  {" "}
-                  n8n Automation, Python, Node.js, and API Integration{" "}
-                </b>
-              </i>
-              — and I enjoy building workflows that save teams hours of manual work.
+              I'm a Fintech Researcher at <span className="purple">{identity.personal.university}</span> who loves turning emerging technology
+              into real, practical solutions. 
+              <br />
+              <br />
+              Currently, I'm scaling <i><b className="purple"> {identity.startups[0].name} </b></i> and <i><b className="purple"> {identity.startups[1].name} </b></i>, 
+              leveraging AI automation to redefine how brands communicate.
               <br />
               <br />
               My key areas of interest include
               <i>
                 <b className="purple">
                   {" "}
-                  Fintech Research, Crypto Analysis, DeFi,{" "}
+                  Fintech Research, AI Agents, and Crypto Tokenomics.{" "}
                 </b>
               </i>
-              and building AI-powered automation pipelines with{" "}
-              <b className="purple">n8n</b>.
               <br />
               <br />
-              I've published <b className="purple">8 research papers</b>,
-              written <b className="purple">150+ crypto articles</b>, and built{" "}
-              <b className="purple">42 production workflows</b> that automate
-              real business processes.
+              Whether it's closing VC deals, winning academic prizes, or building 24/7 AI agents, 
+              I am obsessed with <b className="purple">efficiency</b> and the <b className="purple">speed to result</b>.
             </p>
           </Col>
           <Col md={4} className="myAvtar">

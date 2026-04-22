@@ -2,12 +2,11 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import chatify from "../../Assets/Projects/chatify.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import leaf from "../../Assets/Projects/leaf.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import emotion from "../../Assets/Projects/emotion.png";
+import bepInk from "../../Assets/Projects/bep_ink.png";
+import research from "../../Assets/Projects/research.png";
+import aiVideo from "../../Assets/Projects/ai_video.png";
+import automation from "../../Assets/Projects/automation.png";
+import { identity } from "../../data/identity";
 
 function Projects() {
   return (
@@ -18,70 +17,46 @@ function Projects() {
           My Recent <strong className="purple">Works </strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          Here are a few high-impact projects I've built or led recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={bepInk}
               isBlog={false}
-              title="F&B Lead Scraper"
-              description="Automated n8n workflow that scrapes Google Maps for F&B business leads in Vietnam, extracts contact info, and exports to Google Sheets. Built with HTTP Request nodes, data transformation, and schedule triggers for daily runs."
-              ghLink="https://github.com/thaicuong576"
-              demoLink="https://github.com/thaicuong576"
+              title={identity.startups[1].name}
+              description={identity.startups[1].description + " " + identity.startups[1].highlights[0]}
+              demoLink={identity.startups[1].url}
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={research}
               isBlog={false}
-              title="Crypto Market Intelligence"
-              description="AI-powered n8n pipeline that monitors crypto prices, analyzes sentiment from Twitter/Reddit, generates daily reports using GPT, and delivers insights via Telegram bot. Processes 1000+ data points daily."
-              ghLink="https://github.com/thaicuong576"
-              demoLink="https://github.com/thaicuong576"
+              title={identity.projects[0].title}
+              description={identity.projects[0].description + " " + identity.projects[0].achievements}
+              ghLink={identity.socials.github}
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={aiVideo}
               isBlog={false}
-              title="Digital Banking Research"
-              description="Published research on the architectural evolution of digital banking systems in Southeast Asia. Covers financial inclusion strategies, RegTech frameworks, and the bridge between legacy infrastructure and modern fintech solutions."
-              ghLink="https://github.com/thaicuong576"
-              demoLink="https://github.com/thaicuong576"
+              title={identity.projects[2].title}
+              description={identity.projects[2].description + " " + identity.projects[2].achievements}
+              ghLink={identity.socials.github}
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={automation}
               isBlog={false}
-              title="AI Content Pipeline"
-              description="End-to-end automation workflow using n8n + OpenAI that generates, edits, and publishes crypto articles. Includes research aggregation, outline generation, draft writing, SEO optimization, and multi-platform publishing."
-              ghLink="https://github.com/thaicuong576"
-              demoLink="https://github.com/thaicuong576"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={suicide}
-              isBlog={false}
-              title="DeFi Protocol Tracker"
-              description="Automated monitoring system for DeFi protocols. Tracks TVL changes, yield opportunities, and governance proposals across multiple chains. Sends real-time alerts when significant changes are detected."
-              ghLink="https://github.com/thaicuong576"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={emotion}
-              isBlog={false}
-              title="Fintech Payment Flow Analyzer"
-              description="Research project analyzing global payment system architectures. Mapped transaction flows across 15+ payment providers in SEA, identifying optimization points and regulatory compliance gaps."
-              ghLink="https://github.com/thaicuong576"
+              title={identity.projects[1].title}
+              description={identity.projects[1].description + " " + identity.projects[1].achievements}
+              ghLink={identity.socials.github}
             />
           </Col>
         </Row>

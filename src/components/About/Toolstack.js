@@ -19,6 +19,14 @@ function Toolstack() {
         <img src={Postman} alt="Postman" className="tech-icon-images" />
         <div className="tech-icons-text">Postman</div>
       </Col>
+      <Col xs={4} md={2} className="tech-icons ">
+        <div className="tech-icons-text" style={{ fontSize: "1.2em", fontWeight: "bold" }}>TradingView</div>
+        <div className="tech-icons-text">Market Analysis</div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons ">
+        <div className="tech-icons-text" style={{ fontSize: "1.2em", fontWeight: "bold" }}>Vercel</div>
+        <div className="tech-icons-text">Deployment</div>
+      </Col>
     </Row>
   );
 }

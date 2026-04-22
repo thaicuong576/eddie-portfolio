@@ -10,6 +10,8 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
+import { identity } from "../../data/identity";
+
 function Home() {
   return (
     <section>
@@ -27,11 +29,11 @@ function Home() {
 
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name"> EDDIE PHUNG</strong>
+                <strong className="main-name"> {identity.basics.name.toUpperCase()}</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
-                <Type />
+                <Type tagline={identity.basics.tagline} />
               </div>
             </Col>
 

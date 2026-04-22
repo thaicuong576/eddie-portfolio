@@ -3,15 +3,11 @@ import { Col, Row } from "react-bootstrap";
 import Node from "../../Assets/TechIcons/Node.svg";
 import Python from "../../Assets/TechIcons/Python.svg";
 import Javascript from "../../Assets/TechIcons/Javascript.svg";
-import ReactIcon from "../../Assets/TechIcons/React.svg";
 import Git from "../../Assets/TechIcons/Git.svg";
-import Redis from "../../Assets/TechIcons/Redis.svg";
 import Docker from "../../Assets/TechIcons/Docker.svg";
 import SQL from "../../Assets/TechIcons/SQL.svg";
-import Firebase from "../../Assets/TechIcons/Firebase.svg";
-import Mongo from "../../Assets/TechIcons/Mongo.svg";
 import AWS from "../../Assets/TechIcons/AWS.svg";
-import Postman from "../../Assets/TechIcons/Postman.svg";
+import ReactIcon from "../../Assets/TechIcons/React.svg";
 
 function Techstack() {
   return (
@@ -33,36 +29,28 @@ function Techstack() {
         <div className="tech-icons-text">PostgreSQL</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
+        <img src={AWS} alt="aws" className="tech-icon-images" />
+        <div className="tech-icons-text">AWS</div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
         <img src={ReactIcon} alt="react" />
         <div className="tech-icons-text">React.js</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Redis} alt="redis" />
-        <div className="tech-icons-text">Redis</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Mongo} alt="mongoDb" />
-        <div className="tech-icons-text">MongoDB</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Git} alt="git" />
-        <div className="tech-icons-text">Git</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <img src={Docker} alt="docker" />
         <div className="tech-icons-text">Docker</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={Firebase} alt="firebase" />
-        <div className="tech-icons-text">Firebase</div>
+        <img src={Git} alt="git" />
+        <div className="tech-icons-text">Git</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={AWS} alt="aws" className="tech-icon-images" />
-        <div className="tech-icons-text">AWS</div>
+        <div className="tech-icons-text" style={{ fontSize: "1.5em", fontWeight: "bold" }}>n8n</div>
+        <div className="tech-icons-text">Automation</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={Postman} alt="Postman" />
-        <div className="tech-icons-text">Postman</div>
+        <div className="tech-icons-text" style={{ fontSize: "1.5em", fontWeight: "bold" }}>AI</div>
+        <div className="tech-icons-text">Agents</div>
       </Col>
     </Row>
   );
