@@ -21,6 +21,20 @@ export const identity = {
     twitter: "https://x.com/0xeddiephung",
     linkedin: "https://www.linkedin.com/in/phungthaicuong"
   },
+  startups: [
+    {
+      name: "nOps Labs",
+      role: "Co-Founder / Builder",
+      description: "AI video agency producing UGC videos, 2D animations, and news-format videos.",
+      url: "#"
+    },
+    {
+      name: "Bep Ink",
+      role: "Founder / Builder",
+      description: "FnB-specialist print brand in HCMC with AI lead-gen engine.",
+      url: "https://dashboard-sand-nine-57.vercel.app/"
+    }
+  ],
   specializations: [
     {
       id: "system-design",
