@@ -2,7 +2,7 @@ const experienceData = [
   {
     id: "nops-labs",
     title: "nOps Labs — AI Video Orchestration",
-    category: "founding",
+    category: "work",
     role: "Co-Founder",
     date: "Aug 2024 – Present",
     description: "Architected a fully autonomous AI Video Engine using n8n and FFmpeg. Reduced production time from 24 hours to 15 minutes per video.",
@@ -14,7 +14,7 @@ const experienceData = [
   {
     id: "bep-ink",
     title: "Bep Ink — FnB Growth Engine",
-    category: "founding",
+    category: "work",
     role: "Founder & Tech Builder",
     date: "July 2024 – Present",
     description: "Built a geo-targeted lead generation engine for the FnB market in HCMC. Layered AI signals over Google Maps data to identify high-intent leads.",
@@ -26,7 +26,7 @@ const experienceData = [
   {
     id: "attacker-2024",
     title: "ATTACKER 2024 — Fintech Algo Trading",
-    category: "research",
+    category: "academy",
     role: "Team Leader",
     date: "April 2024",
     description: "3rd Runner-up out of 500+ participants. Developed a Python-based algorithmic model tracking VN30 stocks using EMA & Bollinger Bands.",
@@ -37,7 +37,7 @@ const experienceData = [
   {
     id: "gfi",
     title: "GFI Research — Crypto KOL POC",
-    category: "growth",
+    category: "work",
     role: "Content Strategy & Virtual KOL",
     date: "Nov 2024 – Feb 2026",
     description: "Built a Virtual KOL persona from scratch. Closed a $5,000 partnership deal with Mantle Network solo through strategic outreach.",
@@ -48,7 +48,7 @@ const experienceData = [
   {
     id: "gam3",
     title: "Gam3 — Web3 BD & Tokenomics",
-    category: "founding",
+    category: "work",
     role: "Founding BD Team",
     date: "July 2024 – Sept 2024",
     description: "Led institutional outreach to 500+ KOLs. Secured MOUs from global Market Makers DWF Labs and GSR using the 'Token-Loan' model.",
@@ -59,7 +59,7 @@ const experienceData = [
   {
     id: "green-sm",
     title: "Green SM — Intention Research",
-    category: "research",
+    category: "academy",
     role: "Lead Researcher",
     date: "2024",
     description: "Conducted quantitative consumer behavior research with 300+ participants. Applied TPB and TAM models to analyze EV adoption.",
@@ -70,7 +70,7 @@ const experienceData = [
   {
     id: "ai-ugc",
     title: "AI UGC Video — Programmatic Media",
-    category: "systems",
+    category: "projects",
     role: "System Architect",
     date: "2024",
     description: "The core IP of nOps Labs. A high-speed assembly line using Minimax 2.7 and Omnivoice to generate TikTok-ready retail content.",
@@ -81,7 +81,7 @@ const experienceData = [
   {
     id: "justfab",
     title: "JustFab — Early Startup Venture",
-    category: "founding",
+    category: "work",
     role: "Founder",
     date: "2023",
     description: "Validated a content-to-commerce model in the HCMC fashion niche. First entrepreneurial step shifting focus to automation-first operations.",

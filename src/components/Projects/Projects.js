@@ -26,10 +26,9 @@ function Projects() {
 
   const categories = [
     { id: "all", label: "All" },
-    { id: "founding", label: "Founding & Ops" },
-    { id: "systems", label: "AI Systems" },
-    { id: "research", label: "Research Eng" },
-    { id: "growth", label: "Growth BD" },
+    { id: "work", label: "Work" },
+    { id: "projects", label: "Projects" },
+    { id: "academy", label: "Academy" },
   ];
 
   return (
