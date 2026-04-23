@@ -32,7 +32,7 @@
   --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
   --font-heading: "Orbitron", sans-serif;
-  --font-body: "Inter", "Exo 2", sans-serif;
+  --font-body: "Exo 2", "Inter", sans-serif;
   --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-hover: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
@@ -109,6 +109,9 @@ body {
 
 #preloader-none {
   opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s;
 }
 
 #no-scroll {
@@ -604,11 +607,12 @@ h4, h5, h6 {
 }
 
 .tech-icons:hover {
-  transform: scale(1.04) translateY(-4px) !important;
+  transform: scale(1.05) translateY(-6px) !important;
   overflow: hidden !important;
   border-color: var(--accent-blue) !important;
-  box-shadow: var(--shadow-hover), 0 0 16px var(--glow-blue) !important;
+  box-shadow: var(--shadow-hover), 0 0 20px var(--glow-blue) !important;
   opacity: 1 !important;
+  cursor: pointer !important;
 }
 
 .tech-icon-images {
@@ -668,9 +672,10 @@ blockquote {
 }
 
 .project-card-view:hover {
-  transform: translateY(-8px) scale(1.02) !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px var(--glow-blue) !important;
+  transform: translateY(-10px) scale(1.02) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px var(--glow-blue) !important;
   border-color: var(--accent-blue) !important;
+  cursor: pointer !important;
 }
 
 /* Experience Highlights */
@@ -720,7 +725,7 @@ blockquote {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px) !important;
+  transform: translateY(-2px) rotate(-0.5deg) !important;
   box-shadow: 0 4px 16px var(--glow-purple), 0 0 24px var(--glow-blue) !important;
   background: linear-gradient(135deg, #9b7bff, #7cb8ff) !important;
 }
@@ -837,6 +842,7 @@ blockquote {
   font-family: var(--font-heading) !important;
 }
 
+
 .home-about-description h1 {
   font-family: var(--font-heading) !important;
   font-size: 2.2em;
@@ -894,6 +900,11 @@ section,
 .pdf-viewer-wrapper .react-pdf__Page__textContent {
   user-select: text !important;
   -webkit-user-select: text !important;
+  z-index: 2 !important;
+}
+
+.pdf-viewer-wrapper .react-pdf__Page__annotations {
+  z-index: 1 !important;
 }
 
 .pdf-nav {

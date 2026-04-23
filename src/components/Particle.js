@@ -8,64 +8,66 @@ function Particle() {
       params={{
         particles: {
           number: {
-            value: 100,
+            value: 160,
             density: {
               enable: true,
-              value_area: 1200,
+              value_area: 1500,
             },
           },
           color: {
-            value: ["#60a5fa", "#fbbf24", "#ffffff"],
+            value: ["#38bdf8", "#fbbf24", "#8b5cf6"],
           },
           shape: {
             type: "circle",
           },
           opacity: {
-            value: 0.5,
+            value: 0.3,
             random: true,
             anim: {
               enable: true,
-              speed: 0.8,
-              opacity_min: 0.1,
+              speed: 0.5,
+              opacity_min: 0.05,
               sync: false,
             },
           },
           size: {
-            value: 2.5,
+            value: 1.5,
             random: true,
             anim: {
               enable: true,
-              speed: 1.5,
-              size_min: 0.5,
+              speed: 1,
+              size_min: 0.3,
               sync: false,
             },
           },
           line_linked: {
             enable: true,
-            distance: 150,
-            color: "#3b82f6",
-            opacity: 0.12,
-            width: 1,
+            distance: 120,
+            color: "#60a5fa",
+            opacity: 0.08,
+            width: 0.8,
           },
           move: {
             enable: true,
-            speed: 0.8,
+            speed: 0.6,
             direction: "none",
             random: true,
             straight: false,
             out_mode: "out",
             bounce: false,
             attract: {
-              enable: false,
+              enable: true,
+              rotateX: 600,
+              rotateY: 1200,
             },
           },
         },
         interactivity: {
-          detect_on: "canvas",
+          detect_on: "window",
           events: {
             onhover: {
               enable: true,
-              mode: "repulse",
+              mode: "grab",
             },
             onclick: {
               enable: true,
@@ -74,12 +76,14 @@ function Particle() {
             resize: true,
           },
           modes: {
-            repulse: {
-              distance: 100,
-              duration: 0.4,
+            grab: {
+              distance: 140,
+              line_linked: {
+                opacity: 0.4,
+              },
             },
             push: {
-              particles_nb: 3,
+              particles_nb: 2,
             },
           },
         },
