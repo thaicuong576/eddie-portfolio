@@ -2,33 +2,10 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import { identity } from "../../data/identity";
+
 function Techstack() {
-  const skills = [
-    {
-      id: "system-design",
-      title: "I. System Design",
-      emoji: "⛓️",
-      abstraction: "Building autonomous logic that replaces manual labor at scale."
-    },
-    {
-      id: "fintech",
-      title: "II. Fintech Builder",
-      emoji: "📉",
-      abstraction: "Merging academic-grade econometric research with raw market execution."
-    },
-    {
-      id: "startup-growth",
-      title: "III. Startup Growth & Ops",
-      emoji: "🚀",
-      abstraction: "Zero-to-one business development through partnership negotiation and data-led GTM."
-    },
-    {
-      id: "creative-tech",
-      title: "IV. Creative Tech",
-      emoji: "🎨",
-      abstraction: "High-fidelity visual authority and 'Generative Identity' orchestrations."
-    }
-  ];
+  const skills = identity.specializations;
 
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
@@ -37,7 +14,7 @@ function Techstack() {
           <Link to={`/skill/${skill.id}`} className="specialization-link">
             <div className="specialization-card">
               <div className="specialization-icon">{skill.emoji}</div>
-              <h3 className="specialization-title">{skill.title}</h3>
+              <h3 className="specialization-title">{skill.prefix}{skill.title}</h3>
               <p className="specialization-abstraction">{skill.abstraction}</p>
               <div className="specialization-footer">
                 <span>Deep Dive</span>

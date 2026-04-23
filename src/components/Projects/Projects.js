@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import experienceData from "../../data/experience";
+import { identity } from "../../data/identity";
 
 // Generic image placeholders (if unique ones aren't available)
 import bepInk from "../../Assets/Projects/bep_ink.png";
@@ -12,6 +12,8 @@ import automation from "../../Assets/Projects/automation.png";
 
 function Projects() {
   const [filter, setFilter] = useState("all");
+
+  const experienceData = identity.experience;
 
   const filteredData = filter === "all" 
     ? experienceData 

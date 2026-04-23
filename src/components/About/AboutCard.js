@@ -25,19 +25,15 @@ function AboutCard() {
           </p>
 
           <ul>
-            <li className="about-activity">
-              <ImPointRight /> Building AI Agents & Automation
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> AI Video Generation & Styling
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Self-directed learning & inflation hedging strategies
-            </li>
+            {identity.basics.activities.map((activity, index) => (
+              <li key={index} className="about-activity">
+                <ImPointRight /> {activity}
+              </li>
+            ))}
           </ul>
 
           <p style={{ color: "rgb(155, 126, 172)" }}>
-            "Combines research-grade data thinking with the hands-on instinct to actually ship."{" "}
+            "{identity.basics.quote}"{" "}
           </p>
           <footer className="blockquote-footer">Eddie</footer>
         </blockquote>
