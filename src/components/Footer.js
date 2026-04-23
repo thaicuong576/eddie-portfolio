@@ -5,6 +5,7 @@ import {
   AiOutlineTwitter,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { identity } from "../data/identity";
 
 function Footer() {
   let date = new Date();
@@ -13,7 +14,7 @@ function Footer() {
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by Eddie Phung</h3>
+          <h3>Designed and Developed by {identity.basics.name}</h3>
         </Col>
         <Col md="4" className="footer-copywright">
           <h3>Copyright &copy; {year} EP</h3>
@@ -22,7 +23,7 @@ function Footer() {
           <ul className="footer-icons">
             <li className="social-icons">
               <a
-                href="https://github.com/thaicuong576"
+                href={identity.socials.github}
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -32,7 +33,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://x.com/0xeddiephung"
+                href={identity.socials.twitter}
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -42,7 +43,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.linkedin.com/in/phungthaicuong/"
+                href={identity.socials.linkedin}
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"

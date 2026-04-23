@@ -1,17 +1,12 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
+import { identity } from "../../data/identity";
 
 function Type() {
   return (
     <Typewriter
       options={{
-        strings: [
-          "Co-Founder @ nOps Labs",
-          "Co-Founder @ Bep Ink",
-          "AI Automation Builder",
-          "Award-winning Fintech Researcher",
-          "Virtual KOL (Dương Quá)",
-        ],
+        strings: identity.basics.typewriter_strings,
         autoStart: true,
         loop: true,
         deleteSpeed: 50,

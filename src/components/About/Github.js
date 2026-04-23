@@ -1,6 +1,7 @@
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
 import { Row } from "react-bootstrap";
+import { identity } from "../../data/identity";
 
 function Github() {
   return (
@@ -15,7 +16,7 @@ function Github() {
         Days I <strong className="purple">Code</strong>
       </h1>
       <GitHubCalendar
-        username="thaicuong576"
+        username={identity.socials.github_username}
         blockSize={30}
         blockMargin={10}
         color="#60a5fa"

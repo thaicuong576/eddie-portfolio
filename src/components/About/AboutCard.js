@@ -35,7 +35,7 @@ function AboutCard() {
           <p style={{ color: "rgb(155, 126, 172)" }}>
             "{identity.basics.quote}"{" "}
           </p>
-          <footer className="blockquote-footer">Eddie</footer>
+          <footer className="blockquote-footer">{identity.basics.nickname}</footer>
         </blockquote>
       </Card.Body>
     </Card>

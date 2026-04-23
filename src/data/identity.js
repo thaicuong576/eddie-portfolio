@@ -1,14 +1,22 @@
 export const identity = {
   basics: {
     name: "Cuong Phung Thai (Eddie)",
-    tagline: "Co-Founder @ nOps Labs & Bep Ink | AI Automation Builder | Fintech Researcher",
-    unfair_advantage: "A university student who has founded 2 startups, won academic research prizes competing against 2,500+ peers, closed a $5K VC deal solo at age 20, and cut his own content workflow from 5 hours to 1 hour using AI automation — all simultaneously. Combines research-grade data thinking with the hands-on instinct to actually ship.",
+    nickname: "EDDIE",
+    tagline: "Bridging Econometric Rigor with Agentic Automation.",
     quote: "Combines research-grade data thinking with the hands-on instinct to actually ship.",
     activities: [
       "Building AI Agents & Automation",
       "AI Video Generation & Styling",
       "Self-directed learning & inflation hedging"
-    ]
+    ],
+    unfair_advantage: "A university student who has founded 2 startups, won academic research prizes competing against 2,500+ peers, closed a $5K VC deal solo at age 20, and cut his own content workflow from 5 hours to 1 hour using AI automation — all simultaneously. Combines research-grade data thinking with the hands-on instinct to actually ship.",
+    typewriter_strings: [
+      "Co-Founder @ nOps Labs",
+      "Co-Founder @ Bep Ink",
+      "AI Automation Builder",
+      "Award-winning Fintech Researcher",
+      "Virtual KOL (Dương Quá)",
+    ],
   },
   personal: {
     university: "University of Economics Ho Chi Minh City (UEH)",
@@ -18,6 +26,7 @@ export const identity = {
   },
   socials: {
     github: "https://github.com/thaicuong576",
+    github_username: "thaicuong576",
     twitter: "https://x.com/0xeddiephung",
     linkedin: "https://www.linkedin.com/in/phungthaicuong",
     repo: "https://github.com/thaicuong576/eddie-portfolio"
@@ -243,15 +252,17 @@ export const identity = {
     }
   ],
   skills: {
-    stack: [
-      { name: "n8n", type: "tools" },
-      { name: "Python", type: "languages" },
-      { name: "JavaScript", type: "languages" },
-      { name: "Git", type: "tools" },
-      { name: "Docker", type: "tools" },
-      { name: "FFmpeg", type: "tools" },
-      { name: "Postman", type: "tools" },
-      { name: "Vercel", type: "infrastructure" }
+    tools: [
+      { name: "n8n", img_key: "n8n" },
+      { name: "Python", img_key: "Python" },
+      { name: "JavaScript", img_key: "Javascript" },
+      { name: "Git", img_key: "Git" },
+      { name: "Docker", img_key: "Docker" },
+      { name: "Postman", img_key: "Postman" },
+      { name: "VS Code", img_key: "vsCode" },
+      { name: "Chrome", img_key: "chrome" },
+      { name: "Vercel", img_key: "Vercel" },
+      { name: "TradingView", img_key: "TradingView" },
     ]
   }
 };

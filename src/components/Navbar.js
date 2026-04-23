@@ -36,7 +36,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <span className="purple" style={{ fontWeight: "bold", fontSize: "1.4em", textDecoration: "none" }}>EDDIE.</span>
+          <span className="purple" style={{ fontWeight: "bold", fontSize: "1.4em", textDecoration: "none" }}>{identity.basics.nickname.toUpperCase()}.</span>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
