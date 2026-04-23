@@ -56,7 +56,7 @@ function Home() {
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/thaicuong576"
+                  href={identity.socials.github}
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -66,7 +66,7 @@ function Home() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://x.com/0xeddiephung"
+                  href={identity.socials.twitter}
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -76,7 +76,7 @@ function Home() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/phungthaicuong/"
+                  href={identity.socials.linkedin}
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"

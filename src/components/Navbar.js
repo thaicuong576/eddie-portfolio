@@ -11,6 +11,8 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 
+import { identity } from "../data/identity";
+
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
@@ -89,7 +91,7 @@ function NavBar() {
 
             <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/thaicuong576/eddie-portfolio"
+                href={identity.socials.repo}
                 target="_blank"
                 className="fork-btn-inner"
               >

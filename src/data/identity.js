@@ -19,7 +19,8 @@ export const identity = {
   socials: {
     github: "https://github.com/thaicuong576",
     twitter: "https://x.com/0xeddiephung",
-    linkedin: "https://www.linkedin.com/in/phungthaicuong"
+    linkedin: "https://www.linkedin.com/in/phungthaicuong",
+    repo: "https://github.com/thaicuong576/eddie-portfolio"
   },
   startups: [
     {

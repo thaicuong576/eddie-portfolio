@@ -99,13 +99,11 @@ function ResumeNew() {
           <h2 className="purple" style={{ textAlign: "center", marginBottom: "30px" }}>Experience Highlights</h2>
           {identity.experience.map((exp, index) => (
             <div key={index} style={{ marginBottom: "40px", borderLeft: "2px solid #be50f4", paddingLeft: "20px" }}>
-              <h3>{exp.role} <span className="purple">@ {exp.company}</span></h3>
-              <p style={{ color: "#d1d1d1" }}>{exp.duration}</p>
-              <ul>
-                {exp.highlights.map((item, id) => (
-                  <li key={id} style={{ marginBottom: "10px" }}>{item}</li>
-                ))}
-              </ul>
+              <h3>{exp.title}</h3>
+              <p className="purple" style={{ fontWeight: "bold" }}>{exp.role}</p>
+              <p style={{ color: "#d1d1d1" }}>{exp.date}</p>
+              <p>{exp.description}</p>
+              <p style={{ color: "#be50f4", fontWeight: "bold" }}>{exp.impact} — {exp.stats}</p>
             </div>
           ))}
           
@@ -114,11 +112,13 @@ function ResumeNew() {
             <div key={index} style={{ marginBottom: "40px", borderLeft: "2px solid #50f4be", paddingLeft: "20px" }}>
               <h3>{startup.role} <span className="purple">@ {startup.name}</span></h3>
               <p style={{ fontStyle: "italic" }}>{startup.description}</p>
-              <ul>
-                {startup.highlights.map((item, id) => (
-                  <li key={id} style={{ marginBottom: "10px" }}>{item}</li>
-                ))}
-              </ul>
+              {startup.highlights && (
+                <ul>
+                  {startup.highlights.map((item, id) => (
+                    <li key={id} style={{ marginBottom: "10px" }}>{item}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </Container>
