@@ -1,8 +1,9 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import vsCode from "../../Assets/TechIcons/vscode.svg";
-import chrome from "../../Assets/TechIcons/Google Chrome.svg";
-import Postman from "../../Assets/TechIcons/Postman.svg";
+import nodejs from "../../Assets/TechIcons/nodejs.svg";
+import antigravity from "../../Assets/TechIcons/antigravity.svg";
+import nocodb from "../../Assets/TechIcons/nocodb.svg";
+import openclaw from "../../Assets/TechIcons/openclaw.svg";
 import Python from "../../Assets/TechIcons/Python.svg";
 import Javascript from "../../Assets/TechIcons/Javascript.svg";
 import Docker from "../../Assets/TechIcons/Docker.svg";
@@ -12,9 +13,10 @@ import { identity } from "../../data/identity";
 
 function Toolstack() {
   const imageMap = {
-    vsCode,
-    chrome,
-    Postman,
+    nodejs,
+    antigravity,
+    nocodb,
+    openclaw,
     Python,
     Javascript,
     Docker,
@@ -31,10 +33,9 @@ function Toolstack() {
               src={imageMap[tool.img_key]} 
               alt={tool.name} 
               className="tech-icon-images" 
-              style={tool.img_key === "n8n" ? { width: "45px" } : {}}
             />
           ) : (
-            <div className="tech-icons-text" style={{ fontSize: "1.2em", fontWeight: "bold" }}>
+            <div className="tech-icons-text" style={{ fontSize: "1.4em", fontWeight: "900", color: "#fff", marginBottom: "10px" }}>
               {tool.name}
             </div>
           )}

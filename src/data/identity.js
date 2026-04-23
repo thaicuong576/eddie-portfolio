@@ -258,9 +258,10 @@ export const identity = {
       { name: "JavaScript", img_key: "Javascript" },
       { name: "Git", img_key: "Git" },
       { name: "Docker", img_key: "Docker" },
-      { name: "Postman", img_key: "Postman" },
-      { name: "VS Code", img_key: "vsCode" },
-      { name: "Chrome", img_key: "chrome" },
+      { name: "Node.js", img_key: "nodejs" },
+      { name: "Antigravity", img_key: "antigravity" },
+      { name: "NocoDB", img_key: "nocodb" },
+      { name: "OpenClaw", img_key: "openclaw" },
       { name: "Vercel", img_key: "Vercel" },
       { name: "TradingView", img_key: "TradingView" },
     ]
