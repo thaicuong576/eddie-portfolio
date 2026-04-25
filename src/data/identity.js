@@ -9,7 +9,7 @@ export const identity = {
       "AI Video Generation & Styling",
       "Self-directed learning & inflation hedging"
     ],
-    unfair_advantage: "A university student who has founded 2 startups, won academic research prizes competing against 2,500+ peers, closed a $5K VC deal solo at age 20, and cut his own content workflow from 5 hours to 1 hour using AI automation — all simultaneously. Combines research-grade data thinking with the hands-on instinct to actually ship.",
+    unfair_advantage: "A university student who has founded 2 startups, won academic research prizes competing against 2,500+ peers, closed a $5K marketing partnership deal solo at age 20, and cut his own content workflow from 5 hours to 1 hour using AI automation — all simultaneously. Combines research-grade data thinking with the hands-on instinct to actually ship.",
     typewriter_strings: [
       "Co-Founder @ nOps Labs",
       "Co-Founder @ Bep Ink",
@@ -106,11 +106,11 @@ export const identity = {
       category: "work",
       role: "Co-Founder",
       date: "Aug 2024 – Present",
-      description: "Architected a fully autonomous AI Video Engine using n8n and FFmpeg. Reduced production time from 24 hours to 15 minutes per video.",
-      impact: "100% Autonomous Pipeline",
+      description: "Architected a fully autonomous AI Video Engine using n8n and FFmpeg. Scaled production capacity to 100-200 videos per day.",
+      impact: "100-200 Videos/Day",
       tech: ["n8n", "FFmpeg", "ComfyUI", "Python"],
       link: "/skill/creative-tech",
-      stats: "90% Cost Reduction"
+      stats: "High-Volume Production"
     },
     {
       id: "bep-ink",
@@ -118,11 +118,11 @@ export const identity = {
       category: "work",
       role: "Founder & Tech Builder",
       date: "July 2024 – Present",
-      description: "Built a geo-targeted lead generation engine for the FnB market in HCMC. Layered AI signals over Google Maps data to identify high-intent leads.",
-      impact: "500+ Qualified Leads",
+      description: "Built a geo-targeted lead generation engine for the FnB market in HCMC. Layered AI signals over Google Maps data to identify high-intent leads across Ho Chi Minh City.",
+      impact: "HCMC Lead Discovery",
       tech: ["n8n", "Next.js", "Vercel", "Scraping"],
       link: "/skill/startup-growth",
-      stats: "Zero-Manual Lead Gen"
+      stats: "City-Wide Identification"
     },
     {
       id: "gfi",
@@ -139,12 +139,12 @@ export const identity = {
       id: "gam3",
       title: "Gam3 — Web3 BD & Tokenomics",
       category: "work",
-      role: "Founding BD Team",
+      role: "Personal Assistant to Founder / BD Team",
       date: "July 2024 – Sept 2024",
-      description: "Led institutional outreach to 500+ KOLs. Secured MOUs from global Market Makers DWF Labs and GSR using the 'Token-Loan' model.",
-      impact: "MOU with DWF & GSR",
+      description: "Provided direct assistance in institutional outreach and negotiation, supporting the successful MOU acquisition with DWF Labs and GSR.",
+      impact: "MOU Support (DWF & GSR)",
       tech: ["Tokenomics", "BD Funnel", "MOU Negotiation", "Nodes"],
-      stats: "500+ KOL Outreach"
+      stats: "Institutional BD Support"
     },
     {
       id: "u2u",
@@ -176,10 +176,10 @@ export const identity = {
       category: "projects",
       role: "System Architect",
       date: "2024",
-      description: "The core IP of nOps Labs. A high-speed assembly line using Minimax 2.7 and Omnivoice to generate TikTok-ready retail content.",
-      impact: "Script-to-Video in 15m",
+      description: "The core IP of nOps Labs. A high-speed assembly line using Minimax 2.7 and Omnivoice to generate TikTok-ready retail content at a rate of 100-200 videos per day.",
+      impact: "100-200 Videos/Day",
       tech: ["Minimax 2.7", "Omnivoice", "FFmpeg", "n8n"],
-      stats: "Fully Programmatic"
+      stats: "Scalable Production"
     },
     {
       id: "pm-agent",
@@ -247,7 +247,7 @@ export const identity = {
       description: "Advanced academic research exploring technological proximity and innovation performance. Applied complex econometric models.",
       impact: "Innovation Policy Insights",
       tech: ["Econometrics", "R&D Analysis", "Academic Research"],
-      stats: "High Impact"
+      stats: "The UEH Young Researcher"
     },
     {
       id: "green-sm",
