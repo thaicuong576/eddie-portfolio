@@ -6,7 +6,6 @@ import { identity } from "../../data/identity";
 
 // Generic image placeholders (if unique ones aren't available)
 import bepInk from "../../Assets/Projects/bep-ink.png";
-import research from "../../Assets/Projects/research.png";
 import nopsLabs from "../../Assets/Projects/nopslabs.png";
 import automation from "../../Assets/Projects/automation.png";
 import attacker from "../../Assets/Projects/attacker.jpg";
