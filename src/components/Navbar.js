@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { CgGitFork, CgFileDocument } from "react-icons/cg";
+import { CgFileDocument } from "react-icons/cg";
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
@@ -36,7 +36,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <span className="purple" style={{ fontWeight: "bold", fontSize: "1.4em", textDecoration: "none" }}>{identity.basics.nickname.toUpperCase()}.</span>
+          <span className="blue" style={{ fontWeight: "bold", fontSize: "1.4em", textDecoration: "none" }}>{identity.basics.nickname.toUpperCase()}.</span>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -89,15 +89,7 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item className="fork-btn">
-              <Button
-                href={identity.socials.repo}
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-              </Button>
-            </Nav.Item>
+
           </Nav>
         </Navbar.Collapse>
       </Container>

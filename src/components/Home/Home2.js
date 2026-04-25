@@ -10,23 +10,23 @@ function Home2() {
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              THE <span className="purple"> FOUNDER-BUILDER </span> ESSENCE
+              THE <span className="blue"> FOUNDER-BUILDER </span> ESSENCE
             </h1>
             <p className="home-about-body">
               {identity.basics.unfair_advantage}
               <br />
               <br />
-              I'm a Fintech Researcher at <span className="purple">{identity.personal.university}</span> who loves turning emerging technology
+              I'm a Fintech Researcher at <span className="blue">{identity.personal.university}</span> who loves turning emerging technology
               into real, practical solutions. 
               <br />
               <br />
-              Currently, I'm scaling <i><b className="purple"> {identity.startups[0].name} </b></i> and <i><b className="purple"> {identity.startups[1].name} </b></i>, 
+              Currently, I'm scaling <i><b className="blue"> {identity.startups[0].name} </b></i> and <i><b className="blue"> {identity.startups[1].name} </b></i>, 
               leveraging AI automation to redefine how brands communicate.
               <br />
               <br />
               My key areas of interest include
               <i>
-                <b className="purple">
+                <b className="blue">
                   {" "}
                   Fintech Research, AI Agents, and Crypto Tokenomics.{" "}
                 </b>
@@ -34,7 +34,7 @@ function Home2() {
               <br />
               <br />
               Whether it's closing VC deals, winning academic prizes, or building 24/7 AI agents, 
-              I am obsessed with <b className="purple">efficiency</b> and the <b className="purple">speed to result</b>.
+              I am obsessed with <b className="blue">efficiency</b> and the <b className="blue">speed to result</b>.
             </p>
           </Col>
           <Col md={4} className="myAvtar">

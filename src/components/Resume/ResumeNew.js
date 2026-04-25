@@ -12,7 +12,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.min.
 
 const pdfUrl = process.env.PUBLIC_URL + "/eddie-cv.pdf";
 
-function ResumeNew() {
+function ResumeNew({ isHome }) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -31,7 +31,7 @@ function ResumeNew() {
   return (
     <div>
       <Container fluid className="resume-section">
-        <Particle />
+        {!isHome && <Particle />}
 
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
@@ -96,21 +96,21 @@ function ResumeNew() {
 
         {/* Experience Highlights Section */}
         <Container className="experience-highlights" style={{ marginTop: "50px", color: "white" }}>
-          <h2 className="purple" style={{ textAlign: "center", marginBottom: "30px" }}>Experience Highlights</h2>
+          <h2 className="blue" style={{ textAlign: "center", marginBottom: "30px" }}>Experience Highlights</h2>
           {identity.experience.map((exp, index) => (
             <div key={index} style={{ marginBottom: "40px", borderLeft: "2px solid #be50f4", paddingLeft: "20px" }}>
               <h3>{exp.title}</h3>
-              <p className="purple" style={{ fontWeight: "bold" }}>{exp.role}</p>
+              <p className="blue" style={{ fontWeight: "bold" }}>{exp.role}</p>
               <p style={{ color: "#d1d1d1" }}>{exp.date}</p>
               <p>{exp.description}</p>
               <p style={{ color: "#be50f4", fontWeight: "bold" }}>{exp.impact} — {exp.stats}</p>
             </div>
           ))}
           
-          <h2 className="purple" style={{ textAlign: "center", margin: "30px 0" }}>Startups</h2>
+          <h2 className="blue" style={{ textAlign: "center", margin: "30px 0" }}>Startups</h2>
           {identity.startups.map((startup, index) => (
             <div key={index} style={{ marginBottom: "40px", borderLeft: "2px solid #50f4be", paddingLeft: "20px" }}>
-              <h3>{startup.role} <span className="purple">@ {startup.name}</span></h3>
+              <h3>{startup.role} <span className="blue">@ {startup.name}</span></h3>
               <p style={{ fontStyle: "italic" }}>{startup.description}</p>
               {startup.highlights && (
                 <ul>

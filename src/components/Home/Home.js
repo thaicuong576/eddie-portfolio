@@ -4,6 +4,9 @@ import Globe3D from "../Globe3D";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
+import About from "../About/About";
+import Projects from "../Projects/Projects";
+import ResumeNew from "../Resume/ResumeNew";
 import {
   AiFillGithub,
 } from "react-icons/ai";
@@ -45,13 +48,16 @@ function Home() {
         </Container>
       </Container>
       <Home2 />
+      <About isHome={true} />
+      <Projects isHome={true} />
+      <ResumeNew isHome={true} />
 
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
             <h1>Find Me On</h1>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              Feel free to <span className="blue">connect </span>with me
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">
@@ -85,6 +91,9 @@ function Home() {
                 </a>
               </li>
             </ul>
+            <p style={{ marginTop: "20px" }}>
+              ...or email me directly at <a href="mailto:cuongphungthai1@gmail.com" className="blue" style={{ textDecoration: "none" }}>cuongphungthai1@gmail.com</a>
+            </p>
           </Col>
         </Row>
       </Container>

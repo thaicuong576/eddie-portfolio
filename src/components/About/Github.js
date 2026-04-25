@@ -13,7 +13,7 @@ function Github() {
       }}
     >
       <h1 className="project-heading pb-4" style={{ paddingBottom: "20px" }}>
-        Days I <strong className="purple">Code</strong>
+        Days I <strong className="blue">Code</strong>
       </h1>
       <GitHubCalendar
         username={identity.socials.github_username}

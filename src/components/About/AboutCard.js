@@ -5,20 +5,20 @@ import { identity } from "../../data/identity";
 
 function AboutCard() {
   return (
-    <Card className="quote-card-view">
-      <Card.Body>
+    <Card className="quote-card-view" style={{ flex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
+      <Card.Body style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi everyone! I'm <span className="purple">{identity.basics.name}</span>{" "}
-            from <span className="purple">{identity.personal.location}</span>.
+            Hi everyone! I'm <span className="blue">{identity.basics.name}</span>{" "}
+            from <span className="blue">{identity.personal.location}</span>.
             <br />
-            I'm a <span className="purple">Fintech Researcher</span> and{" "}
-            <span className="purple">Startup Founder</span>, currently
-            leading <span className="purple">nOps Labs</span> and <span className="purple">Bep Ink</span>.
+            I'm a <span className="blue">Fintech Researcher</span> and{" "}
+            <span className="blue">Startup Founder</span>, currently
+            leading <span className="blue">nOps Labs</span> and <span className="blue">Bep Ink</span>.
             <br />
             I'm currently pursuing a degree in{" "}
-            <span className="purple">{identity.personal.major}</span> at{" "}
-            <span className="purple">{identity.personal.university}</span>.
+            <span className="blue">{identity.personal.major}</span> at{" "}
+            <span className="blue">{identity.personal.university}</span>.
             <br />
             <br />
             Beyond building startups and research, I enjoy:

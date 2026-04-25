@@ -5,12 +5,24 @@ import Particle from "../Particle";
 import { identity } from "../../data/identity";
 
 // Generic image placeholders (if unique ones aren't available)
-import bepInk from "../../Assets/Projects/bep_ink.png";
+import bepInk from "../../Assets/Projects/bep-ink.png";
 import research from "../../Assets/Projects/research.png";
-import aiVideo from "../../Assets/Projects/ai_video.png";
+import nopsLabs from "../../Assets/Projects/nopslabs.png";
 import automation from "../../Assets/Projects/automation.png";
+import attacker from "../../Assets/Projects/attacker.jpg";
+import gam3 from "../../Assets/Projects/gam3.png";
+import gfi from "../../Assets/Projects/gfi-duong-qua.png";
+import greenSM from "../../Assets/Projects/green-sm.png";
+import justfab from "../../Assets/Projects/justfab.jpg";
+import u2u from "../../Assets/Projects/u2u.jpeg";
+import xToThread from "../../Assets/Projects/x-to-thread.png";
+import nnct from "../../Assets/Projects/nnct-2025.png";
+import pmAgent from "../../Assets/Projects/pm-agent.png";
+import bepScraper from "../../Assets/Projects/bep-ink-ggmap-scraper.png";
+import contentBot from "../../Assets/Projects/eddie-content-bot.png";
+import justfactor from "../../Assets/Projects/justfactor.png";
 
-function Projects() {
+function Projects({ isHome }) {
   const [filter, setFilter] = useState("all");
 
   const experienceData = identity.experience;
@@ -21,8 +33,19 @@ function Projects() {
 
   const getImage = (id) => {
     if (id === "bep-ink") return bepInk;
-    if (id === "attacker-2024" || id === "green-sm") return research;
-    if (id === "nops-labs" || id === "ai-ugc") return aiVideo;
+    if (id === "attacker-2024") return attacker;
+    if (id === "green-sm") return greenSM;
+    if (id === "nops-labs" || id === "ai-ugc") return nopsLabs;
+    if (id === "gfi") return gfi;
+    if (id === "gam3") return gam3;
+    if (id === "u2u") return u2u;
+    if (id === "justfab") return justfab;
+    if (id === "x-threads") return xToThread;
+    if (id === "rd-proximity") return nnct;
+    if (id === "pm-agent") return pmAgent;
+    if (id === "lead-gen-scraper") return bepScraper;
+    if (id === "content-bot") return contentBot;
+    if (id === "justfactor") return justfactor;
     return automation;
   };
 
@@ -35,10 +58,10 @@ function Projects() {
 
   return (
     <Container fluid className="project-section">
-      <Particle />
+      {!isHome && <Particle />}
       <Container>
-        <h1 className="project-heading">
-          Career <strong className="purple">Experience </strong>
+        <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
+          Career <strong className="blue">Experience </strong>
         </h1>
         <p style={{ color: "white" }}>
           A high-stakes roadmap of founding ventures, AI orchestration, and quantitative research.

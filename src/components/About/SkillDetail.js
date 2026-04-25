@@ -24,7 +24,7 @@ function SkillDetail() {
               <div className="skill-detail-title-block">
                 <span className="skill-detail-emoji">{skill.emoji}</span>
                 <h1 className="project-heading">
-                  {skill.title.split(' ')[0]} <strong className="purple">{skill.title.split(' ').slice(1).join(' ')}</strong>
+                  {skill.title.split(' ')[0]} <strong className="blue">{skill.title.split(' ').slice(1).join(' ')}</strong>
                 </h1>
               </div>
             </Col>
@@ -38,7 +38,7 @@ function SkillDetail() {
             </Col>
             
             <Col md={7}>
-              <h2 className="skill-sub-heading">Core <strong className="purple">Evidence</strong></h2>
+              <h2 className="skill-sub-heading">Core <strong className="blue">Evidence</strong></h2>
               <ul className="evidence-list">
                 {skill.evidence.map((item, index) => (
                   <li key={index}>{item}</li>
@@ -48,7 +48,7 @@ function SkillDetail() {
 
             <Col md={5}>
               <div className="value-proposition-card">
-                <h3 className="purple">The Value</h3>
+                <h3 className="blue">The Value</h3>
                 <p>{skill.value}</p>
               </div>
             </Col>

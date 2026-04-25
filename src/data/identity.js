@@ -28,8 +28,7 @@ export const identity = {
     github: "https://github.com/thaicuong576",
     github_username: "thaicuong576",
     twitter: "https://x.com/0xeddiephung",
-    linkedin: "https://www.linkedin.com/in/phungthaicuong",
-    repo: "https://github.com/thaicuong576/eddie-portfolio"
+    linkedin: "https://www.linkedin.com/in/phungthaicuong"
   },
   startups: [
     {
@@ -215,6 +214,17 @@ export const identity = {
       tech: ["Social Automation", "n8n", "LLM Scripting", "Growth Loops"],
       stats: "Viral Growth Engine"
     },
+    {
+      id: "content-bot",
+      title: "Eddie Content Bot — Workflow Automation",
+      category: "projects",
+      role: "Automation Lead",
+      date: "2024",
+      description: "Architected a custom content bot that automates research, scripting, and multi-platform publishing. Successfully reduced content production cycles from 5 hours down to just 1 hour.",
+      impact: "80% Time Efficiency Gain",
+      tech: ["n8n", "LLMs", "API Orchestration", "Python"],
+      stats: "5h → 1h Automation"
+    },
 
     // ACADEMY CATEGORY
     {
@@ -249,6 +259,17 @@ export const identity = {
       impact: "300+ Survey Sample",
       tech: ["Quantitative Research", "TPB/TAM", "Consumer Behavior"],
       stats: "Academic High-Grade"
+    },
+    {
+      id: "justfactor",
+      title: "JustFactor — SME Credit Origination PoC",
+      category: "academy",
+      role: "Project Lead",
+      date: "Q1 2026",
+      description: "Addressing the $24B SME credit gap in Vietnam. Developed an 'Intelligent Origination Layer' MVP that transforms fragmented SME records into standardized, tradeable assets using data automation.",
+      impact: "$24B Credit Gap Solution PoC",
+      tech: ["FastAPI", "Supabase", "React", "Digital Banking"],
+      stats: "90% Friction Reduction"
     }
   ],
   skills: {
