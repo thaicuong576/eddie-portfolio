@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
+import React, { useState, useMemo } from "react";
+import { Container, Row, Col, Button, ButtonGroup, Form, InputGroup } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import { identity } from "../../data/identity";
+import { FaSearch } from "react-icons/fa";
 
 // Generic image placeholders (if unique ones aren't available)
 import bepInk from "../../Assets/Projects/bep-ink.png";
@@ -23,12 +24,27 @@ import justfactor from "../../Assets/Projects/justfactor.png";
 
 function Projects({ isHome }) {
   const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
 
   const experienceData = identity.experience;
 
-  const filteredData = filter === "all" 
-    ? experienceData 
-    : experienceData.filter(item => item.category === filter);
+  const filteredData = useMemo(() => {
+    let data = filter === "all"
+      ? experienceData
+      : experienceData.filter(item => item.category === filter);
+
+    if (search.trim()) {
+      const searchLower = search.toLowerCase();
+      data = data.filter(item =>
+        item.title.toLowerCase().includes(searchLower) ||
+        item.description.toLowerCase().includes(searchLower) ||
+        item.tech?.some(t => t.toLowerCase().includes(searchLower)) ||
+        item.role.toLowerCase().includes(searchLower)
+      );
+    }
+
+    return data;
+  }, [filter, search, experienceData]);
 
   const getImage = (id) => {
     if (id === "bep-ink") return bepInk;
@@ -80,23 +96,48 @@ function Projects({ isHome }) {
           </ButtonGroup>
         </div>
 
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {filteredData.map((item) => (
-            <Col md={4} className="project-card" key={item.id}>
-              <ProjectCard
-                imgPath={getImage(item.id)}
-                isBlog={false}
-                title={item.title}
-                description={item.description}
-                ghLink={item.link} // Reusing ghLink as card link
-                impact={item.impact}
-                stats={item.stats}
-                role={item.role}
-                tech={item.tech}
+        {isHome && (
+          <div className="experience-search-wrapper">
+            <InputGroup className="experience-search">
+              <InputGroup.Text className="search-icon">
+                <FaSearch />
+              </InputGroup.Text>
+              <Form.Control
+                type="text"
+                placeholder="Search experiences..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="search-input"
               />
-            </Col>
-          ))}
-        </Row>
+            </InputGroup>
+          </div>
+        )}
+
+        <div className={isHome ? "experience-scroll-frame" : ""}>
+          <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+            {filteredData.length > 0 ? (
+              filteredData.map((item) => (
+                <Col md={4} className="project-card" key={item.id}>
+                  <ProjectCard
+                    imgPath={getImage(item.id)}
+                    isBlog={false}
+                    title={item.title}
+                    description={item.description}
+                    ghLink={item.link}
+                    impact={item.impact}
+                    stats={item.stats}
+                    role={item.role}
+                    tech={item.tech}
+                  />
+                </Col>
+              ))
+            ) : (
+              <Col md={12} className="text-center" style={{ color: "var(--text-secondary)", padding: "40px 0" }}>
+                No experiences found matching your search.
+              </Col>
+            )}
+          </Row>
+        </div>
       </Container>
     </Container>
   );

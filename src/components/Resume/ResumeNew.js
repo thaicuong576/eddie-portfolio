@@ -106,7 +106,7 @@ function ResumeNew({ isHome }) {
               <p style={{ color: "#be50f4", fontWeight: "bold" }}>{exp.impact} — {exp.stats}</p>
             </div>
           ))}
-          
+
           <h2 className="blue" style={{ textAlign: "center", margin: "30px 0" }}>Startups</h2>
           {identity.startups.map((startup, index) => (
             <div key={index} style={{ marginBottom: "40px", borderLeft: "2px solid #50f4be", paddingLeft: "20px" }}>
