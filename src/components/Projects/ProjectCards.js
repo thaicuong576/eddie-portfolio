@@ -1,43 +1,54 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { Badge } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { getSpecTitle } from "../../utils/identityUtils";
 
 function ProjectCards(props) {
   return (
-    <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
-      <Card.Body className="d-flex flex-column">
-        <div className="card-role-badge">{props.role}</div>
-        <Card.Title className="experience-title">{props.title}</Card.Title>
-        
-        <div className="impact-badge-container">
-          <Badge bg="info" className="impact-badge">
-            {props.stats}
-          </Badge>
+    <Card className="modern-experience-card">
+      <div 
+        className="experience-card-img" 
+        style={{ 
+          backgroundImage: `url(${props.imgPath})`,
+          backgroundPosition: `${props.imgPosition || "center top"}`,
+          backgroundSize: "120%", // Restored large zoom
+          backgroundRepeat: "no-repeat",
+          height: "210px",
+          width: "100%"
+        }}
+      >
+        <div className="card-image-overlay"></div>
+      </div>
+      
+      <Card.Body className="card-content">
+        <div className="card-impact-highlight">
+          {props.stats}
         </div>
+        
+        <Card.Title className="card-title-minimal">
+          {props.title}
+        </Card.Title>
 
-        <Card.Text style={{ textAlign: "justify", fontSize: "0.9em", flexGrow: 1 }}>
+        <Card.Text className="card-description-minimal">
           {props.description}
         </Card.Text>
 
-        <div className="tech-stack-mini">
-          {props.tech && props.tech.map((t, index) => (
-            <span key={index} className="tech-tag">#{t}</span>
-          ))}
-        </div>
-
-        <div className="experience-impact-footer">
-          <strong>Key Impact:</strong> {props.impact}
-        </div>
-        
-        {props.ghLink && (
-          <div className="experience-action mt-3">
-            <a href={props.ghLink} className="experience-link">
-              Deep Dive <AiOutlineArrowRight />
-            </a>
+        {props.specializationIds && props.specializationIds.length > 0 && (
+          <div className="card-business-tags">
+            {props.specializationIds.map((specId) => (
+              <span key={specId} className="business-tag-pill">
+                {getSpecTitle(specId)}
+              </span>
+            ))}
           </div>
         )}
+
+        <div className="card-action-minimal">
+          <Link to={`/experience/${props.id}`} className="cta-link-minimal">
+            See How It Works <AiOutlineArrowRight />
+          </Link>
+        </div>
       </Card.Body>
     </Card>
   );

@@ -9,33 +9,32 @@ function AboutCard() {
       <Card.Body style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi everyone! I'm <span className="blue">{identity.basics.name}</span>{" "}
-            from <span className="blue">{identity.personal.location}</span>.
-            <br />
-            I'm a <span className="blue">Fintech Researcher</span> and{" "}
-            <span className="blue">Startup Founder</span>, currently
-            leading <span className="blue">nOps Labs</span> and <span className="blue">Bep Ink</span>.
-            <br />
-            I'm currently pursuing a degree in{" "}
-            <span className="blue">{identity.personal.major}</span> at{" "}
-            <span className="blue">{identity.personal.university}</span>.
-            <br />
-            <br />
-            Beyond building startups and research, I enjoy:
+            {identity.basics.how_i_work.intro}
           </p>
 
-          <ul>
-            {identity.basics.activities.map((activity, index) => (
+          <br />
+          <p style={{ textAlign: "justify", marginBottom: "10px" }}>
+            <b className="blue">{identity.basics.how_i_work.approach_title}</b>
+          </p>
+          <ul className="home-about-list">
+            {identity.basics.how_i_work.approach_steps.map((step, index) => (
               <li key={index} className="about-activity">
-                <ImPointRight /> {activity}
+                <ImPointRight /> {step}
               </li>
             ))}
           </ul>
 
-          <p style={{ color: "rgb(155, 126, 172)" }}>
-            "{identity.basics.quote}"{" "}
+          <br />
+          <p style={{ textAlign: "justify", marginBottom: "10px" }}>
+            <b className="blue">{identity.basics.how_i_work.preferences_title}</b>
           </p>
-          <footer className="blockquote-footer">{identity.basics.nickname}</footer>
+          <ul className="home-about-list">
+            {identity.basics.how_i_work.preferences.map((pref, index) => (
+              <li key={index} className="about-activity">
+                <ImPointRight /> {pref}
+              </li>
+            ))}
+          </ul>
         </blockquote>
       </Card.Body>
     </Card>

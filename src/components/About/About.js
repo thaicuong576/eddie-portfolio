@@ -6,6 +6,7 @@ import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 
 import Toolstack from "./Toolstack";
+import { identity } from "../../data/identity";
 
 function About({ isHome }) {
   return (
@@ -25,7 +26,7 @@ function About({ isHome }) {
               }}
             >
               <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-                Know Who <strong className="blue">I AM</strong>
+                HOW <strong className="blue">I WORK</strong>
               </h1>
               <Aboutcard />
             </Col>
@@ -35,48 +36,28 @@ function About({ isHome }) {
               className="about-img"
             >
               <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-                The <strong className="blue">Formula</strong>
+                WHAT <strong className="blue">I BRING</strong>
               </h1>
-              <Card className="quote-card-view" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-                <Card.Body style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 0, height: "100%" }}>
-                  <div style={{ display: "flex", alignItems: "center", borderLeft: "3px solid var(--accent-blue)", background: "rgba(56, 189, 248, 0.04)", borderRadius: "0 8px 8px 0", padding: "10px 20px" }}>
-                    <span className="blue" style={{ fontWeight: "700", minWidth: "90px", fontSize: "1.4em" }}>40%</span>
-                    <span style={{ fontSize: "1.05em" }}>Hate for wasting time</span>
-                  </div>
-                  
-                  <div style={{ display: "flex", justifyContent: "center", margin: "2px 0" }}>
-                    <span className="blue" style={{ fontSize: "1.6em", fontWeight: "900", opacity: 0.8 }}>+</span>
-                  </div>
-
-                  <div style={{ display: "flex", alignItems: "center", borderLeft: "3px solid var(--accent-blue)", background: "rgba(56, 189, 248, 0.04)", borderRadius: "0 8px 8px 0", padding: "10px 20px" }}>
-                    <span className="blue" style={{ fontWeight: "700", minWidth: "90px", fontSize: "1.4em" }}>30%</span>
-                    <span style={{ fontSize: "1.05em" }}>Love for winning</span>
-                  </div>
-
-                  <div style={{ display: "flex", justifyContent: "center", margin: "2px 0" }}>
-                    <span className="blue" style={{ fontSize: "1.6em", fontWeight: "900", opacity: 0.8 }}>+</span>
-                  </div>
-
-                  <div style={{ display: "flex", alignItems: "center", borderLeft: "3px solid var(--accent-blue)", background: "rgba(56, 189, 248, 0.04)", borderRadius: "0 8px 8px 0", padding: "10px 20px" }}>
-                    <span className="blue" style={{ fontWeight: "700", minWidth: "90px", fontSize: "1.4em" }}>20%</span>
-                    <span style={{ fontSize: "1.05em" }}>Fun and discovery</span>
-                  </div>
-
-                  <div style={{ display: "flex", justifyContent: "center", margin: "2px 0" }}>
-                    <span className="blue" style={{ fontSize: "1.6em", fontWeight: "900", opacity: 0.8 }}>+</span>
-                  </div>
-
-                  <div style={{ display: "flex", alignItems: "center", borderLeft: "3px solid var(--accent-blue)", background: "rgba(56, 189, 248, 0.04)", borderRadius: "0 8px 8px 0", padding: "10px 20px" }}>
-                    <span className="blue" style={{ fontWeight: "700", minWidth: "90px", fontSize: "1.4em" }}>10%</span>
-                    <span style={{ fontSize: "1.05em" }}>Do it now</span>
-                  </div>
-
-                  <div style={{ display: "flex", justifyContent: "center", margin: "8px 0 2px 0" }}>
-                    <span className="blue" style={{ fontSize: "2.2em", fontWeight: "900", opacity: 0.9 }}>=</span>
-                  </div>
-
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(56, 189, 248, 0.15)", borderRadius: "8px", borderBottom: "3px solid var(--accent-blue)", padding: "12px 20px" }}>
-                    <strong className="blue" style={{ fontSize: "2em", letterSpacing: "2px", textTransform: "uppercase" }}>Eddie</strong>
+              <Card className="quote-card-view" style={{ flex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
+                <Card.Body style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                  <ul className="home-about-list" style={{ margin: 0 }}>
+                    {identity.basics.builder_mindset.achievements.map((achievement, index) => (
+                      <li key={index} className="about-activity" style={{ fontSize: "1.1em", paddingBottom: "15px" }}>
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                  <div style={{ 
+                    marginTop: "20px", 
+                    padding: "15px", 
+                    background: "rgba(56, 189, 248, 0.04)", 
+                    borderRadius: "8px", 
+                    borderLeft: "4px solid var(--accent-blue)",
+                    fontSize: "0.9em",
+                    color: "var(--text-secondary)",
+                    fontStyle: "italic"
+                  }}>
+                    Combining technical automation with strategic business execution to drive measurable results.
                   </div>
                 </Card.Body>
               </Card>

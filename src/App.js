@@ -18,6 +18,8 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import DeepDivePage from "./components/Experience/DeepDivePage";
+
 function App() {
   const [load, upadateLoad] = useState(true);
 
@@ -38,6 +40,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/experience" element={<Projects />} />
+          <Route path="/experience/:id" element={<DeepDivePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/skill/:id" element={<SkillDetail />} />
           <Route path="/resume" element={<Resume />} />
