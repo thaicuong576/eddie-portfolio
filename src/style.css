@@ -573,6 +573,24 @@ h6 {
   line-height: 1.8;
 }
 
+.home-about-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+
+.home-about-list li {
+  padding-bottom: 10px !important;
+}
+
+.home-about-list li::before {
+  content: "▹";
+  color: var(--accent-blue);
+  margin-right: 12px;
+  font-weight: bold;
+}
+
 /* ---------- ABOUT PAGE ---------- */
 .about-section {
   position: relative !important;

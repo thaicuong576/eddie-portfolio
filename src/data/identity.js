@@ -9,13 +9,48 @@ export const identity = {
       "AI Video Generation & Styling",
       "Self-directed learning & inflation hedging"
     ],
-    unfair_advantage: "A university student who has founded 2 startups, won academic research prizes competing against 2,500+ peers, closed a $5K marketing partnership deal solo at age 20, and cut his own content workflow from 5 hours to 1 hour using AI automation — all simultaneously. Combines research-grade data thinking with the hands-on instinct to actually ship.",
+    unfair_advantage: "I’m a Fintech student at UEH who focuses on improving how businesses operate using automation and practical tools. I founded 2 early-stage ventures, closed a $5,000 partnership deal independently, and reduced content workflows from 5 hours to 1 hour using automation.",
+    builder_mindset: {
+      intro: [
+        "I’m a Fintech student at UEH who focuses on improving how businesses operate using automation and practical tools.",
+        "I like turning manual workflows into systems that are faster, more consistent, and easier to scale."
+      ],
+      achievements: [
+        "Founded 2 early-stage ventures (nOps Labs, Bep Ink)",
+        "Closed a $5,000 partnership deal independently",
+        "Reduced content workflow from 5 hours → 1 hour using automation",
+        "Won academic research awards among 2,500+ students"
+      ],
+      current: "Currently, I’m working on building automation systems and lead generation workflows, applying data thinking to improve business operations.",
+      interests: [
+        "Business Operations & Growth",
+        "Automation & AI tools",
+        "Fintech & data-driven decisions"
+      ],
+      closing: "I care a lot about efficiency and speed — not just analyzing problems, but building systems that actually solve them."
+    },
+    how_i_work: {
+      intro: "I focus on improving how businesses operate by identifying inefficiencies and turning them into structured systems.",
+      approach_title: "When I approach a problem, I usually:",
+      approach_steps: [
+        "Break it down into smaller, clear steps",
+        "Identify repetitive or manual work",
+        "Use automation or simple tools to reduce time and errors",
+        "Focus on solutions that are practical and scalable"
+      ],
+      preferences_title: "I prefer building things that:",
+      preferences: [
+        "Save time",
+        "Improve consistency",
+        "Can scale without increasing workload"
+      ]
+    },
     typewriter_strings: [
       "Co-Founder @ nOps Labs",
-      "Co-Founder @ Bep Ink",
-      "AI Automation Builder",
-      "Award-winning Fintech Researcher",
-      "Virtual KOL (Dương Quá)",
+      "Builder @ Bep Ink",
+      "Business Ops & Automation",
+      "Fintech Student @ UEH",
+      "Building systems that save time"
     ],
   },
   personal: {
