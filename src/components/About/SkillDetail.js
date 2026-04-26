@@ -1,15 +1,23 @@
+"use client";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
-import { useParams, Link, Navigate } from "react-router-dom";
-
+import { useParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import { identity } from "../../data/identity";
 
 function SkillDetail() {
-  const { id } = useParams();
+  const params = useParams();
+  const id = params.id;
+  const router = useRouter();
   const skill = identity.specializations.find(s => s.id === id);
 
-  if (!skill) return <Navigate to="/about" />;
+  if (!skill) {
+    if (typeof window !== "undefined") {
+        router.push("/about");
+    }
+    return null;
+  }
 
   return (
     <section>
@@ -18,7 +26,7 @@ function SkillDetail() {
         <Container>
           <Row style={{ justifyContent: "center", padding: "10px" }}>
             <Col md={12} className="skill-detail-header">
-              <Link to="/about" className="back-link">
+              <Link href="/about" className="back-link">
                 ← Back to Specializations
               </Link>
               <div className="skill-detail-title-block">
