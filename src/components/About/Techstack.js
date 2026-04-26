@@ -1,7 +1,7 @@
+"use client";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
+import Link from "next/link";
 import { identity } from "../../data/identity";
 
 function Techstack() {
@@ -11,7 +11,7 @@ function Techstack() {
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       {skills.map((skill) => (
         <Col key={skill.id} md={6} lg={3} className="specialization-col">
-          <Link to={`/skill/${skill.id}`} className="specialization-link">
+          <Link href={`/skill/${skill.id}`} className="specialization-link" style={{ textDecoration: "none" }}>
             <div className="specialization-card">
               <div className="specialization-icon">{skill.emoji}</div>
               <h3 className="specialization-title">{skill.prefix}{skill.title}</h3>

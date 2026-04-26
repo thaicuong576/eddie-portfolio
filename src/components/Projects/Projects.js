@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";

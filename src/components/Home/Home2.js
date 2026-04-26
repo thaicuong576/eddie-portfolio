@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/eddie-cutout.png";

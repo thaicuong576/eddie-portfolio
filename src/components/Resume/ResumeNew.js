@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
 import { identity } from "../../data/identity";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-import "react-pdf/dist/esm/Page/TextLayer.css";
+import dynamic from "next/dynamic";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.min.js`;
+const ResumeViewer = dynamic(() => import("./ResumeViewer"), {
+  ssr: false,
+});
 
-const pdfUrl = process.env.PUBLIC_URL + "/eddie-cv.pdf";
+const pdfUrl = "/eddie-cv.pdf";
 
 function ResumeNew({ isHome }) {
   const [numPages, setNumPages] = useState(null);
@@ -30,9 +31,8 @@ function ResumeNew({ isHome }) {
 
   return (
     <div>
+      {!isHome && <Particle />}
       <Container fluid className="resume-section">
-        {!isHome && <Particle />}
-
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
@@ -45,85 +45,25 @@ function ResumeNew({ isHome }) {
           </Button>
         </Row>
 
-        <Row className="resume" style={{ justifyContent: "center" }}>
-          <div className="pdf-viewer-wrapper">
-            <Document
-              file={pdfUrl}
-              onLoadSuccess={onDocumentLoadSuccess}
-              loading={<div className="pdf-loading">Loading CV...</div>}
-              error={
-                <div className="pdf-error">
-                  Failed to load PDF.{" "}
-                  <a href={pdfUrl} target="_blank" rel="noreferrer">
-                    Download instead
-                  </a>
-                </div>
-              }
-            >
-              <Page
-                pageNumber={pageNumber}
-                width={Math.min(window.innerWidth * 0.85, 800)}
-                renderTextLayer={true}
-                renderAnnotationLayer={true}
-              />
-            </Document>
+        <Row className="resume">
+          <ResumeViewer 
+            pdfUrl={pdfUrl} 
+            onDocumentLoadSuccess={onDocumentLoadSuccess} 
+            pageNumber={pageNumber} 
+          />
+        </Row>
 
-            {numPages && numPages > 1 && (
-              <div className="pdf-nav">
-                <button
-                  onClick={goToPrev}
-                  disabled={pageNumber <= 1}
-                  className="pdf-nav-btn"
-                  aria-label="Previous page"
-                >
-                  ‹ Prev
-                </button>
-                <span className="pdf-nav-info">
-                  Page {pageNumber} of {numPages}
-                </span>
-                <button
-                  onClick={goToNext}
-                  disabled={pageNumber >= numPages}
-                  className="pdf-nav-btn"
-                  aria-label="Next page"
-                >
-                  Next ›
-                </button>
-              </div>
-            )}
+        <Row style={{ justifyContent: "center", position: "relative" }}>
+          <div className="resume-pagination">
+             <Button onClick={goToPrev} disabled={pageNumber <= 1}>Previous</Button>
+             <span className="page-info">
+               Page {pageNumber} of {numPages || "..."}
+             </span>
+             <Button onClick={goToNext} disabled={pageNumber >= numPages}>Next</Button>
           </div>
         </Row>
 
-        {/* Experience Highlights Section */}
-        <Container className="experience-highlights" style={{ marginTop: "50px", color: "white" }}>
-          <h2 className="blue" style={{ textAlign: "center", marginBottom: "30px" }}>Experience Highlights</h2>
-          {identity.experience.map((exp, index) => (
-            <div key={index} style={{ marginBottom: "40px", borderLeft: "2px solid #be50f4", paddingLeft: "20px" }}>
-              <h3>{exp.title}</h3>
-              <p className="blue" style={{ fontWeight: "bold" }}>{exp.role}</p>
-              <p style={{ color: "#d1d1d1" }}>{exp.date}</p>
-              <p>{exp.description}</p>
-              <p style={{ color: "#be50f4", fontWeight: "bold" }}>{exp.impact} — {exp.stats}</p>
-            </div>
-          ))}
-          
-          <h2 className="blue" style={{ textAlign: "center", margin: "30px 0" }}>Startups</h2>
-          {identity.startups.map((startup, index) => (
-            <div key={index} style={{ marginBottom: "40px", borderLeft: "2px solid #50f4be", paddingLeft: "20px" }}>
-              <h3>{startup.role} <span className="blue">@ {startup.name}</span></h3>
-              <p style={{ fontStyle: "italic" }}>{startup.description}</p>
-              {startup.highlights && (
-                <ul>
-                  {startup.highlights.map((item, id) => (
-                    <li key={id} style={{ marginBottom: "10px" }}>{item}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </Container>
-
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", position: "relative", marginTop: "20px" }}>
           <Button
             variant="primary"
             href={pdfUrl}
