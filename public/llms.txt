@@ -1,0 +1,24 @@
+# Eddie Phung | Portfolio Identity
+> Bridging Econometric Rigor with Agentic Automation.
+
+## Overview
+Eddie Phung (Cuong Phung Thai) is a Fintech Researcher, AI Automation Builder, and Co-Founder at nOps Labs. He specializes in building autonomous logic, quantitative research, and creative tech orchestrations.
+
+## Core Specializations
+- **System Design**: Agentic n8n planning with JSON-batching and complex API orchestration.
+- **Fintech Builder**: Econometric research (Panel Data Regression), Tokenomics, and UEH-Awarded Fintech research.
+- **Startup Growth & Ops**: Zero-to-one business development, lead-gen scoring, and GTM frameworking.
+- **Creative Tech**: AI-UGC production pipelines and Virtual KOL persona design.
+
+## Experience Highlights
+- **nOps Labs**: Architected autonomous AI Video Engine scaling to 100-200 videos/day.
+- **Bep Ink**: Built geo-targeted lead generation engine for FnB market in HCMC.
+- **GFI Research**: Virtual KOL strategy, closing $5K Mantle deal.
+- **JustFactor**: Addressing Vietnam's $24B SME credit gap with an Intelligent Origination PoC.
+- **Academic**: 3rd Runner-up in ATTACKER 2024 Fintech Algo Trading.
+
+## Machine-Readable Links
+- Identity JSON: https://portfolio.eddiephung.me/eddie-identity.json
+- GitHub: https://github.com/thaicuong576
+- LinkedIn: https://www.linkedin.com/in/phungthaicuong
+- X: https://x.com/0xeddiephung
