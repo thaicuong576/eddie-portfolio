@@ -1,9 +1,0 @@
-{
-  "/_global-error/page": "/_global-error",
-  "/_not-found/page": "/_not-found",
-  "/about/page": "/about",
-  "/experience/page": "/experience",
-  "/page": "/",
-  "/resume/page": "/resume",
-  "/skill/[id]/page": "/skill/[id]"
-}
