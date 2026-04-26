@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eddie Portfolio — Batch Alignment Tool</title>
+    <style>
+        :root {
+            --accent: #38bdf8;
+            --bg: #020617;
+            --card-w: 480px;
+            --card-h: 210px; /* Matched to production */
+        }
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background: var(--bg);
+            color: #f8fafc;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        /* Sidebar Gallery */
+        .sidebar {
+            width: 300px;
+            background: #0f172a;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-header { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-header h1 { font-size: 1.2rem; color: var(--accent); margin: 0; }
+        .asset-list { flex: 1; overflow-y: auto; padding: 10px; }
+        .asset-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid transparent;
+        }
+        .asset-item:hover { background: rgba(56, 189, 248, 0.1); }
+        .asset-item.active { border-color: var(--accent); background: rgba(56, 189, 248, 0.15); }
+        .asset-thumb { width: 40px; height: 40px; border-radius: 4px; object-fit: cover; margin-right: 12px; }
+        .asset-name { font-size: 0.8rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+        /* Main Editor */
+        .editor {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+        }
+        .preview-container {
+            width: var(--card-w);
+            height: var(--card-h);
+            background: #000;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+            position: relative;
+            border: 2px solid var(--accent);
+        }
+        #stage-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            user-select: none;
+            pointer-events: none;
+        }
+        .adjuster-ui {
+            margin-top: 40px;
+            width: 480px;
+            background: rgba(255,255,255,0.05);
+            padding: 24px;
+            border-radius: 12px;
+        }
+        .slider-row { margin-bottom: 20px; }
+        .slider-row label { display: block; font-size: 0.8rem; opacity: 0.6; margin-bottom: 10px; }
+        input[type="range"] { width: 100%; cursor: pointer; }
+        
+        .action-bar {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .confirm-btn {
+            background: var(--accent);
+            color: #000;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .confirm-btn:hover { transform: scale(1.05); filter: brightness(1.1); }
+        
+        .code-display {
+            font-family: monospace;
+            background: rgba(0,0,0,0.4);
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+        .status-msg {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background: #10b981;
+            color: #fff;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: none;
+            animation: slideUp 0.3s ease-out;
+        }
+        @keyframes slideUp { from { bottom: -50px; } to { bottom: 20px; } }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h1>Asset Gallery</h1>
+        </div>
+        <div class="asset-list" id="asset-list">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <div class="editor">
+        <div class="preview-container" id="preview-stage">
+            <!-- Simulated background image -->
+        </div>
+
+        <div class="adjuster-ui">
+            <div class="slider-row">
+                <label>VERTICAL ALIGNMENT</label>
+                <input type="range" id="y-slider" min="0" max="100" value="50">
+            </div>
+            <div class="slider-row">
+                <label>HORIZONTAL ALIGNMENT</label>
+                <input type="range" id="x-slider" min="0" max="100" value="50">
+            </div>
+
+            <div class="action-bar">
+                <div class="code-display" id="code-val">50% 50%</div>
+                <button class="confirm-btn" id="confirm-btn">Confirm Crop</button>
+            </div>
+        </div>
+
+        <div id="status" class="status-msg">Crop saved to memory! Continue to next.</div>
+    </div>
+
+    <script>
+        // List of project assets from src/Assets/Projects
+        const assets = [
+            "100-videos.png", "attacker.jpg", "automation.png", 
+            "bep-ink-ggmap-scraper.png", "bep-ink.png", "eddie-content-bot.png", 
+            "gam3.png", "gfi-duong-qua.png", "green-sm.png", "justfab.jpg", 
+            "justfactor.png", "nnct-2025.png", "nopslabs.png", "pm-agent.png", 
+            "research.png", "u2u.jpeg", "x-to-thread.png"
+        ];
+
+        const listEl = document.getElementById('asset-list');
+        const stageEl = document.getElementById('preview-stage');
+        const xSlider = document.getElementById('x-slider');
+        const ySlider = document.getElementById('y-slider');
+        const codeEl = document.getElementById('code-val');
+        const confirmBtn = document.getElementById('confirm-btn');
+        const statusEl = document.getElementById('status');
+
+        let currentAsset = null;
+        let cropMap = {}; // Will store results to show in a final report
+
+        // Path to your local assets (relative to this file)
+        const assetPathPrefix = "../../src/Assets/Projects/";
+
+        function init() {
+            assets.forEach(name => {
+                const item = document.createElement('div');
+                item.className = 'asset-item';
+                item.innerHTML = `
+                    <img src="${assetPathPrefix}${name}" class="asset-thumb">
+                    <span class="asset-name">${name}</span>
+                `;
+                item.onclick = () => selectAsset(name, item);
+                listEl.appendChild(item);
+            });
+            
+            // Auto Select first
+            if (assets.length > 0) selectAsset(assets[0], listEl.children[0]);
+        }
+
+        function selectAsset(name, element) {
+            currentAsset = name;
+            document.querySelectorAll('.asset-item').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+            stageEl.style.backgroundImage = `url('${assetPathPrefix}${name}')`;
+            stageEl.style.backgroundSize = '120%';
+            stageEl.style.backgroundRepeat = 'no-repeat';
+            
+            // Reset sliders or load previous if exists
+            const saved = cropMap[name] || { x: 50, y: 50 };
+            xSlider.value = saved.x;
+            ySlider.value = saved.y;
+            updatePreview();
+        }
+
+        function updatePreview() {
+            const val = `${xSlider.value}% ${ySlider.value}%`;
+            stageEl.style.backgroundPosition = val;
+            codeEl.textContent = val;
+        }
+
+        xSlider.oninput = updatePreview;
+        ySlider.oninput = updatePreview;
+
+        confirmBtn.onclick = () => {
+            cropMap[currentAsset] = { x: xSlider.value, y: ySlider.value };
+            
+            // Show status
+            statusEl.style.display = 'block';
+            console.log(`CROP_RESULT: ${currentAsset} -> ${xSlider.value}% ${ySlider.value}%`);
+            
+            setTimeout(() => {
+                statusEl.style.display = 'none';
+                
+                // Auto-advance
+                const currentIdx = assets.indexOf(currentAsset);
+                if (currentIdx < assets.length - 1) {
+                    selectAsset(assets[currentIdx + 1], listEl.children[currentIdx + 1]);
+                } else {
+                    alert("All images aligned! Check console or provide the log to the AI assistant to save changes permanently.");
+                    console.log("FINAL_RESULTS_JSON:", JSON.stringify(cropMap, null, 2));
+                }
+            }, 800);
+        };
+
+        window.onload = init;
+    </script>
+</body>
+</html>

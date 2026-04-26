@@ -14,8 +14,8 @@ function Techstack() {
           <Link to={`/skill/${skill.id}`} className="specialization-link">
             <div className="specialization-card">
               <div className="specialization-icon">{skill.emoji}</div>
-              <h3 className="specialization-title">{skill.prefix}{skill.title}</h3>
-              <p className="specialization-abstraction">{skill.abstraction}</p>
+              <h3 className="specialization-title">{skill.title}</h3>
+              <p className="specialization-abstraction">{skill.summary}</p>
               <div className="specialization-footer">
                 <span>Deep Dive</span>
                 <span className="arrow">→</span>
