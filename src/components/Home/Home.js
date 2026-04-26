@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Globe3D from "../Globe3D";
 import Particle from "../Particle";
@@ -7,6 +7,8 @@ import Type from "./Type";
 import About from "../About/About";
 import Projects from "../Projects/Projects";
 import ResumeNew from "../Resume/ResumeNew";
+import HomeStatic from "./HomeStatic";
+import { isWebGLSupported, isBot } from "../../utils/webgl";
 import {
   AiFillGithub,
 } from "react-icons/ai";
@@ -17,10 +19,18 @@ import { identity } from "../../data/identity";
 import xLogo from "../../Assets/x-logo.svg";
 
 function Home() {
+  const [useStatic, setUseStatic] = useState(false);
+
+  useEffect(() => {
+    if (!isWebGLSupported() || isBot()) {
+      setUseStatic(true);
+    }
+  }, []);
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
-        <Particle />
+        {!useStatic && <Particle />}
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
@@ -42,7 +52,7 @@ function Home() {
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
-              <Globe3D />
+              {useStatic ? <HomeStatic /> : <Globe3D />}
             </Col>
           </Row>
         </Container>
