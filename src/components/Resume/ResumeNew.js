@@ -32,10 +32,10 @@ function ResumeNew({ isHome }) {
       <Container fluid className="resume-section">
         {!isHome && <Particle />}
 
-        <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
+        <h1 className="project-heading" style={{ paddingBottom: "10px" }}>
           My <strong className="blue">Resume</strong>
         </h1>
-        <p style={{ color: "white", textAlign: "center", marginBottom: "40px" }}>
+        <p style={{ color: "white", textAlign: "center", marginBottom: "20px" }}>
           A detailed breakdown of my technical background, research focus, and operational impact.
         </p>
 

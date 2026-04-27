@@ -479,6 +479,9 @@ h6 {
   display: block;
   max-height: 350px;
   object-fit: cover;
+  transform: scale(1.15);
+  transform-origin: center 15%;
+  object-position: center top;
 }
 
 /* Decorative dot grid */
@@ -791,7 +794,7 @@ blockquote {
 }
 
 .resume {
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 50px;
   justify-content: center;
 }
