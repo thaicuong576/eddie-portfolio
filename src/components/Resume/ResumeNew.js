@@ -32,17 +32,12 @@ function ResumeNew({ isHome }) {
       <Container fluid className="resume-section">
         {!isHome && <Particle />}
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdfUrl}
-            target="_blank"
-            style={{ maxWidth: "250px" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
+        <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
+          My <strong className="blue">Resume</strong>
+        </h1>
+        <p style={{ color: "white", textAlign: "center", marginBottom: "40px" }}>
+          A detailed breakdown of my technical background, research focus, and operational impact.
+        </p>
 
         <Row className="resume" style={{ justifyContent: "center" }}>
           <div className="pdf-viewer-wrapper">
