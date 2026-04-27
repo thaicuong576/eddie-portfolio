@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import { identity } from "../../data/identity";
 import { FaSearch } from "react-icons/fa";
-import { getExperienceImage } from "../../utils/identityUtils";
+import { getExperienceImage, getCertificateImage } from "../../utils/identityUtils";
 
 function Projects({ isHome }) {
   const [filter, setFilter] = useState("all");
@@ -107,6 +107,36 @@ function Projects({ isHome }) {
             )}
           </Row>
         </div>
+
+        {isHome && (
+          <>
+            <h1 className="project-heading" style={{ marginTop: "80px", paddingBottom: "20px" }}>
+              Professional <strong className="blue">Certifications </strong>
+            </h1>
+            <p style={{ color: "white" }}>
+              Academic validation of technical skills from global institutions.
+            </p>
+            <div className="experience-scroll-frame">
+              <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+                {identity.certificates.map((cert) => (
+                  <Col md={4} className="project-card" key={cert.id}>
+                    <ProjectCard
+                      id={cert.id}
+                      imgPath={getCertificateImage(cert.img_key)}
+                      isBlog={false}
+                      title={cert.title}
+                      description={cert.description}
+                      ghLink={cert.link}
+                      role={cert.issuer}
+                      date={cert.date}
+                      isCertificate={true}
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          </>
+        )}
       </Container>
     </Container>
   );
