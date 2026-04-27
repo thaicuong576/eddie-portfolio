@@ -32,8 +32,8 @@ function Home() {
       <Container fluid className="home-section" id="home">
         {!useStatic && <Particle />}
         <Container className="home-content">
-          <Row>
-            <Col md={7} className="home-header">
+          <Row style={{ alignItems: "center", justifyContent: "center", textAlign: "center" }}>
+            <Col md={7} className="home-header" style={{ textAlign: "center" }}>
               <h1 style={{ paddingBottom: 15 }} className="heading">
                 Hi There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
@@ -46,12 +46,12 @@ function Home() {
                 <strong className="main-name"> {identity.basics.name.toUpperCase()}</strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
+              <div style={{ padding: "30px 0", textAlign: "center" }}>
                 <Type tagline={identity.basics.tagline} />
               </div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
+            <Col md={5} style={{ paddingBottom: 20, display: "flex", justifyContent: "center" }}>
               {useStatic ? <HomeStatic /> : <Globe3D />}
             </Col>
           </Row>
