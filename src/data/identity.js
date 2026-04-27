@@ -419,6 +419,80 @@ export const identity = {
       specializations: ["operations-automation", "data-decision"]
     }
   ],
+  certificates: [
+    {
+      id: "blockchain-specialization",
+      title: "Blockchain Specialization",
+      issuer: "Coursera / University at Buffalo",
+      date: "2024",
+      description: "Comprehensive program covering blockchain foundations, smart contracts, decentralized applications (Dapps), and blockchain platforms.",
+      link: "https://www.coursera.org/account/accomplishments/specialization/JN7VELD2ZFT3",
+      img_key: "blockchain"
+    },
+    {
+      id: "trading-ml-ibm",
+      title: "Trading Strategies with Machine Learning",
+      issuer: "Coursera / IBM",
+      date: "2024",
+      description: "Advanced course on applying machine learning algorithms to develop and backtest quantitative trading strategies.",
+      link: "https://www.coursera.org/account/accomplishments/verify/K3JWU9C7487N",
+      img_key: "trading-ml"
+    },
+    {
+      id: "python-michigan",
+      title: "Python for Everybody",
+      issuer: "Coursera / University of Michigan",
+      date: "2023",
+      description: "Mastery of Python programming basics, data structures, web scraping, and database management.",
+      link: "https://www.coursera.org/account/accomplishments/verify/FRD53C3CUAZN",
+      img_key: "python-michigan"
+    },
+    {
+      id: "ai-intro-ibm",
+      title: "Introduction to Artificial Intelligence (AI)",
+      issuer: "Coursera / IBM",
+      date: "2023",
+      description: "Foundational knowledge of AI concepts, machine learning, deep learning, and generative AI applications.",
+      link: "https://www.coursera.org/account/accomplishments/verify/67VFKCK8JVR7",
+      img_key: "ai-intro"
+    },
+    {
+      id: "word-associate",
+      title: "Microsoft Word Associate (Microsoft 365 Apps)",
+      issuer: "Microsoft",
+      date: "2024",
+      description: "Professional certification in advanced document creation, collaboration, and formatting.",
+      link: "/Word Associate.pdf",
+      img_key: "word"
+    },
+    {
+      id: "excel-associate",
+      title: "Microsoft Excel Associate (Microsoft 365 Apps)",
+      issuer: "Microsoft",
+      date: "2024",
+      description: "Professional certification in data management, formulas, charts, and financial analysis.",
+      link: "/Excel Associate.pdf",
+      img_key: "excel"
+    },
+    {
+      id: "powerpoint-associate",
+      title: "Microsoft PowerPoint Associate (Microsoft 365 Apps)",
+      issuer: "Microsoft",
+      date: "2024",
+      description: "Professional certification in high-impact presentation design and visual communication.",
+      link: "/PowerPoint Associate.pdf",
+      img_key: "powerpoint"
+    },
+    {
+      id: "mos-associate",
+      title: "Microsoft Office Specialist: Associate (Microsoft 365 Apps)",
+      issuer: "Microsoft",
+      date: "2024",
+      description: "Earned by passing three associate-level exams (Excel, Word, and PowerPoint), demonstrating comprehensive proficiency across the Microsoft 365 suite.",
+      link: "/MOS Associate.pdf",
+      img_key: "mos"
+    }
+  ],
   skills: {
     tools: [
       { name: "n8n", img_key: "n8n" },

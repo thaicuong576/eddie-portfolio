@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
@@ -94,34 +94,6 @@ function ResumeNew({ isHome }) {
           </div>
         </Row>
 
-        {/* Experience Highlights Section */}
-        <Container className="experience-highlights" style={{ marginTop: "50px", color: "white" }}>
-          <h2 className="blue" style={{ textAlign: "center", marginBottom: "30px" }}>Experience Highlights</h2>
-          {identity.experience.map((exp, index) => (
-            <div key={index} style={{ marginBottom: "40px", borderLeft: "2px solid #be50f4", paddingLeft: "20px" }}>
-              <h3>{exp.title}</h3>
-              <p className="blue" style={{ fontWeight: "bold" }}>{exp.role}</p>
-              <p style={{ color: "#d1d1d1" }}>{exp.date}</p>
-              <p>{exp.description}</p>
-              <p style={{ color: "#be50f4", fontWeight: "bold" }}>{exp.impact} — {exp.stats}</p>
-            </div>
-          ))}
-
-          <h2 className="blue" style={{ textAlign: "center", margin: "30px 0" }}>Startups</h2>
-          {identity.startups.map((startup, index) => (
-            <div key={index} style={{ marginBottom: "40px", borderLeft: "2px solid #50f4be", paddingLeft: "20px" }}>
-              <h3>{startup.role} <span className="blue">@ {startup.name}</span></h3>
-              <p style={{ fontStyle: "italic" }}>{startup.description}</p>
-              {startup.highlights && (
-                <ul>
-                  {startup.highlights.map((item, id) => (
-                    <li key={id} style={{ marginBottom: "10px" }}>{item}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </Container>
 
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button

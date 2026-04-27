@@ -17,6 +17,16 @@ import bepScraper from "../Assets/Projects/bep-ink-ggmap-scraper.png";
 import contentBot from "../Assets/Projects/eddie-content-bot.png";
 import justfactor from "../Assets/Projects/justfactor.png";
 
+// Certificate image imports
+import certBlockchain from "../Assets/Certificates/Blockchain-certificates.jpeg";
+import certTradingML from "../Assets/Certificates/trading-maching-learning-ibm.jpeg";
+import certPython from "../Assets/Certificates/python-michigan.jpeg";
+import certAIIntro from "../Assets/Certificates/ai-intro-ibm.jpeg";
+import certWord from "../Assets/Certificates/word.png";
+import certExcel from "../Assets/Certificates/excel.png";
+import certPowerPoint from "../Assets/Certificates/powerpoint.png";
+import certMOS from "../Assets/Certificates/mos-associate.png";
+
 /**
  * Maps experience IDs to imported image assets
  * @param {string} id 
@@ -69,4 +79,20 @@ export const getSpecById = (specId) => {
 export const getSpecTitle = (id) => {
     const spec = getSpecById(id);
     return spec ? spec.title : id;
+};
+/**
+ * Maps certificate keys to imported image assets
+ * @param {string} key 
+ * @returns {any} Image asset
+ */
+export const getCertificateImage = (key) => {
+    if (key === "blockchain") return certBlockchain;
+    if (key === "trading-ml") return certTradingML;
+    if (key === "python-michigan") return certPython;
+    if (key === "ai-intro") return certAIIntro;
+    if (key === "word") return certWord;
+    if (key === "excel") return certExcel;
+    if (key === "powerpoint") return certPowerPoint;
+    if (key === "mos") return certMOS;
+    return nopsLabs;
 };

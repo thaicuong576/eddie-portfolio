@@ -8,6 +8,7 @@ import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiOutlineSafetyCertificate,
 } from "react-icons/ai";
 
 import { identity } from "../data/identity";
@@ -76,6 +77,16 @@ function NavBar() {
                   />{" "}
                   Experience
                 </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/certificates"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineSafetyCertificate style={{ marginBottom: "2px" }} /> Certificates
+              </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>

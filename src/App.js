@@ -5,6 +5,7 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import SkillDetail from "./components/About/SkillDetail";
 import Projects from "./components/Projects/Projects";
+import Certificates from "./components/Resume/Certificates";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
 import {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/experience/:id" element={<DeepDivePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/skill/:id" element={<SkillDetail />} />
+          <Route path="/certificates" element={<Certificates />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>

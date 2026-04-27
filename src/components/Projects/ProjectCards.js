@@ -30,6 +30,12 @@ function ProjectCards(props) {
           {props.title}
         </Card.Title>
 
+        {props.isCertificate && (
+          <div className="card-issuer" style={{ color: "var(--accent-blue)", fontSize: "0.9em", marginBottom: "10px", fontWeight: "bold" }}>
+             {props.role}
+          </div>
+        )}
+
         <Card.Text className="card-description-minimal">
           {props.description}
         </Card.Text>
@@ -45,9 +51,15 @@ function ProjectCards(props) {
         )}
 
         <div className="card-action-minimal">
-          <Link to={`/experience/${props.id}`} className="cta-link-minimal">
-            See How It Works <AiOutlineArrowRight />
-          </Link>
+          {props.isCertificate ? (
+             <a href={props.ghLink} target="_blank" rel="noreferrer" className="cta-link-minimal">
+               Verify Certificate <AiOutlineArrowRight />
+             </a>
+          ) : (
+            <Link to={`/experience/${props.id}`} className="cta-link-minimal">
+              See How It Works <AiOutlineArrowRight />
+            </Link>
+          )}
         </div>
       </Card.Body>
     </Card>
