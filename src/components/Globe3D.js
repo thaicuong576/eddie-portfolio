@@ -288,12 +288,10 @@ function Globe3D() {
       ref={mountRef}
       style={{
         width: "100%",
-        maxWidth: "450px",
         height: "450px",
         cursor: "grab",
         position: "relative",
         zIndex: 2,
-        margin: "0 auto",
       }}
     />
   );
