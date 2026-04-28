@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
 } from "react-icons/ai";
+import xLogo from "../Assets/x-logo.svg";
 import { FaLinkedinIn } from "react-icons/fa";
 import { identity } from "../data/identity";
 
@@ -38,7 +38,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <AiOutlineTwitter />
+                <img src={xLogo} alt="X" style={{ width: "16px", height: "16px", filter: "invert(1)" }} />
               </a>
             </li>
             <li className="social-icons">

@@ -9,6 +9,7 @@ import Javascript from "../../Assets/TechIcons/Javascript.svg";
 import Docker from "../../Assets/TechIcons/Docker.svg";
 import Git from "../../Assets/TechIcons/Git.svg";
 import n8n from "../../Assets/TechIcons/n8n.svg";
+import Vercel from "../../Assets/TechIcons/Vercel.svg";
 import { identity } from "../../data/identity";
 
 function Toolstack() {
@@ -22,6 +23,7 @@ function Toolstack() {
     Docker,
     Git,
     n8n,
+    Vercel,
   };
 
   return (

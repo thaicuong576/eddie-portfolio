@@ -505,7 +505,6 @@ export const identity = {
       { name: "NocoDB", img_key: "nocodb" },
       { name: "OpenClaw", img_key: "openclaw" },
       { name: "Vercel", img_key: "Vercel" },
-      { name: "TradingView", img_key: "TradingView" },
     ]
   }
 };
