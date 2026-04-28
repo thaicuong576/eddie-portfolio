@@ -7,14 +7,26 @@ import Aboutcard from "./AboutCard";
 
 import Toolstack from "./Toolstack";
 import { identity } from "../../data/identity";
+import { FiTarget, FiZap, FiTrendingUp, FiAward, FiLayers } from "react-icons/fi";
 
 function About({ isHome }) {
+  const getIcon = (index) => {
+    const icons = [
+      <FiLayers style={{ color: "var(--accent-blue)" }} />,
+      <FiTarget style={{ color: "var(--accent-blue)" }} />,
+      <FiTrendingUp style={{ color: "var(--accent-blue)" }} />,
+      <FiZap style={{ color: "var(--accent-blue)" }} />,
+      <FiAward style={{ color: "var(--accent-blue)" }} />
+    ];
+    return icons[index % icons.length];
+  };
+
   const formatAchievement = (text) => {
-    // Regex to find numbers, dollar amounts, and metrics like 1.3M+, 2,500+, 5 hours, 1 hour
+    // Regex to find numbers, dollar amounts, and metrics
     const parts = text.split(/(\$?\d+(?:,\d{3})*(?:\.\d+)?(?:M\+|K\+|h|\s?hours?|\s?hour)?)/g);
     return parts.map((part, i) => 
       /(\$?\d+(?:,\d{3})*(?:\.\d+)?(?:M\+|K\+|h|\s?hours?|\s?hour)?)/.test(part) ? 
-      <strong key={i} className="blue" style={{ fontWeight: "700", fontSize: "1.1em" }}>{part}</strong> : part
+      <strong key={i} className="blue" style={{ fontWeight: "800", fontSize: "1.15em", color: "var(--accent-yellow)" }}>{part}</strong> : part
     );
   };
 
@@ -32,32 +44,66 @@ function About({ isHome }) {
               <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
                 WHAT <strong className="blue">I BRING</strong>
               </h1>
-              <Card className="quote-card-view" style={{ flex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
-                <Card.Body style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "20px" }}>
-                  <ul className="home-about-list" style={{ margin: 0, flexGrow: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    {identity.basics.builder_mindset.achievements.map((achievement, index) => (
-                      <li key={index} className="about-activity" style={{ fontSize: "1.1em", paddingBottom: "30px", lineHeight: "1.6" }}>
-                        {formatAchievement(achievement)}
-                      </li>
-                    ))}
-                  </ul>
-                  <div style={{ 
-                    marginTop: "10px", 
-                    padding: "25px 20px", 
-                    background: "rgba(56, 189, 248, 0.08)", 
-                    borderRadius: "15px", 
-                    borderLeft: "5px solid var(--accent-blue)",
-                    fontSize: "1.05em",
-                    color: "var(--text-secondary)",
-                    fontStyle: "italic",
-                    lineHeight: "1.7",
-                    fontWeight: "500",
-                    textAlign: "center"
-                  }}>
-                    Combining technical automation with strategic business execution to drive measurable results.
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "20px" }}>
+                {identity.basics.builder_mindset.achievements.map((achievement, index) => (
+                  <div 
+                    key={index} 
+                    className="achievement-card"
+                    style={{
+                      background: "rgba(255, 255, 255, 0.03)",
+                      border: "1px solid rgba(56, 189, 248, 0.15)",
+                      borderRadius: "12px",
+                      padding: "18px 22px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "20px",
+                      transition: "all 0.3s ease",
+                      position: "relative",
+                      overflow: "hidden"
+                    }}
+                  >
+                    <div className="achievement-icon" style={{ 
+                      fontSize: "1.6em", 
+                      background: "rgba(56, 189, 248, 0.1)", 
+                      padding: "12px", 
+                      borderRadius: "10px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center"
+                    }}>
+                      {getIcon(index)}
+                    </div>
+                    <div style={{ fontSize: "1.1em", lineHeight: "1.5", color: "var(--text-secondary)" }}>
+                      {formatAchievement(achievement)}
+                    </div>
+                    <div style={{ 
+                      position: "absolute", 
+                      left: 0, 
+                      top: 0, 
+                      height: "100%", 
+                      width: "4px", 
+                      background: "var(--accent-blue)",
+                      opacity: 0.6
+                    }}></div>
                   </div>
-                </Card.Body>
-              </Card>
+                ))}
+                
+                <div style={{ 
+                  marginTop: "10px", 
+                  padding: "20px", 
+                  background: "rgba(56, 189, 248, 0.05)", 
+                  borderRadius: "15px", 
+                  border: "1px dashed rgba(56, 189, 248, 0.3)",
+                  fontSize: "1.05em",
+                  color: "var(--text-secondary)",
+                  fontStyle: "italic",
+                  lineHeight: "1.6",
+                  fontWeight: "500",
+                  textAlign: "center"
+                }}>
+                  Combining technical automation with strategic business execution to drive measurable results.
+                </div>
+              </div>
             </Col>
 
             <Col
