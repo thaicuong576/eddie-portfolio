@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    EDDIE PHUNG PORTFOLIO â€” Design System v2
    Enhanced with UI UX Pro Max + Coinbase/Stripe/Linear best practices
 
@@ -588,7 +588,7 @@ h6 {
 }
 
 .home-about-list li::before {
-  content: "â–¹";
+  content: "\25b9";
   color: var(--accent-blue);
   margin-right: 12px;
   font-weight: bold;
@@ -723,7 +723,7 @@ blockquote {
 }
 
 .experience-highlights li::before {
-  content: "â–¹";
+  content: "\25b9";
   color: var(--accent-blue);
   margin-right: 12px;
   font-weight: bold;

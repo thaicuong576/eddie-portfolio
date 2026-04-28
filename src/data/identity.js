@@ -1,4 +1,4 @@
-﻿export const identity = {
+export const identity = {
   basics: {
     name: "Cuong Phung Thai (Eddie)",
     nickname: "EDDIE",
@@ -9,10 +9,10 @@
       "AI Video Generation & Styling",
       "Self-directed learning & inflation hedging"
     ],
-    unfair_advantage: "Iâ€™m a Fintech student at UEH who focuses on improving how businesses operate using automation and practical tools. I founded 2 early-stage ventures, closed a $5,000 partnership deal independently, built a Virtual KOL persona with 1.3M+ reach sharing crypto experiences, and reduced content workflows from 5 hours to 1 hour using automation.",
+    unfair_advantage: "I'm a Fintech student at UEH who focuses on improving how businesses operate using automation and practical tools. I founded 2 early-stage ventures, closed a $5,000 partnership deal independently, built a Virtual KOL persona with 1.3M+ reach sharing crypto experiences, and reduced content workflows from 5 hours to 1 hour using automation.",
     builder_mindset: {
       intro: [
-        "Iâ€™m a Fintech student at UEH who focuses on improving how businesses operate using automation and practical tools.",
+        "I'm a Fintech student at UEH who focuses on improving how businesses operate using automation and practical tools.",
         "I like turning manual workflows into systems that are faster, more consistent, and easier to scale."
       ],
       achievements: [
@@ -22,7 +22,7 @@
         "Reduced content workflow from 5 hours -> 1 hour using automation",
         "Won academic research awards among 2,500+ students"
       ],
-      current: "Currently, Iâ€™m scaling autonomous media production lines and agentic project management systems, specializing in bridging econometric logic with self-operating business infrastructure.",
+      current: "Currently, I'm scaling autonomous media production lines and agentic project management systems, specializing in bridging econometric logic with self-operating business infrastructure.",
       interests: [
         "Business Operations & Growth",
         "Automation & AI tools",
@@ -83,8 +83,7 @@
   specializations: [
     {
       id: "operations-automation",
-      title: "Operations Automation",
-      emoji: "âš™ï¸",
+      title: "Operations      emoji: "⚙️",
       summary: "I build systems that reduce manual work and improve how business operations run.",
       what_i_do: [
         "Identify repetitive workflows in operations",
@@ -92,7 +91,7 @@
         "Connect different tools into one streamlined process"
       ],
       example_projects: [
-        "Content Bot: Reduced workflow from 5h â†’ 1h",
+        "Content Bot: Reduced workflow from 5h -> 1h",
         "PM Agent: Automated task tracking and reporting",
         "AI UGC System: Scaled content production to 100+ videos/day"
       ],
@@ -105,7 +104,28 @@
     {
       id: "growth-leadgen",
       title: "Growth & Lead Generation",
-      emoji: "ðŸ“ˆ",
+      emoji: "📈",
+      summary: "I build systems that help businesses find and convert high-intent customers.",
+      what_i_do: [
+        "Collect and structure lead data from sources like Google Maps",
+        "Build scoring systems to identify high-quality leads",
+        "Design outreach and content systems for growth"
+      ],
+      example_projects: [
+        "Bep Ink Lead Engine: Geo-targeted lead discovery in HCMC",
+        "Scraper System: Clustered F&B businesses into high-intent zones",
+        "X Automation: Built content system for consistent growth"
+      ],
+      business_impact: [
+        "Save time across operations",
+        "Reduce manual errors",
+        "Increase output without increasing headcount"
+      ]
+    },
+    {
+      id: "growth-leadgen",
+      title: "Growth & Lead Generation",
+      emoji: "📈",
       summary: "I build systems that help businesses find and convert high-intent customers.",
       what_i_do: [
         "Collect and structure lead data from sources like Google Maps",
@@ -126,7 +146,7 @@
     {
       id: "data-decision",
       title: "Data & Decision Making",
-      emoji: "ðŸ”",
+      emoji: "🔍",
       summary: "I use data and structured thinking to support better business decisions.",
       what_i_do: [
         "Analyze data using econometrics and statistical models",
@@ -147,7 +167,7 @@
     {
       id: "content-systems",
       title: "Content Automation Systems",
-      emoji: "ðŸŽ¥",
+      emoji: "🎥",
       summary: "I build systems that automate content production and help businesses scale media output.",
       what_i_do: [
         "Design automated pipelines for video and content production",
@@ -155,9 +175,10 @@
         "Optimize workflows for speed and consistency"
       ],
       example_projects: [
-        "AI UGC System (nOps Labs): 100â€“200 videos/day production pipeline",
-        "Content Bot: Automated research â†’ scripting â†’ publishing",
+        "AI UGC System (nOps Labs): 100-200 videos/day production pipeline",
+        "Content Bot: Automated research -> scripting -> publishing",
         "AI Video Engine: Combined n8n + FFmpeg + AI tools into one workflow"
+      ],ned n8n + FFmpeg + AI tools into one workflow"
       ],
       business_impact: [
         "Scale content without hiring more people",
@@ -170,10 +191,10 @@
     // WORK CATEGORY
     {
       id: "nops-labs",
-      title: "nOps Labs â€” AI Video System",
+      title: "nOps Labs - AI Video System",
       category: "work",
       role: "Co-Founder",
-      date: "Aug 2024 â€“ Present",
+      date: "Aug 2024 - Present",
       description: "The Factory of AI Video: An autonomous agency utilizing automation and AI orchestration to handle high-volume video production.",
       impact: "Media Engine Built",
       imgPosition: "50% 50%",
@@ -183,7 +204,7 @@
       specializations: ["operations-automation", "content-systems"],
       deepDive: {
         problem: "In the short-form video era, brands face a 'Content Velocity Problem.' Traditional production is too expensive, slow (days of turnaround), and impossible to scale across multiple brands without a massive editing headcount.",
-        solution: "Established nOps Labs as the 'Factory of AI Video'â€”an autonomous agency that removes the human bottleneck. I engineered a 100% autonomous production pipeline using n8n and FFmpeg to handle the entire video lifecycleâ€”from raw input to final renderâ€”without human intervention.",
+        solution: "Established nOps Labs as the 'Factory of AI Video'- an autonomous agency that removes the human bottleneck. I engineered a 100% autonomous production pipeline using n8n and FFmpeg to handle the entire video lifecycle- from raw input to final render- without human intervention.",
         flow: [
           "n8n logic coordinates multiple AI models for scripting and visual direction.",
           "ComfyUI programmatic instances render realistic image-to-video frames.",
@@ -202,7 +223,7 @@
     },
     {
       id: "bep-ink",
-      title: "Bep Ink â€” Geo-Lead Engine",
+      title: "Bep Ink - Geo-Lead Engine",
       category: "work",
       role: "Founder & Tech Builder",
       date: "July 2024 â€“ Present",
@@ -216,7 +237,7 @@
     },
     {
       id: "gfi",
-      title: "GFI Research â€” Virtual KOL",
+      title: "GFI Research - Virtual KOL",
       category: "work",
       role: "Content Strategy & Virtual KOL",
       date: "Nov 2024 â€“ Feb 2026",
@@ -230,7 +251,7 @@
     },
     {
       id: "gam3",
-      title: "Gam3 â€” BD & MOU Engine",
+      title: "Gam3 - BD & MOU Engine",
       category: "work",
       role: "Personal Assistant to Founder / BD Team",
       date: "July 2024 â€“ Sept 2024",
@@ -244,7 +265,7 @@
     },
     {
       id: "u2u",
-      title: "U2U Network â€” Community Ops",
+      title: "U2U Network - Community Ops",
       category: "work",
       role: "Community Ops",
       date: "2024",
