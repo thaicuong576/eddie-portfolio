@@ -16,7 +16,7 @@ export const identity = {
         "I like turning manual workflows into systems that are faster, more consistent, and easier to scale."
       ],
       achievements: [
-        "Founded 2 early-stage ventures (nOps Labs, Bep Ink)",
+        "Co-founded 2 early-stage Startups (nOps Labs, Bep Ink)",
         "Closed a $5,000 partnership deal independently",
         "Built a Virtual KOL persona with 1.3M+ reach sharing crypto experiences",
         "Reduced content workflow from 5 hours -> 1 hour using automation",

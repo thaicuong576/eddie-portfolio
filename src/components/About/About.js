@@ -7,20 +7,7 @@ import Aboutcard from "./AboutCard";
 
 import Toolstack from "./Toolstack";
 import { identity } from "../../data/identity";
-import { FiTarget, FiZap, FiTrendingUp, FiAward, FiLayers } from "react-icons/fi";
-
 function About({ isHome }) {
-  const getIcon = (index) => {
-    const icons = [
-      <FiLayers style={{ color: "var(--accent-blue)" }} />,
-      <FiTarget style={{ color: "var(--accent-blue)" }} />,
-      <FiTrendingUp style={{ color: "var(--accent-blue)" }} />,
-      <FiZap style={{ color: "var(--accent-blue)" }} />,
-      <FiAward style={{ color: "var(--accent-blue)" }} />
-    ];
-    return icons[index % icons.length];
-  };
-
   const formatAchievement = (text) => {
     // Regex to find numbers, dollar amounts, and metrics
     const parts = text.split(/(\$?\d+(?:,\d{3})*(?:\.\d+)?(?:M\+|K\+|h|\s?hours?|\s?hour)?)/g);
@@ -42,9 +29,9 @@ function About({ isHome }) {
               className="about-img"
             >
               <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-                WHAT <strong className="blue">I BRING</strong>
+                <strong className="blue">Highlights</strong>
               </h1>
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "20px" }}>
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "15px" }}>
                 {identity.basics.builder_mindset.achievements.map((achievement, index) => (
                   <div 
                     key={index} 
@@ -53,27 +40,16 @@ function About({ isHome }) {
                       background: "rgba(255, 255, 255, 0.03)",
                       border: "1px solid rgba(56, 189, 248, 0.15)",
                       borderRadius: "12px",
-                      padding: "18px 22px",
+                      padding: "20px 25px",
                       display: "flex",
-                      alignItems: "center",
-                      gap: "20px",
+                      flexDirection: "column",
+                      justifyContent: "center",
                       transition: "all 0.3s ease",
                       position: "relative",
                       overflow: "hidden"
                     }}
                   >
-                    <div className="achievement-icon" style={{ 
-                      fontSize: "1.6em", 
-                      background: "rgba(56, 189, 248, 0.1)", 
-                      padding: "12px", 
-                      borderRadius: "10px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center"
-                    }}>
-                      {getIcon(index)}
-                    </div>
-                    <div style={{ fontSize: "1.1em", lineHeight: "1.5", color: "var(--text-secondary)" }}>
+                    <div style={{ fontSize: "1.15em", lineHeight: "1.4", color: "var(--text-secondary)", textAlign: "left" }}>
                       {formatAchievement(achievement)}
                     </div>
                     <div style={{ 
@@ -83,7 +59,7 @@ function About({ isHome }) {
                       height: "100%", 
                       width: "4px", 
                       background: "var(--accent-blue)",
-                      opacity: 0.6
+                      opacity: 0.4
                     }}></div>
                   </div>
                 ))}
