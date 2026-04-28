@@ -9,7 +9,7 @@ import "react-pdf/dist/esm/Page/TextLayer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.min.js`;
 
-const pdfUrl = process.env.PUBLIC_URL + "/Phung Thai Cuong (Eddie) - Resume.pdf";
+const pdfUrl = process.env.PUBLIC_URL + "/Phung-Thai-Cuong-(Eddie)-Resume.pdf";
 
 function ResumeNew({ isHome }) {
   const [numPages, setNumPages] = useState(null);
