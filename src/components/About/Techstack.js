@@ -18,7 +18,7 @@ function Techstack() {
               <p className="specialization-abstraction">{skill.summary}</p>
               <div className="specialization-footer">
                 <span>Deep Dive</span>
-                <span className="arrow">→</span>
+                <span className="arrow">-></span>
               </div>
             </div>
           </Link>
