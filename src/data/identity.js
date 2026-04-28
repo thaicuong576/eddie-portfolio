@@ -19,7 +19,7 @@ export const identity = {
         "Founded 2 early-stage ventures (nOps Labs, Bep Ink)",
         "Closed a $5,000 partnership deal independently",
         "Built a Virtual KOL persona with 1.3M+ reach sharing crypto experiences",
-        "Reduced content workflow from 5 hours → 1 hour using automation",
+        "Reduced content workflow from 5 hours -> 1 hour using automation",
         "Won academic research awards among 2,500+ students"
       ],
       current: "Currently, I’m scaling autonomous media production lines and agentic project management systems, specializing in bridging econometric logic with self-operating business infrastructure.",
@@ -28,7 +28,7 @@ export const identity = {
         "Automation & AI tools",
         "Fintech & data-driven decisions"
       ],
-      closing: "I care a lot about efficiency and speed — not just analyzing problems, but building systems that actually solve them."
+      closing: "I've joined multiple early-stage Web3 Startups (U2U Network, Boom Max, Gam3, JustFAB, ...), and I care a lot about efficiency and speed - not just analyzing problems, but building systems that actually solve them."
     },
     how_i_work: {
       intro: "I focus on improving how businesses operate by identifying inefficiencies and turning them into structured systems.",

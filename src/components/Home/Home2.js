@@ -4,6 +4,37 @@ import myImg from "../../Assets/eddie-cutout.png";
 import { identity } from "../../data/identity";
 
 function Home2() {
+  const highlightText = (text) => {
+    // List of high-impact keywords to highlight
+    const keywords = [
+      "Fintech student",
+      "UEH",
+      "automation",
+      "manual workflows",
+      "systems",
+      "faster, more consistent, and easier to scale",
+      "Currently",
+      "autonomous media production lines",
+      "agentic project management systems",
+      "econometric logic",
+      "self-operating business infrastructure",
+      "multiple early-stage Web3 Startups",
+      "U2U Network, Boom Max, Gam3, JustFAB",
+      "efficiency and speed",
+      "building systems that actually solve them"
+    ];
+
+    // Create a combined regex for all keywords
+    const regex = new RegExp(`(${keywords.join("|")})`, "gi");
+    
+    const parts = text.split(regex);
+    
+    return parts.map((part, i) => 
+      regex.test(part) ? 
+      <span key={i} className="blue" style={{ fontWeight: "600" }}>{part}</span> : part
+    );
+  };
+
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
@@ -14,16 +45,16 @@ function Home2() {
             </h1>
             <div className="home-about-body">
               {identity.basics.builder_mindset.intro.map((p, i) => (
-                <p key={i}>{p}</p>
+                <p key={i}>{highlightText(p)}</p>
               ))}
-              <p>{identity.basics.builder_mindset.current}</p>
+              <p>{highlightText(identity.basics.builder_mindset.current)}</p>
               <b className="blue">I’m especially interested in:</b>
               <ul className="home-about-list">
                 {identity.basics.builder_mindset.interests.map((interest, i) => (
                   <li key={i}>{interest}</li>
                 ))}
               </ul>
-              <p>{identity.basics.builder_mindset.closing}</p>
+              <p>{highlightText(identity.basics.builder_mindset.closing)}</p>
             </div>
           </Col>
           <Col md={4} className="myAvtar">
