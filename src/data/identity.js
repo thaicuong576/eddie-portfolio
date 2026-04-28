@@ -83,7 +83,8 @@ export const identity = {
   specializations: [
     {
       id: "operations-automation",
-      title: "Operations      emoji: "⚙️",
+      title: "Operations Automation",
+      emoji: "⚙️",
       summary: "I build systems that reduce manual work and improve how business operations run.",
       what_i_do: [
         "Identify repetitive workflows in operations",
@@ -94,27 +95,6 @@ export const identity = {
         "Content Bot: Reduced workflow from 5h -> 1h",
         "PM Agent: Automated task tracking and reporting",
         "AI UGC System: Scaled content production to 100+ videos/day"
-      ],
-      business_impact: [
-        "Save time across operations",
-        "Reduce manual errors",
-        "Increase output without increasing headcount"
-      ]
-    },
-    {
-      id: "growth-leadgen",
-      title: "Growth & Lead Generation",
-      emoji: "📈",
-      summary: "I build systems that help businesses find and convert high-intent customers.",
-      what_i_do: [
-        "Collect and structure lead data from sources like Google Maps",
-        "Build scoring systems to identify high-quality leads",
-        "Design outreach and content systems for growth"
-      ],
-      example_projects: [
-        "Bep Ink Lead Engine: Geo-targeted lead discovery in HCMC",
-        "Scraper System: Clustered F&B businesses into high-intent zones",
-        "X Automation: Built content system for consistent growth"
       ],
       business_impact: [
         "Save time across operations",
@@ -178,7 +158,6 @@ export const identity = {
         "AI UGC System (nOps Labs): 100-200 videos/day production pipeline",
         "Content Bot: Automated research -> scripting -> publishing",
         "AI Video Engine: Combined n8n + FFmpeg + AI tools into one workflow"
-      ],ned n8n + FFmpeg + AI tools into one workflow"
       ],
       business_impact: [
         "Scale content without hiring more people",
@@ -204,7 +183,7 @@ export const identity = {
       specializations: ["operations-automation", "content-systems"],
       deepDive: {
         problem: "In the short-form video era, brands face a 'Content Velocity Problem.' Traditional production is too expensive, slow (days of turnaround), and impossible to scale across multiple brands without a massive editing headcount.",
-        solution: "Established nOps Labs as the 'Factory of AI Video'- an autonomous agency that removes the human bottleneck. I engineered a 100% autonomous production pipeline using n8n and FFmpeg to handle the entire video lifecycle- from raw input to final render- without human intervention.",
+        solution: "Established nOps Labs as the 'Factory of AI Video' - an autonomous agency that removes the human bottleneck. I engineered a 100% autonomous production pipeline using n8n and FFmpeg to handle the entire video lifecycle - from raw input to final render - without human intervention.",
         flow: [
           "n8n logic coordinates multiple AI models for scripting and visual direction.",
           "ComfyUI programmatic instances render realistic image-to-video frames.",
@@ -226,7 +205,7 @@ export const identity = {
       title: "Bep Ink - Geo-Lead Engine",
       category: "work",
       role: "Founder & Tech Builder",
-      date: "July 2024 â€“ Present",
+      date: "July 2024 - Present",
       description: "Developed a geo-targeted lead generation system for the local F&B market.",
       impact: "HCMC Lead Discovery",
       imgPosition: "100% 40%",
@@ -240,7 +219,7 @@ export const identity = {
       title: "GFI Research - Virtual KOL",
       category: "work",
       role: "Content Strategy & Virtual KOL",
-      date: "Nov 2024 â€“ Feb 2026",
+      date: "Nov 2024 - Feb 2026",
       description: "Created a Virtual KOL persona and secured a $5,000 partnership deal independently.",
       impact: "$5,000 Mantle Deal",
       imgPosition: "100% 100%",
@@ -254,7 +233,7 @@ export const identity = {
       title: "Gam3 - BD & MOU Engine",
       category: "work",
       role: "Personal Assistant to Founder / BD Team",
-      date: "July 2024 â€“ Sept 2024",
+      date: "July 2024 - Sept 2024",
       description: "Supported institutional outreach and MOU negotiations with major crypto market makers.",
       impact: "MOU Support (DWF & GSR)",
       imgPosition: "0% 0%",
@@ -279,7 +258,7 @@ export const identity = {
     },
     {
       id: "justfab",
-      title: "JustFab â€” Fashion Commerce POC",
+      title: "JustFab - Fashion Commerce POC",
       category: "work",
       role: "Founder",
       date: "2023",
@@ -295,7 +274,7 @@ export const identity = {
     // PROJECTS CATEGORY
     {
       id: "ai-ugc",
-      title: "AI UGC Video â€” Production Line",
+      title: "AI UGC Video - Production Line",
       category: "projects",
       role: "System Architect",
       date: "2024",
@@ -304,7 +283,7 @@ export const identity = {
       imgPosition: "85% 80%",
       tech: ["Minimax 2.7", "Omnivoice", "FFmpeg", "n8n"],
       link: "https://github.com/thaicuong576",
-      stats: "100â€“200 Videos/Day",
+      stats: "100-200 Videos/Day",
       specializations: ["content-systems"],
       deepDive: {
         problem: "Content teams struggle with 5-6 hour production cycles for a single video, making high-volume output impossible without massive headcount. Manual processes for scripting, rendering, and QC created a significant growth bottleneck.",
@@ -327,7 +306,7 @@ export const identity = {
     },
     {
       id: "pm-agent",
-      title: "PM-Agent â€” Task Automation",
+      title: "PM-Agent - Task Automation",
       category: "projects",
       role: "Lead Developer",
       date: "2024",
@@ -341,7 +320,7 @@ export const identity = {
     },
     {
       id: "lead-gen-scraper",
-      title: "Lead-Gen Scraper â€” Geo-Clustering",
+      title: "Lead-Gen Scraper - Geo-Clustering",
       category: "projects",
       role: "Automation Engineer",
       date: "2024",
@@ -355,7 +334,7 @@ export const identity = {
     },
     {
       id: "x-threads",
-      title: "X-Threads â€” Social Automator",
+      title: "X-Threads - Social Automator",
       category: "projects",
       role: "Growth Engineer",
       date: "2024",
@@ -369,7 +348,7 @@ export const identity = {
     },
     {
       id: "content-bot",
-      title: "Eddie Content Bot â€” Workflow Optimizer",
+      title: "Eddie Content Bot - Workflow Optimizer",
       category: "projects",
       role: "Automation Lead",
       date: "2024",
@@ -378,14 +357,14 @@ export const identity = {
       imgPosition: "0% 0%",
       tech: ["n8n", "LLMs", "API Orchestration", "Python"],
       link: "https://github.com/thaicuong576",
-      stats: "5h â†’ 1h Workflow",
+      stats: "5h -> 1h Workflow",
       specializations: ["operations-automation", "content-systems"]
     },
 
     // ACADEMY CATEGORY
     {
       id: "attacker-2024",
-      title: "ATTACKER 2024 â€” Algo Trading",
+      title: "ATTACKER 2024 - Algo Trading",
       category: "academy",
       role: "Team Leader",
       date: "April 2024",
@@ -399,7 +378,7 @@ export const identity = {
     },
     {
       id: "rd-proximity",
-      title: "R&D Proximity â€” Innovation Analysis",
+      title: "R&D Proximity - Innovation Analysis",
       category: "academy",
       role: "Lead Researcher",
       date: "2024",
@@ -413,7 +392,7 @@ export const identity = {
     },
     {
       id: "green-sm",
-      title: "Green SM â€” Consumer Research",
+      title: "Green SM - Consumer Research",
       category: "academy",
       role: "Lead Researcher",
       date: "2024",
@@ -427,7 +406,7 @@ export const identity = {
     },
     {
       id: "justfactor",
-      title: "JustFactor â€” Fintech Credit MVP",
+      title: "JustFactor - Fintech Credit MVP",
       category: "academy",
       role: "Project Lead",
       date: "Q1 2026",
@@ -497,7 +476,7 @@ export const identity = {
     },
     {
       id: "powerpoint-associate",
-      title: "Microsoft PowerPoint Associate (Microsoft 365 Apps)",
+      title: "Microsoft Powerpoint Associate (Microsoft 365 Apps)",
       issuer: "Microsoft",
       date: "2024",
       description: "Professional certification in high-impact presentation design and visual communication.",
@@ -509,7 +488,7 @@ export const identity = {
       title: "Microsoft Office Specialist: Associate (Microsoft 365 Apps)",
       issuer: "Microsoft",
       date: "2024",
-      description: "Earned by passing three associate-level exams (Excel, Word, and PowerPoint), demonstrating comprehensive proficiency across the Microsoft 365 suite.",
+      description: "Earned by passing three associate-level exams (Excel, Word, and Powerpoint), demonstrating comprehensive proficiency across the Microsoft 365 suite.",
       link: "/MOS Associate.pdf",
       img_key: "mos"
     }

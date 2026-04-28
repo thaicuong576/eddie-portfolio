@@ -5,7 +5,14 @@ import { identity } from "../../data/identity";
 
 function Home2() {
   const highlightText = (text) => {
-    // List of high-impact keywords to highlight
+    const headerTrigger = "I’m especially interested in:";
+    
+    const exclusions = [
+      "Currently",
+      "econometric logic with self-operating business infrastructure.",
+      "(U2U Network, Boom Max, Gam3, JustFAB, ...)"
+    ];
+
     const keywords = [
       "Fintech student",
       "UEH",
@@ -20,16 +27,35 @@ function Home2() {
       "building systems that actually solve them"
     ];
 
-    // Create a combined regex for all keywords, ensuring we don't match sub-parts of the startup list if possible
-    // Using Word Boundary \b for some keywords where appropriate
-    const regex = new RegExp(`(${keywords.join("|")})`, "gi");
+    if (text === headerTrigger) {
+      return <b className="blue">{text}</b>;
+    }
+
+    // Function to escape regex characters
+    const escapeRegExp = (string) => {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    };
+
+    // Filter out keywords that are in the exclusions list and escape them
+    const activeKeywords = keywords
+      .filter(k => !exclusions.some(e => e.includes(k) || k.includes(e)))
+      .map(escapeRegExp);
     
+    if (activeKeywords.length === 0) return text;
+
+    const regex = new RegExp(`(${activeKeywords.join("|")})`, "gi");
     const parts = text.split(regex);
     
-    return parts.map((part, i) => 
-      regex.test(part) ? 
-      <span key={i} className="blue">{part}</span> : part
-    );
+    return parts.map((part, i) => {
+      if (regex.test(part)) {
+        // Double check it's not inside an exclusion phrase in the original text
+        const isExcluded = exclusions.some(e => e.includes(part));
+        if (!isExcluded) {
+          return <span key={i} className="blue">{part}</span>;
+        }
+      }
+      return part;
+    });
   };
 
   return (
