@@ -28,8 +28,9 @@ function About({ isHome }) {
               style={{ paddingTop: "30px", paddingBottom: "50px", display: "flex", flexDirection: "column" }}
               className="about-img"
             >
+
               <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-                <strong className="blue">Highlights</strong>
+                <strong className="blue">HIGHLIGHTS</strong>
               </h1>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "15px" }}>
                 {identity.basics.builder_mindset.achievements.map((achievement, index) => (
