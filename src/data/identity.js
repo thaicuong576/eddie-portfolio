@@ -22,7 +22,7 @@ export const identity = {
         "Reduced content workflow from 5 hours → 1 hour using automation",
         "Won academic research awards among 2,500+ students"
       ],
-      current: "Currently, I’m working on building automation systems and lead generation workflows, applying data thinking to improve business operations.",
+      current: "Currently, I’m scaling autonomous media production lines and agentic project management systems, specializing in bridging econometric logic with self-operating business infrastructure.",
       interests: [
         "Business Operations & Growth",
         "Automation & AI tools",

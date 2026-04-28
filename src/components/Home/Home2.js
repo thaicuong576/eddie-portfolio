@@ -16,19 +16,13 @@ function Home2() {
               {identity.basics.builder_mindset.intro.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
-              
-              <br />
               <p>{identity.basics.builder_mindset.current}</p>
-              
-              <br />
               <b className="blue">I’m especially interested in:</b>
               <ul className="home-about-list">
                 {identity.basics.builder_mindset.interests.map((interest, i) => (
                   <li key={i}>{interest}</li>
                 ))}
               </ul>
-              
-              <br />
               <p>{identity.basics.builder_mindset.closing}</p>
             </div>
           </Col>
