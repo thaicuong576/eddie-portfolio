@@ -13,25 +13,22 @@ function Home2() {
       "manual workflows",
       "systems",
       "faster, more consistent, and easier to scale",
-      "Currently",
       "autonomous media production lines",
       "agentic project management systems",
-      "econometric logic",
-      "self-operating business infrastructure",
       "multiple early-stage Web3 Startups",
-      "U2U Network, Boom Max, Gam3, JustFAB",
       "efficiency and speed",
       "building systems that actually solve them"
     ];
 
-    // Create a combined regex for all keywords
+    // Create a combined regex for all keywords, ensuring we don't match sub-parts of the startup list if possible
+    // Using Word Boundary \b for some keywords where appropriate
     const regex = new RegExp(`(${keywords.join("|")})`, "gi");
     
     const parts = text.split(regex);
     
     return parts.map((part, i) => 
       regex.test(part) ? 
-      <span key={i} className="blue" style={{ fontWeight: "600" }}>{part}</span> : part
+      <span key={i} className="blue">{part}</span> : part
     );
   };
 

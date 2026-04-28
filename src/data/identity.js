@@ -1,4 +1,4 @@
-export const identity = {
+﻿export const identity = {
   basics: {
     name: "Cuong Phung Thai (Eddie)",
     nickname: "EDDIE",
@@ -9,10 +9,10 @@ export const identity = {
       "AI Video Generation & Styling",
       "Self-directed learning & inflation hedging"
     ],
-    unfair_advantage: "I’m a Fintech student at UEH who focuses on improving how businesses operate using automation and practical tools. I founded 2 early-stage ventures, closed a $5,000 partnership deal independently, built a Virtual KOL persona with 1.3M+ reach sharing crypto experiences, and reduced content workflows from 5 hours to 1 hour using automation.",
+    unfair_advantage: "Iâ€™m a Fintech student at UEH who focuses on improving how businesses operate using automation and practical tools. I founded 2 early-stage ventures, closed a $5,000 partnership deal independently, built a Virtual KOL persona with 1.3M+ reach sharing crypto experiences, and reduced content workflows from 5 hours to 1 hour using automation.",
     builder_mindset: {
       intro: [
-        "I’m a Fintech student at UEH who focuses on improving how businesses operate using automation and practical tools.",
+        "Iâ€™m a Fintech student at UEH who focuses on improving how businesses operate using automation and practical tools.",
         "I like turning manual workflows into systems that are faster, more consistent, and easier to scale."
       ],
       achievements: [
@@ -22,7 +22,7 @@ export const identity = {
         "Reduced content workflow from 5 hours -> 1 hour using automation",
         "Won academic research awards among 2,500+ students"
       ],
-      current: "Currently, I’m scaling autonomous media production lines and agentic project management systems, specializing in bridging econometric logic with self-operating business infrastructure.",
+      current: "Currently, Iâ€™m scaling autonomous media production lines and agentic project management systems, specializing in bridging econometric logic with self-operating business infrastructure.",
       interests: [
         "Business Operations & Growth",
         "Automation & AI tools",
@@ -84,7 +84,7 @@ export const identity = {
     {
       id: "operations-automation",
       title: "Operations Automation",
-      emoji: "⚙️",
+      emoji: "âš™ï¸",
       summary: "I build systems that reduce manual work and improve how business operations run.",
       what_i_do: [
         "Identify repetitive workflows in operations",
@@ -92,7 +92,7 @@ export const identity = {
         "Connect different tools into one streamlined process"
       ],
       example_projects: [
-        "Content Bot: Reduced workflow from 5h → 1h",
+        "Content Bot: Reduced workflow from 5h â†’ 1h",
         "PM Agent: Automated task tracking and reporting",
         "AI UGC System: Scaled content production to 100+ videos/day"
       ],
@@ -105,7 +105,7 @@ export const identity = {
     {
       id: "growth-leadgen",
       title: "Growth & Lead Generation",
-      emoji: "📈",
+      emoji: "ðŸ“ˆ",
       summary: "I build systems that help businesses find and convert high-intent customers.",
       what_i_do: [
         "Collect and structure lead data from sources like Google Maps",
@@ -126,7 +126,7 @@ export const identity = {
     {
       id: "data-decision",
       title: "Data & Decision Making",
-      emoji: "🔍",
+      emoji: "ðŸ”",
       summary: "I use data and structured thinking to support better business decisions.",
       what_i_do: [
         "Analyze data using econometrics and statistical models",
@@ -147,7 +147,7 @@ export const identity = {
     {
       id: "content-systems",
       title: "Content Automation Systems",
-      emoji: "🎥",
+      emoji: "ðŸŽ¥",
       summary: "I build systems that automate content production and help businesses scale media output.",
       what_i_do: [
         "Design automated pipelines for video and content production",
@@ -155,8 +155,8 @@ export const identity = {
         "Optimize workflows for speed and consistency"
       ],
       example_projects: [
-        "AI UGC System (nOps Labs): 100–200 videos/day production pipeline",
-        "Content Bot: Automated research → scripting → publishing",
+        "AI UGC System (nOps Labs): 100â€“200 videos/day production pipeline",
+        "Content Bot: Automated research â†’ scripting â†’ publishing",
         "AI Video Engine: Combined n8n + FFmpeg + AI tools into one workflow"
       ],
       business_impact: [
@@ -170,10 +170,10 @@ export const identity = {
     // WORK CATEGORY
     {
       id: "nops-labs",
-      title: "nOps Labs — AI Video System",
+      title: "nOps Labs â€” AI Video System",
       category: "work",
       role: "Co-Founder",
-      date: "Aug 2024 – Present",
+      date: "Aug 2024 â€“ Present",
       description: "The Factory of AI Video: An autonomous agency utilizing automation and AI orchestration to handle high-volume video production.",
       impact: "Media Engine Built",
       imgPosition: "50% 50%",
@@ -183,7 +183,7 @@ export const identity = {
       specializations: ["operations-automation", "content-systems"],
       deepDive: {
         problem: "In the short-form video era, brands face a 'Content Velocity Problem.' Traditional production is too expensive, slow (days of turnaround), and impossible to scale across multiple brands without a massive editing headcount.",
-        solution: "Established nOps Labs as the 'Factory of AI Video'—an autonomous agency that removes the human bottleneck. I engineered a 100% autonomous production pipeline using n8n and FFmpeg to handle the entire video lifecycle—from raw input to final render—without human intervention.",
+        solution: "Established nOps Labs as the 'Factory of AI Video'â€”an autonomous agency that removes the human bottleneck. I engineered a 100% autonomous production pipeline using n8n and FFmpeg to handle the entire video lifecycleâ€”from raw input to final renderâ€”without human intervention.",
         flow: [
           "n8n logic coordinates multiple AI models for scripting and visual direction.",
           "ComfyUI programmatic instances render realistic image-to-video frames.",
@@ -202,10 +202,10 @@ export const identity = {
     },
     {
       id: "bep-ink",
-      title: "Bep Ink — Geo-Lead Engine",
+      title: "Bep Ink â€” Geo-Lead Engine",
       category: "work",
       role: "Founder & Tech Builder",
-      date: "July 2024 – Present",
+      date: "July 2024 â€“ Present",
       description: "Developed a geo-targeted lead generation system for the local F&B market.",
       impact: "HCMC Lead Discovery",
       imgPosition: "100% 40%",
@@ -216,10 +216,10 @@ export const identity = {
     },
     {
       id: "gfi",
-      title: "GFI Research — Virtual KOL",
+      title: "GFI Research â€” Virtual KOL",
       category: "work",
       role: "Content Strategy & Virtual KOL",
-      date: "Nov 2024 – Feb 2026",
+      date: "Nov 2024 â€“ Feb 2026",
       description: "Created a Virtual KOL persona and secured a $5,000 partnership deal independently.",
       impact: "$5,000 Mantle Deal",
       imgPosition: "100% 100%",
@@ -230,10 +230,10 @@ export const identity = {
     },
     {
       id: "gam3",
-      title: "Gam3 — BD & MOU Engine",
+      title: "Gam3 â€” BD & MOU Engine",
       category: "work",
       role: "Personal Assistant to Founder / BD Team",
-      date: "July 2024 – Sept 2024",
+      date: "July 2024 â€“ Sept 2024",
       description: "Supported institutional outreach and MOU negotiations with major crypto market makers.",
       impact: "MOU Support (DWF & GSR)",
       imgPosition: "0% 0%",
@@ -244,7 +244,7 @@ export const identity = {
     },
     {
       id: "u2u",
-      title: "U2U Network — Community Ops",
+      title: "U2U Network â€” Community Ops",
       category: "work",
       role: "Community Ops",
       date: "2024",
@@ -258,7 +258,7 @@ export const identity = {
     },
     {
       id: "justfab",
-      title: "JustFab — Fashion Commerce POC",
+      title: "JustFab â€” Fashion Commerce POC",
       category: "work",
       role: "Founder",
       date: "2023",
@@ -274,7 +274,7 @@ export const identity = {
     // PROJECTS CATEGORY
     {
       id: "ai-ugc",
-      title: "AI UGC Video — Production Line",
+      title: "AI UGC Video â€” Production Line",
       category: "projects",
       role: "System Architect",
       date: "2024",
@@ -283,7 +283,7 @@ export const identity = {
       imgPosition: "85% 80%",
       tech: ["Minimax 2.7", "Omnivoice", "FFmpeg", "n8n"],
       link: "https://github.com/thaicuong576",
-      stats: "100–200 Videos/Day",
+      stats: "100â€“200 Videos/Day",
       specializations: ["content-systems"],
       deepDive: {
         problem: "Content teams struggle with 5-6 hour production cycles for a single video, making high-volume output impossible without massive headcount. Manual processes for scripting, rendering, and QC created a significant growth bottleneck.",
@@ -306,7 +306,7 @@ export const identity = {
     },
     {
       id: "pm-agent",
-      title: "PM-Agent — Task Automation",
+      title: "PM-Agent â€” Task Automation",
       category: "projects",
       role: "Lead Developer",
       date: "2024",
@@ -320,7 +320,7 @@ export const identity = {
     },
     {
       id: "lead-gen-scraper",
-      title: "Lead-Gen Scraper — Geo-Clustering",
+      title: "Lead-Gen Scraper â€” Geo-Clustering",
       category: "projects",
       role: "Automation Engineer",
       date: "2024",
@@ -334,7 +334,7 @@ export const identity = {
     },
     {
       id: "x-threads",
-      title: "X-Threads — Social Automator",
+      title: "X-Threads â€” Social Automator",
       category: "projects",
       role: "Growth Engineer",
       date: "2024",
@@ -348,7 +348,7 @@ export const identity = {
     },
     {
       id: "content-bot",
-      title: "Eddie Content Bot — Workflow Optimizer",
+      title: "Eddie Content Bot â€” Workflow Optimizer",
       category: "projects",
       role: "Automation Lead",
       date: "2024",
@@ -357,14 +357,14 @@ export const identity = {
       imgPosition: "0% 0%",
       tech: ["n8n", "LLMs", "API Orchestration", "Python"],
       link: "https://github.com/thaicuong576",
-      stats: "5h → 1h Workflow",
+      stats: "5h â†’ 1h Workflow",
       specializations: ["operations-automation", "content-systems"]
     },
 
     // ACADEMY CATEGORY
     {
       id: "attacker-2024",
-      title: "ATTACKER 2024 — Algo Trading",
+      title: "ATTACKER 2024 â€” Algo Trading",
       category: "academy",
       role: "Team Leader",
       date: "April 2024",
@@ -378,7 +378,7 @@ export const identity = {
     },
     {
       id: "rd-proximity",
-      title: "R&D Proximity — Innovation Analysis",
+      title: "R&D Proximity â€” Innovation Analysis",
       category: "academy",
       role: "Lead Researcher",
       date: "2024",
@@ -392,7 +392,7 @@ export const identity = {
     },
     {
       id: "green-sm",
-      title: "Green SM — Consumer Research",
+      title: "Green SM â€” Consumer Research",
       category: "academy",
       role: "Lead Researcher",
       date: "2024",
@@ -406,7 +406,7 @@ export const identity = {
     },
     {
       id: "justfactor",
-      title: "JustFactor — Fintech Credit MVP",
+      title: "JustFactor â€” Fintech Credit MVP",
       category: "academy",
       role: "Project Lead",
       date: "Q1 2026",

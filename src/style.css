@@ -1,5 +1,5 @@
-/* ==========================================================================
-   EDDIE PHUNG PORTFOLIO — Design System v2
+﻿/* ==========================================================================
+   EDDIE PHUNG PORTFOLIO â€” Design System v2
    Enhanced with UI UX Pro Max + Coinbase/Stripe/Linear best practices
 
    Fonts: Orbitron (headings) + Exo 2 (body)
@@ -588,7 +588,7 @@ h6 {
 }
 
 .home-about-list li::before {
-  content: "▹";
+  content: "â–¹";
   color: var(--accent-blue);
   margin-right: 12px;
   font-weight: bold;
@@ -723,7 +723,7 @@ blockquote {
 }
 
 .experience-highlights li::before {
-  content: "▹";
+  content: "â–¹";
   color: var(--accent-blue);
   margin-right: 12px;
   font-weight: bold;
@@ -1793,4 +1793,4 @@ section,
   .deep-dive-section {
     margin-bottom: 50px;
   }
-}
+}
