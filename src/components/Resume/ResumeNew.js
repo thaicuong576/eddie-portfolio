@@ -9,7 +9,7 @@ import "react-pdf/dist/esm/Page/TextLayer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.min.js`;
 
-const pdfUrl = process.env.PUBLIC_URL + "/eddie-cv.pdf";
+const pdfUrl = process.env.PUBLIC_URL + "/Phung Thai Cuong (Eddie) - Resume.pdf";
 
 function ResumeNew({ isHome }) {
   const [numPages, setNumPages] = useState(null);
@@ -44,7 +44,7 @@ function ResumeNew({ isHome }) {
             <Document
               file={pdfUrl}
               onLoadSuccess={onDocumentLoadSuccess}
-              loading={<div className="pdf-loading">Loading CV...</div>}
+              loading={<div className="pdf-loading">Loading Resume...</div>}
               error={
                 <div className="pdf-error">
                   Failed to load PDF.{" "}
@@ -97,7 +97,7 @@ function ResumeNew({ isHome }) {
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
-            &nbsp;Download CV
+            &nbsp;Download Resume
           </Button>
         </Row>
       </Container>

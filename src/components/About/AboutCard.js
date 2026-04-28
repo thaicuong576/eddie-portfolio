@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { ImPointRight } from "react-icons/im";
+
 import { identity } from "../../data/identity";
 
 function AboutCard() {
@@ -19,7 +19,7 @@ function AboutCard() {
           <ul className="home-about-list">
             {identity.basics.how_i_work.approach_steps.map((step, index) => (
               <li key={index} className="about-activity">
-                <ImPointRight /> {step}
+                {step}
               </li>
             ))}
           </ul>
@@ -31,7 +31,7 @@ function AboutCard() {
           <ul className="home-about-list">
             {identity.basics.how_i_work.preferences.map((pref, index) => (
               <li key={index} className="about-activity">
-                <ImPointRight /> {pref}
+                {pref}
               </li>
             ))}
           </ul>
