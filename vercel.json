@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "routes": [
-    { "src": "/(robots.txt|sitemap.xml|llms.txt|eddie-identity.json|favicon.png)", "dest": "/$1" },
-    { "handle": "filesystem" },
-    { "src": "/.*", "status": 200, "dest": "/index.html" }
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
