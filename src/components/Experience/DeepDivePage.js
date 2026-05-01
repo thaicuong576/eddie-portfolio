@@ -1,9 +1,10 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
 import Particle from "../Particle";
 import { identity } from "../../data/identity";
 import { getExperienceImage } from "../../utils/identityUtils";
+import { AiOutlineClose } from "react-icons/ai";
 
 /**
  * Reusable Section component for the Deep Dive page
@@ -21,6 +22,7 @@ const Section = ({ title, children, className = "" }) => (
 
 const DeepDivePage = () => {
   const { id } = useParams();
+  const [activeImage, setActiveImage] = useState(null);
 
   const item = useMemo(() => {
     return identity.experience.find((e) => e.id === id);
@@ -36,6 +38,16 @@ const DeepDivePage = () => {
   }
 
   const { deepDive } = item;
+
+  const openLightbox = (img) => {
+    setActiveImage(img);
+    document.body.style.overflow = "hidden"; // Prevent scrolling
+  };
+
+  const closeLightbox = () => {
+    setActiveImage(null);
+    document.body.style.overflow = "auto";
+  };
 
   return (
     <section className="deep-dive-page-wrapper">
@@ -85,22 +97,34 @@ const DeepDivePage = () => {
               </ul>
             </Section>
 
-            {/* VISUALS (OPTIONAL) */}
+            {/* VISUALS PRO MAX */}
             {deepDive.visuals && deepDive.visuals.length > 0 && (
               <Section title="Visuals">
-                <Row>
-                  {deepDive.visuals.map((img, index) => (
-                    <Col md={deepDive.visuals.length === 1 ? 12 : 6} key={index} className="mb-4">
-                      <div className="visual-block-wrapper">
-                         {/* If img is a string path, use it, otherwise use fallback from identityUtils */}
-                        <img 
-                          src={img || getExperienceImage(item.id)} 
-                          alt={`${item.title} visual ${index + 1}`} 
-                          className="visual-img-rect"
-                        />
-                      </div>
-                    </Col>
-                  ))}
+                <Row className="g-4">
+                  {deepDive.visuals.map((img, index) => {
+                    // Logic for responsive column sizing based on total image count
+                    let mdSize = 6;
+                    if (deepDive.visuals.length === 1) mdSize = 12;
+                    else if (deepDive.visuals.length === 3 && index === 0) mdSize = 12; // Feature first image if 3 total
+                    
+                    return (
+                      <Col md={mdSize} key={index}>
+                        <div 
+                          className="visual-block-wrapper" 
+                          onClick={() => openLightbox(img || getExperienceImage(item.id))}
+                        >
+                          <img 
+                            src={img || getExperienceImage(item.id)} 
+                            alt={`${item.title} visual ${index + 1}`} 
+                            className="visual-img-rect"
+                          />
+                          <div className="visual-overlay">
+                            <button className="view-proof-btn">See full image</button>
+                          </div>
+                        </div>
+                      </Col>
+                    );
+                  })}
                 </Row>
               </Section>
             )}
@@ -111,6 +135,18 @@ const DeepDivePage = () => {
           </div>
         )}
       </Container>
+
+      {/* LIGHTBOX MODAL */}
+      {activeImage && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <div className="lightbox-close" onClick={closeLightbox}>
+            <AiOutlineClose />
+          </div>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <img src={activeImage} alt="Enlarged visual" className="lightbox-img" />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

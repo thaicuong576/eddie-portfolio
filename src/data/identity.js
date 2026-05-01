@@ -1,3 +1,57 @@
+// Deep Dive Asset Imports
+// nOps Labs
+import nopslabsProduction from "../Assets/DeepDives/nops-labs/nopslabs-production-line.png";
+import peakoEvidence from "../Assets/DeepDives/nops-labs/peako-Evidence.png";
+import videosProof from "../Assets/DeepDives/nops-labs/videos-proof.png";
+
+// Bep Ink
+import bepInkProof from "../Assets/DeepDives/bep-ink/bep-ink.png";
+import bepInkAgent from "../Assets/DeepDives/bep-ink/pm-agent.png";
+import bepInkScraper from "../Assets/DeepDives/bep-ink/bep-ink-ggmap-scraper.png";
+
+// GFI
+import gfiReach from "../Assets/DeepDives/gfi/gfi-duong-qua.png";
+import gfiEvidence from "../Assets/DeepDives/gfi/evidence.png";
+import gfiDocs from "../Assets/DeepDives/gfi/documentation.png";
+
+// Gam3
+import gam3Proof from "../Assets/DeepDives/gam3/gam3-proof.png";
+import gam3Evidence from "../Assets/DeepDives/gam3/gam3-evidence.png";
+
+// U2U
+import u2uEvidence from "../Assets/DeepDives/u2u/evidence.png";
+import u2uShift from "../Assets/DeepDives/u2u/shift.png";
+
+// JustFab
+import justfabApp from "../Assets/DeepDives/justfab/justfab-miniapp.png";
+import justfabDocs from "../Assets/DeepDives/justfab/justfab-gitbook.png";
+
+// X-Threads
+import xThreadsVisual from "../Assets/DeepDives/x-threads/x-to-thread.png";
+
+// Content Bot
+import contentBotVisual from "../Assets/DeepDives/content-bot/content-bot.png";
+
+// Attacker 2024
+import attackerTop4 from "../Assets/DeepDives/attacker-2024/top-4.jpg";
+import attackerVnstock from "../Assets/DeepDives/attacker-2024/vnstock-integrate.png";
+import attackerEma from "../Assets/DeepDives/attacker-2024/ema-sma.png";
+import attackerBollinger from "../Assets/DeepDives/attacker-2024/bollinger.png";
+import attackerBacktest from "../Assets/DeepDives/attacker-2024/backtest-outcome.png";
+
+// R&D Proximity
+import rdData from "../Assets/DeepDives/rd-proximity/data.png";
+import rdResult from "../Assets/DeepDives/rd-proximity/result.png";
+
+// Green SM
+import greenData from "../Assets/DeepDives/green-sm/data.png";
+import greenCronbach from "../Assets/DeepDives/green-sm/cronbach-alpha.png";
+import greenResult from "../Assets/DeepDives/green-sm/result.png";
+
+// JustFactor
+import justfactorShowcase from "../Assets/DeepDives/justfactor/showcase.png";
+import justfactorModel from "../Assets/DeepDives/justfactor/justfactor-business-model.png";
+
 export const identity = {
   basics: {
     name: "Cuong Phung Thai (Eddie)",
@@ -76,7 +130,7 @@ export const identity = {
     {
       name: "Bep Ink",
       role: "Founder / Builder",
-      description: "FnB-specialist print brand in HCMC with AI lead-gen engine.",
+      description: "FnB-specialist print brand in HCMC with custom-built PM & Operations dashboard.",
       url: "https://dashboard-sand-nine-57.vercel.app/"
     }
   ],
@@ -170,49 +224,61 @@ export const identity = {
     // WORK CATEGORY
     {
       id: "nops-labs",
-      title: "nOps Labs - AI Video System",
+      title: "nOps Labs - AI Video Factory",
       category: "work",
       role: "Co-Founder",
       date: "Aug 2024 - Present",
-      description: "The Factory of AI Video: An autonomous agency utilizing automation and AI orchestration to handle high-volume video production.",
-      impact: "Media Engine Built",
+      description: "Established nOps Labs as an autonomous 'AI Video Factory,' engineering a 100% automated production line using n8n and programmatic FFmpeg assembly.",
+      impact: "100-200 Videos/Day",
       imgPosition: "50% 50%",
       tech: ["n8n", "FFmpeg", "ComfyUI", "Python"],
       link: "https://github.com/thaicuong576",
-      stats: "Scaleable Media Engine",
+      stats: "Autonomous Video Factory",
       specializations: ["operations-automation", "content-systems"],
       deepDive: {
-        problem: "In the short-form video era, brands face a 'Content Velocity Problem.' Traditional production is too expensive, slow (days of turnaround), and impossible to scale across multiple brands without a massive editing headcount.",
-        solution: "Established nOps Labs as the 'Factory of AI Video' - an autonomous agency that removes the human bottleneck. I engineered a 100% autonomous production pipeline using n8n and FFmpeg to handle the entire video lifecycle - from raw input to final render - without human intervention.",
+        problem: "Fashion and cosmetic brands face a 'Content Velocity Problem.' To stay relevant, they need an overwhelming volume of high-quality UGC style videos—a production scale that is impossible to sustain manually without a massive editing headcount.",
+        solution: "Established nOps Labs as an autonomous 'AI Video Factory.' I engineered a 100% automated production line using n8n for orchestration and Peako (FFmpeg core) for programmatic assembly. This system replaces 4 full-time human production steps with a single automated trigger, allowing for infinite scalability.",
         flow: [
-          "n8n logic coordinates multiple AI models for scripting and visual direction.",
-          "ComfyUI programmatic instances render realistic image-to-video frames.",
-          "FFmpeg engine (Peako) handles automated assembly, transitions, and overlays.",
-          "Robust error-handling ensures uptime despite high-latency AI API timeouts.",
-          "System handles multiple brand formats, from News-style to Vlog-style UGC.",
-          "Final assets are automatically pushed to delivery pipelines or cloud storage."
+          "Asset Orchestration: n8n logic triggers multiple third-party APIs to generate high-fidelity image and video frames tailored to brand aesthetics.",
+          "Production Line (Peako): A custom-built FFmpeg-core engine (Peako) handles the 'dirty work'—automated assembly, transitions, branding overlays, and multi-track merging.",
+          "Automated Delivery: Final rendered UGC videos are automatically verified and pushed to cloud delivery pipelines or social publishing APIs."
         ],
         results: [
-          "Reduced time-to-output for finished UGC from 24 hours to <15 minutes.",
-          "Massive scalability allowed supporting multiple brands without extra editors.",
-          "Significant cost reduction per video, enabling mid-sized brands to compete.",
-          "Proved the system architect is the new 'Editor' in the AI era."
-        ]
+          "Scaled content production to 100-200 videos per day per brand with zero human intervention.",
+          "Achieved an 80% reduction in direct human labor costs per video.",
+          "Enabled mid-sized fashion brands to compete at the same content volume as global industry leaders."
+        ],
+        visuals: [nopslabsProduction, peakoEvidence, videosProof]
       }
     },
     {
       id: "bep-ink",
-      title: "Bep Ink - Geo-Lead Engine",
+      title: "Bep Ink - Growth Architecture",
       category: "work",
       role: "Founder & Tech Builder",
       date: "July 2024 - Present",
-      description: "Developed a geo-targeted lead generation system for the local F&B market.",
-      impact: "HCMC Lead Discovery",
+      description: "Engineered a three-pillar ecosystem combining a custom PM Dashboard, an Autonomous Dispatcher, and a Geo-Lead Engine for 100% operational visibility.",
+      impact: "Operations Automated",
       imgPosition: "100% 40%",
-      tech: ["n8n", "Next.js", "Vercel", "Scraping"],
+      tech: ["Astro", "Supabase", "OpenClaw", "Scraping"],
       link: "https://dashboard-sand-nine-57.vercel.app/",
-      stats: "Lead Gen Engine",
-      specializations: ["growth-leadgen"]
+      stats: "Growth Architecture",
+      specializations: ["operations-automation", "growth-leadgen"],
+      deepDive: {
+        problem: "Traditional printing services struggle to bridge the gap between high-quality core technology and the demands of digital marketing. Bep Ink faced a hurdle: managing digital identity and lead gen without a massive team.",
+        solution: "Engineered the 'Bep Ink Growth Architecture'—a three-pillar ecosystem designed for 100% operational visibility and automated lead acquisition using Astro, Supabase, and OpenClaw.",
+        flow: [
+          "PM Dashboard (Control Center): Built with Astro and Supabase, tracking all project KPIs and operational metrics in real-time.",
+          "24/7 AI Dispatcher: An OpenClaw-powered agent handling 100% of initial inquiries using a RAG layer for technical advice.",
+          "Geo-Lead Engine: Automated scraping targeting Google Maps to identify and qualify local leads, feeding directly into the pipeline."
+        ],
+        results: [
+          "Established a unified data layer (Supabase) providing 100% visibility into every business vertical.",
+          "Automated top-of-funnel lead discovery, building a warm contact list for growth campaigns.",
+          "Developed an 'Autonomous Operations' blueprint allowing a small team to manage enterprise-scale operations."
+        ],
+        visuals: [bepInkProof, bepInkAgent, bepInkScraper]
+      }
     },
     {
       id: "gfi",
@@ -220,13 +286,28 @@ export const identity = {
       category: "work",
       role: "Content Strategy & Virtual KOL",
       date: "Nov 2024 - Feb 2026",
-      description: "Created a Virtual KOL persona and secured a $5,000 partnership deal independently.",
-      impact: "$5,000 Mantle Deal",
+      description: "Developed an automated 'Virtual KOL' persona (Eddie) to maintain high content velocity in the hyper-fast Web3 industry.",
+      impact: "1.3M+ Viral Reach",
       imgPosition: "100% 100%",
-      tech: ["X-Social", "Brand Strategy", "Partnerships", "Web3"],
+      tech: ["X-Social", "Brand Strategy", "n8n", "Web3"],
       link: "https://x.com/0xeddiephung",
       stats: "$5,000 Deal Closed",
-      specializations: ["growth-leadgen", "content-systems"]
+      specializations: ["growth-leadgen", "content-systems"],
+      deepDive: {
+        problem: "In Web3, high-quality research is often lost in the noise. Without automation, a researcher cannot maintain the content velocity required to lead trends and capture market authority.",
+        solution: "Developed a partly automated 'Virtual KOL' persona (Eddie) that scales research-backed content production without sacrificing quality, creating a 'Speed-to-Market' advantage.",
+        flow: [
+          "Identity & Vibe Engine: Programmatically aligned the 'Eddie' persona with strategic partners like Mantle.",
+          "Content Factory: Built an automation pipeline producing 20 medium-to-high quality research posts per week.",
+          "Data-Backed Outreach: Leveraged automated growth metrics to negotiate and close institutional partnerships."
+        ],
+        results: [
+          "Achieved massive viral reach: 1.3M+ on X and 1M+ on Facebook for a single account.",
+          "Successfully negotiated and closed a $5,000 partnership deal with the Mantle network.",
+          "Maintained market leadership during volatility through consistent, automated output."
+        ],
+        visuals: [gfiReach, gfiEvidence, gfiDocs]
+      }
     },
     {
       id: "gam3",
@@ -234,13 +315,28 @@ export const identity = {
       category: "work",
       role: "Personal Assistant to Founder / BD Team",
       date: "July 2024 - Sept 2024",
-      description: "Supported institutional outreach and MOU negotiations with major crypto market makers.",
+      description: "Engineered a structured 'BD & MOU Engine' combining automated lead discovery with a centralized tracking pipeline for Web3 gaming.",
       impact: "MOU Support (DWF & GSR)",
       imgPosition: "0% 0%",
-      tech: ["Tokenomics", "BD Funnel", "MOU Negotiation", "Nodes"],
+      tech: ["Tokenomics", "Scraping", "MOU Negotiation", "Nodes"],
       link: "https://gam3s.gg/",
-      stats: "Institutional BD Support",
-      specializations: ["growth-leadgen"]
+      stats: "50+ Institutional Partners",
+      specializations: ["growth-leadgen"],
+      deepDive: {
+        problem: "Institutional outreach in Web3 gaming is often chaotic. Coordinating with 50+ partners across fragmented channels leads to 'lead decay' and slow MOU turnaround times.",
+        solution: "Engineered a structured 'BD & MOU Engine' that combined automated lead discovery via custom scraping with a centralized tracking pipeline for real-time coordination.",
+        flow: [
+          "Automated Lead Discovery: Built a scraping engine targeting YouTube and LinkedIn to identify high-tier VCs and MMs.",
+          "MOU Standardization: Developed a standardized lifecycle for negotiations, reducing legal friction.",
+          "Strategic Sync: Automated tracking of partnership milestones for data-backed reporting."
+        ],
+        results: [
+          "Successfully managed a pipeline of 50+ high-value institutional partners.",
+          "Secured and streamlined MOUs with industry giants including DWF and GSR.",
+          "Established a professional outreach protocol that served as a master class in BD operations."
+        ],
+        visuals: [gam3Proof, gam3Evidence]
+      }
     },
     {
       id: "u2u",
@@ -248,133 +344,147 @@ export const identity = {
       category: "work",
       role: "Community Ops",
       date: "2024",
-      description: "Managed community operations and sentiment for a Layer 1 blockchain network.",
-      impact: "Web3 Sentiment Mastery",
+      description: "Executed high-stakes community operations and sentiment management for a Layer 1 blockchain network during volatile market events.",
+      impact: "10,000+ Active Members",
       imgPosition: "50% 50%",
       tech: ["Community Ops", "Crisis Management", "Layer 1", "Telegram"],
       link: "https://u2u.xyz/",
-      stats: "Community Sentiment Ops",
-      specializations: ["growth-leadgen"]
-    },
-    {
-      id: "justfab",
-      title: "JustFab - Fashion Commerce POC",
-      category: "work",
-      role: "Founder",
-      date: "2023",
-      description: "Validated a content-to-commerce model for the fashion industry in Vietnam.",
-      impact: "Battle-Scarred POC",
-      imgPosition: "50% 19%",
-      tech: ["GTM", "Logistics", "Marketing", "Founder Foundation"],
-      link: "https://github.com/thaicuong576",
-      stats: "First Venture Venture",
-      specializations: ["growth-leadgen"]
-    },
-
-    // PROJECTS CATEGORY
-    {
-      id: "ai-ugc",
-      title: "AI UGC Video - Production Line",
-      category: "projects",
-      role: "System Architect",
-      date: "2024",
-      description: "System for generating high-volume retail content using generative AI video tools.",
-      impact: "100-200 Videos/Day",
-      imgPosition: "85% 80%",
-      tech: ["Minimax 2.7", "Omnivoice", "FFmpeg", "n8n"],
-      link: "https://github.com/thaicuong576",
-      stats: "100-200 Videos/Day",
-      specializations: ["content-systems"],
+      stats: "Sentiment Mastery",
+      specializations: ["growth-leadgen"],
       deepDive: {
-        problem: "Content teams struggle with 5-6 hour production cycles for a single video, making high-volume output impossible without massive headcount. Manual processes for scripting, rendering, and QC created a significant growth bottleneck.",
-        solution: "Built a fully autonomous 'Video Assembly Line' using n8n for orchestration, ComfyUI for generative video frames, and FFmpeg for programmatic assembly. This system replaces 4 full-time human production steps with one automated trigger.",
+        problem: "Managing a Layer 1 community involves technical complexity and emotional volatility. Users need deep clarity, while rewards can trigger intense FUD if not managed precisely.",
+        solution: "Executed high-stakes community operations using a rigorous shift-based protocol focused on proactive education and crisis de-escalation.",
         flow: [
-          "Trigger logic detects new raw research or data inputs.",
-          "LLM agent generates production-ready scripts and prompts.",
-          "ComfyUI programmatic instance renders high-fidelity frames.",
-          "FFmpeg engine stitches media, overlays, and transitions.",
-          "Autonomous QC check validates resolution and bitrate.",
-          "Final delivery pushed to cloud storage or publishing API."
+          "High-Concentration Operations: Operated within a 24/7 team rotation for rapid response during volatile events.",
+          "Technical Essence Support: Authored deep technical responses to complex questions to build community trust.",
+          "Sentiment Cooling: Monitored and neutralized emotional triggers by providing data-backed clarity."
         ],
         results: [
-          "Workflow reduced from 5 hours to under 1 hour per video.",
-          "Production capacity increased to 100-200 videos per day.",
-          "80% reduction in direct human labor costs per video.",
-          "Zero human intervention required for the base rendering flow."
-        ]
+          "Successfully managed and scaled the Vietnamese community to 10,000+ active members.",
+          "Maintained healthy ecosystem sentiment during high-volatility events like airdrops.",
+          "Established a culture of technical literacy, reducing repetitive support inquiries."
+        ],
+        visuals: [u2uEvidence, u2uShift]
       }
     },
     {
-      id: "pm-agent",
-      title: "PM-Agent - Task Automation",
-      category: "projects",
-      role: "Lead Developer",
-      date: "2024",
-      description: "Autonomous agent coordinating team operations and automated production status tracking.",
-      impact: "24/7 Agentic Ops",
-      imgPosition: "0% 3%",
-      tech: ["AI Agents", "n8n", "Project Management", "Automations"],
+      id: "justfab",
+      title: "JustFab - DataFi MiniApp",
+      category: "work",
+      role: "Founder",
+      date: "2023",
+      description: "Developed a DataFi + Gamification ecosystem aimed at returning data ownership to users through a Telegram MiniApp.",
+      impact: "Web3 Tech Mastery",
+      imgPosition: "50% 19%",
+      tech: ["AI Agents", "ZK-Privacy", "AA", "Telegram MiniApp"],
       link: "https://github.com/thaicuong576",
-      stats: "24/7 Agentic Ops",
-      specializations: ["operations-automation"]
+      stats: "Data Ownership POC",
+      specializations: ["growth-leadgen"],
+      deepDive: {
+        problem: "Users unknowingly forfeit privacy and economic value of their data to tech giants, creating a massive gap in data ownership and rewards.",
+        solution: "Developed JustFAB, a DataFi + Gamification ecosystem (Telegram MiniApp) aimed at returning data ownership to users through experimental Web3 tech.",
+        flow: [
+          "Gamification: Engaged users through mini-games to collect high-value behavioral data signals.",
+          "DataFi Infrastructure: Built logic for tokenizing user data and returning value to creators.",
+          "Technical Experimentation: Integrated AI Agents, ZK-privacy, and Account Abstraction (AA)."
+        ],
+        results: [
+          "Gained deep technical mastery in AI Agents, ZK-privacy, and Web2.5 GTM strategies.",
+          "Strategic Realization: Learned that 'wow tech' alone doesn't guarantee success; user needs are priority.",
+          "Founder Lesson: Prioritize the unique value of your game and users over chasing others' success."
+        ],
+        visuals: [justfabApp, justfabDocs]
+      }
     },
-    {
-      id: "lead-gen-scraper",
-      title: "Lead-Gen Scraper - Geo-Clustering",
-      category: "projects",
-      role: "Automation Engineer",
-      date: "2024",
-      description: "Scraping pipeline clustering F&B business leads across Ho Chi Minh City.",
-      impact: "Automated Lead Discovery",
-      imgPosition: "74% 100%",
-      tech: ["n8n", "Scraping", "Data Enrichment", "Geo-Data"],
-      link: "https://github.com/thaicuong576",
-      stats: "Automated Lead Discovery",
-      specializations: ["operations-automation", "growth-leadgen"]
-    },
+
+    // PROJECTS CATEGORY
     {
       id: "x-threads",
       title: "X-Threads - Social Automator",
       category: "projects",
       role: "Growth Engineer",
       date: "2024",
-      description: "Programmatic social media growth system for automated publishing and viral consistency.",
-      impact: "Hyper-Retention Content",
+      description: "Engineered a 'Cross-Platform Arbitrage Engine' that programmatically identifies viral X content and repurposes it for Threads.",
+      impact: "15k+ Organic Impressions",
       imgPosition: "84% 0%",
-      tech: ["Social Automation", "n8n", "LLM Scripting", "Growth Loops"],
+      tech: ["n8n", "LLM Agents", "Social Automation", "Python"],
       link: "https://x.com/0xeddiephung",
-      stats: "Viral Growth Engine",
-      specializations: ["growth-leadgen", "content-systems"]
+      stats: "Viral Arbitrage Engine",
+      specializations: ["growth-leadgen", "content-systems"],
+      deepDive: {
+        problem: "There is an 'insight arbitrage' opportunity between X and Threads, but manually refactoring viral content for a new audience is too time-consuming.",
+        solution: "Engineered a 'Cross-Platform Arbitrage Engine' using AI to refactor X insights into the specific conversational tone required for Threads.",
+        flow: [
+          "Viral Discovery: Built a tracker to rank high-performing content from specific X niches.",
+          "Vibe Repurposing: Leveraged LLM agents to refactor short-form X posts into thoughtful Threads formats.",
+          "Automated Injection: Deployed an automated pipeline to inject content during peak engagement windows."
+        ],
+        results: [
+          "Proof of Concept: Validated the model in just 2 weeks, proving the arbitrage theory.",
+          "Viral Traction: Generated 10,000 – 15,000 organic impressions on a brand-new account.",
+          "Efficiency: Demonstrated a 100% automated path to cross-platform visibility."
+        ],
+        visuals: [xThreadsVisual]
+      }
     },
     {
       id: "content-bot",
-      title: "Eddie Content Bot - Workflow Optimizer",
+      title: "Eddie Content Bot",
       category: "projects",
       role: "Automation Lead",
       date: "2024",
-      description: "Automation bot reducing content production cycles from 5 hours to 1 hour.",
-      impact: "80% Time Efficiency Gain",
+      description: "Personal workflow optimizer designed to clone my specific writing style, reducing production cycles from 5 hours to 1 hour.",
+      impact: "80% Efficiency Gain",
       imgPosition: "0% 0%",
-      tech: ["n8n", "LLMs", "API Orchestration", "Python"],
+      tech: ["n8n", "LLMs", "RAG", "Style Injection"],
       link: "https://github.com/thaicuong576",
       stats: "5h -> 1h Workflow",
-      specializations: ["operations-automation", "content-systems"]
+      specializations: ["operations-automation", "content-systems"],
+      deepDive: {
+        problem: "Producing high-quality, research-backed articles that maintained a consistent personal voice was an exhausting 5-hour manual process.",
+        solution: "Developed the 'Eddie Content Bot'—a workflow optimizer that learns linguistic patterns and 'tone-of-voice' markers to clone my writing style.",
+        flow: [
+          "Style Ingestion: Fed the system a dataset of top-performing articles to extract sentence structures and tone.",
+          "Research-to-Draft: Bot takes raw data and passes it through a style-injection layer to generate drafts.",
+          "Refinement Loop: Final editor (Eddie) performs a quick 'vibe check' and polish."
+        ],
+        results: [
+          "80% Efficiency Gain: Reduced daily content production from 5 hours down to 1 hour.",
+          "Scale: Enabled more frequent, high-rigor articles without sacrificing the personal touch.",
+          "Consistency: Maintained a unified voice across X, Facebook, and long-form articles."
+        ],
+        visuals: [contentBotVisual]
+      }
     },
 
-    // ACADEMY CATEGORY
-    {
+     {
       id: "attacker-2024",
       title: "ATTACKER 2024 - Algo Trading",
       category: "academy",
       role: "Team Leader",
       date: "April 2024",
-      description: "Python-based algorithmic trading model tracking VN30 stocks using technical indicators.",
-      impact: "Top 5 Finalist (UEL x Yuanta)",
+      description: "Sophisticated trend-following algorithmic model for navigating the VN30 and Vietnamese equity markets.",
+      impact: "Top 4 Finalist (UEL x Yuanta)",
       imgPosition: "52% 100%",
-      tech: ["Python", "Pandas", "Econometrics", "Algo-Trading"],
+      tech: ["Python", "vnstock", "pandas_ta", "Plotly"],
       link: "https://github.com/thaicuong576",
-      stats: "Algorithm Development",
-      specializations: ["data-decision"]
+      stats: "124.6% Alpha Achieved",
+      specializations: ["data-decision"],
+      deepDive: {
+        problem: "The VN30 index is highly volatile; traders struggle with emotional bias when monitoring indicators across 30 symbols simultaneously.",
+        solution: "Developed a trend-following algorithmic model using Python, vnstock, and pandas_ta to identify high-probability entry/exit points.",
+        flow: [
+          "Multi-Source Screening: Automated filtering of 50+ stocks based on market cap and liquidity thresholds.",
+          "Hybrid Signal Logic: Engineered a dual-trigger system using EMA/SMA crossovers and Bollinger Bands.",
+          "Visual Intelligence: Integrated Plotly for interactive charts to allow rapid visual verification of signals."
+        ],
+        results: [
+          "Top 4 Finalist: Ranked in the Top 4 of the ATTACKER 2024 competition.",
+          "Backtesting Alpha: Achieved 124.6% total profit on HOSE constituents during the test period.",
+          "Operational Discipline: Removed human emotion from trading, delivering high-rigor risk management."
+        ],
+        visuals: [attackerTop4, attackerVnstock, attackerEma, attackerBollinger, attackerBacktest]
+      }
     },
     {
       id: "rd-proximity",
@@ -382,13 +492,28 @@ export const identity = {
       category: "academy",
       role: "Lead Researcher",
       date: "2024",
-      description: "Research using econometric models to analyze technological proximity and innovation performance.",
-      impact: "Innovation Policy Insights",
+      description: "High-rigor econometric study analyzing knowledge spillover effects of High Technology Centers on firm-level innovation.",
+      impact: "UEH Young Researcher 2025",
       imgPosition: "50% 50%",
-      tech: ["Econometrics", "R&D Analysis", "Academic Research"],
+      tech: ["Econometrics", "Panel Data", "STATA", "Spatial Analysis"],
       link: "https://github.com/thaicuong576",
-      stats: "Econometric Research",
-      specializations: ["data-decision"]
+      stats: "14-Year Panel Study",
+      specializations: ["data-decision"],
+      deepDive: {
+        problem: "Lack of empirical evidence on how geographical distance to Tech Centers and national laws impact the profitability of Vietnamese firms.",
+        solution: "Conducted a longitudinal econometric study spanning 14 years to analyze the interaction between R&D, proximity, and law impact.",
+        flow: [
+          "Dataset Construction: Aggregated and cleaned panel data from listed firms from 2009–2022.",
+          "Spatial Analysis: Calculated coordinates and distance of each firm relative to major High-Tech Centers.",
+          "Econometric Modeling: Applied Panel Data Regression to test R&D effectiveness and law impact."
+        ],
+        results: [
+          "Negative Distance Correlation: Proved that distance to HTCs negatively impacts R&D ROI.",
+          "Policy Insight: Demonstrated that the 2017 Law shifted firm choices toward intangible assets (IP).",
+          "Award-Winning: Awarded at the 'Nhà Nghiên cứu trẻ UEH' 2025 festival."
+        ],
+        visuals: [rdData, rdResult]
+      }
     },
     {
       id: "green-sm",
@@ -396,13 +521,28 @@ export const identity = {
       category: "academy",
       role: "Lead Researcher",
       date: "2024",
-      description: "Quantitative study analyzing electric vehicle adoption using behavioral research models.",
-      impact: "300+ Survey Sample",
+      description: "Quantitative study applying TPB and TAM models to decode the 'Green' consumer mindset in HCMC.",
+      impact: "Excellent Research UEH 2024",
       imgPosition: "40% 72%",
-      tech: ["Quantitative Research", "TPB/TAM", "Consumer Behavior"],
+      tech: ["SPSS 27.0", "EFA", "TPB/TAM", "Linear Regression"],
       link: "https://github.com/thaicuong576",
-      stats: "Behavioral Analysis",
-      specializations: ["data-decision"]
+      stats: "390+ Sample Study",
+      specializations: ["data-decision"],
+      deepDive: {
+        problem: "What actually drives young demographics to switch to EV taxis? Is it environmental concern, price, or social pressure?",
+        solution: "Produced an award-winning research paper using TPB and TAM models to decode the consumer mindset for Green SM in HCMC.",
+        flow: [
+          "Survey Architecture: Executed an online survey collecting data from 390 students across HCMC.",
+          "Statistical Rigor: Used SPSS for Reliability Testing (Cronbach's Alpha) and EFA.",
+          "Hypothesis Testing: Analyzed Attitude, Subjective Norms, and Environmental Concern."
+        ],
+        results: [
+          "Key Discovery: Proved 'Environmental Concern' is the strongest driver, outweighing price for students.",
+          "Actionable Strategy: Proposed a framework for GSM to enhance their 'Green' branding campaigns.",
+          "Academic Excellence: Awarded Excellent Research at the UEH Research Festival 2024."
+        ],
+        visuals: [greenData, greenCronbach, greenResult]
+      }
     },
     {
       id: "justfactor",
@@ -410,13 +550,28 @@ export const identity = {
       category: "academy",
       role: "Project Lead",
       date: "Q1 2026",
-      description: "Data automation layer transforming SME records into standardized assets for credit origination.",
-      impact: "$24B Credit Gap Solution PoC",
+      description: "Intelligent Origination Platform (B2B2B) transforming SME records into standardized, bank-ready credit assets.",
+      impact: "90% Friction Reduction",
       imgPosition: "95% 55%",
-      tech: ["FastAPI", "Supabase", "React", "Digital Banking"],
+      tech: ["FastAPI", "Supabase", "React", "Banking APIs"],
       link: "https://github.com/thaicuong576",
-      stats: "90% Friction Reduction",
-      specializations: ["operations-automation", "data-decision"]
+      stats: "$24B Credit Gap Solution",
+      specializations: ["operations-automation", "data-decision"],
+      deepDive: {
+        problem: "Vietnamese SMEs face a $24B funding shortfall because manual underwriting costs for banks are disproportionately high.",
+        solution: "Developed JustFactor, an automation layer that transforms invoices and tax records into standardized, bank-ready assets.",
+        flow: [
+          "Data Ingestion: SMEs connect bank accounts via Casso and upload digital invoices.",
+          "J-Score Engine: Custom scoring logic in FastAPI analyzes cash flow patterns to generate audit reports.",
+          "Marketplace Matching: Verified receivables are listed for Financial Institutions to execute factoring."
+        ],
+        results: [
+          "90% Friction Reduction: Automated the first 80% of the credit due diligence process.",
+          "Fintech Innovation: Successfully developed the Functional MVP using FastAPI and Supabase.",
+          "Strategic Roadmap: Designed a path for invoice fractionalization and DeFi expansion.",
+        ],
+        visuals: [justfactorShowcase, justfactorModel]
+      }
     }
   ],
   certificates: [
