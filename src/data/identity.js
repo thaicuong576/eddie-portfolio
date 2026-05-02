@@ -74,7 +74,9 @@ export const identity = {
         "Closed a $5,000 partnership deal independently",
         "Built a Virtual KOL persona with 1.3M+ reach sharing crypto experiences",
         "Reduced content workflow from 5 hours -> 1 hour using automation",
-        "Won academic research awards among 2,500+ students"
+        "Prize A — CTD Scholars Academic Research Contest 2024",
+        "Prize B — UEH Young Researcher 2025 (R&D Study)",
+        "Prize C — UEH Young Researcher 2024 (Green SM Study)"
       ],
       current: "Currently, I'm scaling autonomous media production lines and agentic project management systems, specializing in bridging econometric logic with self-operating business infrastructure.",
       interests: [
@@ -497,7 +499,7 @@ export const identity = {
       imgPosition: "50% 50%",
       tech: ["Econometrics", "Panel Data", "STATA", "Spatial Analysis"],
       link: "https://github.com/thaicuong576",
-      stats: "14-Year Panel Study",
+      stats: "Prize B — UEH 2025",
       specializations: ["data-decision"],
       deepDive: {
         problem: "Lack of empirical evidence on how geographical distance to Tech Centers and national laws impact the profitability of Vietnamese firms.",
@@ -510,7 +512,7 @@ export const identity = {
         results: [
           "Negative Distance Correlation: Proved that distance to HTCs negatively impacts R&D ROI.",
           "Policy Insight: Demonstrated that the 2017 Law shifted firm choices toward intangible assets (IP).",
-          "Award-Winning: Awarded at the 'Nhà Nghiên cứu trẻ UEH' 2025 festival."
+          "Award-Winning: Prize B at the 'Nhà Nghiên cứu trẻ UEH' 2025 festival."
         ],
         visuals: [rdData, rdResult]
       }
@@ -526,7 +528,7 @@ export const identity = {
       imgPosition: "40% 72%",
       tech: ["SPSS 27.0", "EFA", "TPB/TAM", "Linear Regression"],
       link: "https://github.com/thaicuong576",
-      stats: "390+ Sample Study",
+      stats: "Prize C — UEH 2024",
       specializations: ["data-decision"],
       deepDive: {
         problem: "What actually drives young demographics to switch to EV taxis? Is it environmental concern, price, or social pressure?",
@@ -539,7 +541,7 @@ export const identity = {
         results: [
           "Key Discovery: Proved 'Environmental Concern' is the strongest driver, outweighing price for students.",
           "Actionable Strategy: Proposed a framework for GSM to enhance their 'Green' branding campaigns.",
-          "Academic Excellence: Awarded Excellent Research at the UEH Research Festival 2024."
+          "Academic Excellence: Prize C at the UEH Research Festival 2024."
         ],
         visuals: [greenData, greenCronbach, greenResult]
       }
