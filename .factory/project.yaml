@@ -1,0 +1,6 @@
+commands:
+  test: [npm, run, build]
+  typecheck: [npx, tsc, --noEmit]
+timeouts:
+  test: 900
+  checks: 900

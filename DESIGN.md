@@ -1,53 +1,26 @@
-# EDDIE PHUNG PORTFOLIO — Design System v2
+# EDDIE PHUNG PORTFOLIO — Design System
 
-This document centralizes the design tokens and color hashes used in the portfolio to maintain a consistent **UI UX Pro Max** aesthetic.
+## Core Design Tokens (Butter & Teal)
 
-## 🎨 Core Color Palette
+| Token | Value | Use |
+|---|---|---|
+| `--color-ground` | `#F2EBD3` | page background |
+| `--color-surface` | `#F8F4E6` | cards |
+| `--color-ink` | `#1A1C1C` | body text, the word "Fin" |
+| `--color-muted` | `#57584F` | secondary text |
+| `--color-rule` | `#D9CFAE` | borders, dividers |
+| `--color-system` | `#0D5C63` | the word "Tech", links, buttons, the one accent |
+| `--color-on-system` | `#FFFFFF` | text on system-colored fills |
 
-| Category | Token | Hex / Value | Description |
-| :--- | :--- | :--- | :--- |
-| **Background** | `--bg-primary` | `#020617` | Deepest blue-black (Main background) |
-| **Background** | `--bg-secondary`| `#0f172a` | Secondary sections / dark layers |
-| **Background** | `--bg-card` | `rgba(15, 23, 42, 0.65)` | Translucent card background |
-| **Text** | `--text-primary` | `#f8fafc` | Main readable text (Off-white) |
-| **Text** | `--text-secondary`| `#cbd5e1` | Secondary descriptions |
-| **Text** | `--text-muted` | `#64748b` | Muted labels and timestamps |
+## Radii
+- Cards: `--radius-card: 16px`
+- Buttons: fully rounded (`9999px`)
 
-## ⚡ Accent & Interaction Colors
+## Typography & Base
+- Fonts: `Geist` (400, 500, 600, 700) as `--font-sans`, `Geist_Mono` (400, 500) as `--font-mono`.
+- Body: `font-family: var(--font-sans)`, background `ground`, color `ink`, `-webkit-font-smoothing: antialiased`.
 
-| Token | Hex | Role |
-| :--- | :--- | :--- |
-| `--accent-blue` | `#38bdf8` | Primary Actions, Links, Progress |
-| `--accent-yellow` | `#fde047` | Highlighting, Highlights, Star icons |
-| `--accent-green` | `#22c55e` | Success states / Impact metrics |
+## Rule
+Fin is ink, Tech is system; system is the only accent.
 
-## ✨ Glow & Glassmorphism
-
-| Token | Value | Effect |
-| :--- | :--- | :--- |
-| `--border-subtle` | `rgba(255, 255, 255, 0.06)` | Ghost borders for cards |
-| `--border-hover` | `rgba(56, 189, 248, 0.4)` | Hover stroke (Blue) |
-| `--glow-blue` | `rgba(56, 189, 248, 0.2)` | Soft blue neon glow |
-| `--glow-yellow` | `rgba(253, 224, 71, 0.2)` | Interactive yellow glow |
-
-## 📏 Layout & Spacing
-
-*   **Border Radius**: 
-    *   `--radius-sm`: 8px
-    *   `--radius-md`: 16px (Main cards)
-    *   `--radius-lg`: 24px (Large sections)
-    *   `--radius-pill`: 9999px (Badges & Buttons)
-*   **Transitions**:
-    *   `--transition-fast`: 150ms
-    *   `--transition-base`: 250ms
-    *   `--transition-slow`: 400ms
-
-## ⌨️ Typography
-
-| Layer | Font Family | Variable |
-| :--- | :--- | :--- |
-| **Headings** | `"Orbitron", sans-serif` | `--font-heading` |
-| **Body** | `"Exo 2", "Inter", sans-serif` | `--font-body` |
-
----
-*Last Updated: April 2026*
+No other colors anywhere. No gradients, no shadows, no emoji.
