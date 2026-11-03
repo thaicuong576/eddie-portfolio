@@ -1,30 +1,78 @@
 import Link from "next/link";
 import { navSections, contactSection } from "@/content/sections";
+import { ui } from "@/content/ui";
+import {
+  HEADER_CONTAINER_CLASS,
+  WORDMARK_CLASS,
+  NAV_LINK_CLASS,
+  CONTACT_BUTTON_CLASS,
+  MOBILE_MENU_SUMMARY_CLASS,
+  MOBILE_DROPDOWN_CLASS,
+  SKIP_LINK_CLASS,
+} from "./headerStyles";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 bg-ground border-b border-rule px-5 sm:px-10 sm:h-[88px] flex flex-col sm:flex-row sm:items-center justify-between py-4 sm:py-0 gap-y-3">
-      <Link
-        href="/"
-        aria-label="FinTech, back to top"
-        className="text-[30px] font-bold leading-none tracking-[-0.045em] select-none"
-      >
-        <span className="text-ink">Fin</span>
-        <span className="text-system">Tech</span>
-      </Link>
-      <nav className="flex flex-wrap items-center gap-x-4 sm:gap-x-8 gap-y-2 text-[15px]">
-        {navSections.map((item) => (
-          <Link key={item.id} href={`/#${item.id}`} className="text-ink">
-            {item.label}
-          </Link>
-        ))}
+    <>
+      <a href="#case-content" className={SKIP_LINK_CLASS}>
+        {ui.skipToContent}
+      </a>
+      <header className={HEADER_CONTAINER_CLASS}>
         <Link
-          href="/#contact"
-          className="rounded-full bg-system text-on-system font-semibold px-[18px] py-[10px] leading-none"
+          href="/"
+          aria-label="FinTech, back to top"
+          className={WORDMARK_CLASS}
         >
-          {contactSection.label}
+          <span className="text-ink">Fin</span>
+          <span className="text-system">Tech</span>
         </Link>
-      </nav>
-    </header>
+
+        {/* Mobile Nav (<sm) */}
+        <div className="flex items-center gap-2 sm:hidden">
+          <details className="relative group">
+            <summary
+              className={MOBILE_MENU_SUMMARY_CLASS}
+              aria-label={ui.menuLabel}
+            >
+              <span className="group-open:hidden">{ui.menuLabel}</span>
+              <span className="hidden group-open:inline">{ui.closeLabel}</span>
+            </summary>
+            <div className={MOBILE_DROPDOWN_CLASS}>
+              {navSections.map((item) => (
+                <Link
+                  key={item.id}
+                  href={`/#${item.id}`}
+                  className="px-3 py-2 rounded-lg text-ink hover:text-system hover:bg-ground/50 transition-colors text-[14px]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </details>
+          <Link href="/#contact" className={CONTACT_BUTTON_CLASS}>
+            {contactSection.label}
+          </Link>
+        </div>
+
+        {/* Desktop Nav (sm+) */}
+        <nav
+          aria-label={ui.navAriaLabel}
+          className="hidden sm:flex items-center gap-6 lg:gap-8"
+        >
+          {navSections.map((item) => (
+            <Link
+              key={item.id}
+              href={`/#${item.id}`}
+              className={NAV_LINK_CLASS}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <Link href="/#contact" className={CONTACT_BUTTON_CLASS}>
+            {contactSection.label}
+          </Link>
+        </nav>
+      </header>
+    </>
   );
 }

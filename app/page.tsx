@@ -16,6 +16,8 @@ export default function Home() {
         name: profile.name,
         paragraph: profile.heroParagraph,
         hints: profile.heroHints,
+        cv: profile.cv,
+        cvLabel: profile.cvLabel,
       }}
       nav={navSections}
       contactLabel={contactSection.label}

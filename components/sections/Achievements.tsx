@@ -1,59 +1,70 @@
 import { achievements } from "@/content/achievements";
 import { sectionEyebrow, getSection } from "@/content/sections";
 import { ui } from "@/content/ui";
+import { SectionShell } from "@/components/SectionShell";
 
 export function Achievements() {
   const eyebrow = sectionEyebrow("achievements");
   const section = getSection("achievements");
 
   return (
-    <section
+    <SectionShell
       id="achievements"
-      className="max-w-[1240px] mx-auto px-5 sm:px-10 py-24 border-t border-rule scroll-mt-[88px]"
+      eyebrow={eyebrow}
+      heading={section?.heading}
+      tone="surface"
     >
-      <div className="font-mono text-[13px] uppercase tracking-[0.08em] text-system mb-[14px]">
-        {eyebrow}
-      </div>
-      <h2 className="font-semibold text-[32px] sm:text-[44px] leading-[1.1] tracking-[-0.03em] max-w-[760px] mb-12 text-ink">
-        {section?.heading}
-      </h2>
-      <div>
+      <div className="divide-y divide-rule border-y border-rule">
         {achievements.map((item, index) => {
-          const isLast = index === achievements.length - 1;
-          return (
-            <div
-              key={index}
-              className={`border-t border-rule py-7 flex flex-wrap gap-x-12 gap-y-4 ${
-                isLast ? "border-b" : ""
-              }`}
-            >
-              <div className="w-[200px] shrink-0 font-mono text-[14px] text-muted">
-                {item.year}
-              </div>
-              <div className="flex-[1_1_480px] min-w-0 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-                <div>
-                  <h3 className="font-semibold text-[22px] leading-tight text-ink mb-2">
+          const content = (
+            <div className="py-4 sm:py-5 flex items-baseline justify-between gap-4">
+              <div className="flex items-baseline gap-4 sm:gap-6 min-w-0 flex-1">
+                <span className="w-16 sm:w-20 font-mono text-[13px] sm:text-[14px] text-muted tabular-nums shrink-0">
+                  {item.year}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-medium text-[16px] text-ink truncate">
                     {item.title}
                   </h3>
-                  <p className="text-muted leading-[1.55] text-[15px]">
+                  <p className="text-[14px] text-muted truncate">
                     {item.issuer}
                   </p>
                 </div>
+              </div>
+              <div className="flex items-center gap-3 shrink-0">
+                <span className="hidden sm:inline font-mono text-[13px] text-muted">
+                  {item.kind}
+                </span>
                 {item.href ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-system text-[15px] shrink-0"
-                  >
+                  <span className="font-semibold text-system text-[14px] group-hover:underline inline-flex items-center gap-0.5">
                     {ui.viewLabel}
-                  </a>
+                  </span>
                 ) : null}
               </div>
             </div>
           );
+
+          if (item.href) {
+            return (
+              <a
+                key={index}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block hover:bg-ground/50 -mx-3 px-3 sm:-mx-4 sm:px-4 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-system"
+              >
+                {content}
+              </a>
+            );
+          }
+
+          return (
+            <div key={index} className="px-1">
+              {content}
+            </div>
+          );
         })}
       </div>
-    </section>
+    </SectionShell>
   );
 }
