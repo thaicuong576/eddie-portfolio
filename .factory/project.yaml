@@ -4,3 +4,5 @@ commands:
 timeouts:
   test: 900
   checks: 900
+ship:
+  base: staging
