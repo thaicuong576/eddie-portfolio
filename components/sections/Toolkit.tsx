@@ -1,41 +1,44 @@
 import { toolkitGroups } from "@/content/toolkit";
 import { sectionEyebrow, getSection } from "@/content/sections";
+import { SectionShell } from "@/components/SectionShell";
 
 export function Toolkit() {
   const eyebrow = sectionEyebrow("toolkit");
   const section = getSection("toolkit");
 
   return (
-    <section
+    <SectionShell
       id="toolkit"
-      className="max-w-[1240px] mx-auto px-5 sm:px-10 py-24 border-t border-rule scroll-mt-[88px]"
+      eyebrow={eyebrow}
+      heading={section?.heading}
+      tone="surface"
     >
-      <div className="font-mono text-[13px] uppercase tracking-[0.08em] text-system mb-[14px]">
-        {eyebrow}
-      </div>
-      <h2 className="font-semibold text-[32px] sm:text-[44px] leading-[1.1] tracking-[-0.03em] max-w-[760px] mb-12 text-ink">
-        {section?.heading}
-      </h2>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
         {toolkitGroups.map((group) => {
           const isSystems = group.tone === "systems";
+
           return (
-            <div key={group.name}>
-              <h3
-                className={`font-semibold text-[18px] mb-4 ${
-                  isSystems ? "text-system" : "text-ink"
-                }`}
-              >
-                {group.name}
-              </h3>
-              <ul className="flex flex-wrap gap-[10px]">
+            <div
+              key={group.name}
+              className="bg-ground border border-rule rounded-[16px] p-6 sm:p-7 flex flex-col justify-between"
+            >
+              <div>
+                <h3
+                  className={`font-semibold text-[20px] mb-5 ${
+                    isSystems ? "text-system" : "text-ink"
+                  }`}
+                >
+                  {group.name}
+                </h3>
+              </div>
+              <ul className="flex flex-wrap gap-2 sm:gap-2.5 mt-auto">
                 {group.skills.map((skill) => (
                   <li
                     key={skill}
                     className={
                       isSystems
-                        ? "border border-system text-system font-mono text-[14px] px-[14px] py-[9px] rounded-full leading-none"
-                        : "bg-surface border border-rule font-sans text-[15px] text-ink px-[14px] py-[9px] rounded-full leading-none"
+                        ? "border border-system text-system font-mono text-[13px] px-3.5 py-2 rounded-full leading-none"
+                        : "bg-surface border border-rule font-sans text-[14px] text-ink px-3.5 py-2 rounded-full leading-none"
                     }
                   >
                     {skill}
@@ -46,6 +49,6 @@ export function Toolkit() {
           );
         })}
       </div>
-    </section>
+    </SectionShell>
   );
 }

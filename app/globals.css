@@ -16,13 +16,46 @@
   --font-mono: var(--font-mono);
 }
 
+:root {
+  --color-ground: #F2EBD3;
+  --color-surface: #F8F4E6;
+  --color-ink: #1A1C1C;
+  --color-muted: #57584F;
+  --color-rule: #D9CFAE;
+  --color-system: #0D5C63;
+  --color-on-system: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--color-ground);
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
-html {
-  scroll-behavior: smooth;
+:focus-visible {
+  outline: 2px solid var(--color-system);
+  outline-offset: 2px;
 }
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+

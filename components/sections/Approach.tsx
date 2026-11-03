@@ -1,39 +1,38 @@
 import { approachSteps } from "@/content/approach";
 import { sectionEyebrow, getSection } from "@/content/sections";
+import { SectionShell } from "@/components/SectionShell";
 
 export function Approach() {
   const eyebrow = sectionEyebrow("approach");
   const section = getSection("approach");
 
   return (
-    <section
+    <SectionShell
       id="approach"
-      className="max-w-[1240px] mx-auto px-5 sm:px-10 py-24 scroll-mt-[88px]"
+      eyebrow={eyebrow}
+      heading={section?.heading}
+      tone="surface"
     >
-      <div className="font-mono text-[13px] uppercase tracking-[0.08em] text-system mb-[14px]">
-        {eyebrow}
-      </div>
-      <h2 className="font-semibold text-[32px] sm:text-[44px] leading-[1.1] tracking-[-0.03em] max-w-[760px] mb-12 text-ink">
-        {section?.heading}
-      </h2>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(240px,100%),1fr))] gap-4">
-        {approachSteps.map((card) => (
+      <div className="divide-y divide-rule border-y border-rule">
+        {approachSteps.map((step) => (
           <div
-            key={card.number}
-            className="bg-surface border border-rule rounded-[16px] p-7 flex flex-col"
+            key={step.number}
+            className="py-6 sm:py-8 flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-8 group"
           >
-            <div className="font-mono text-[13px] text-system mb-3">
-              {card.number}
+            <span className="font-mono text-[20px] sm:text-[24px] text-system font-medium tabular-nums shrink-0 sm:w-14">
+              {step.number}
+            </span>
+            <div className="min-w-0 flex-1">
+              <h3 className="font-semibold text-[20px] text-ink mb-1.5 leading-snug">
+                {step.title}
+              </h3>
+              <p className="text-ink text-[16px] leading-[1.55]">
+                {step.description}
+              </p>
             </div>
-            <h3 className="font-semibold text-[22px] leading-tight text-ink mb-2">
-              {card.title}
-            </h3>
-            <p className="text-muted leading-[1.55] text-[15px]">
-              {card.description}
-            </p>
           </div>
         ))}
       </div>
-    </section>
+    </SectionShell>
   );
 }

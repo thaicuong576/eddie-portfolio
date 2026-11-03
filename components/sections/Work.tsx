@@ -2,6 +2,23 @@ import Link from "next/link";
 import { projects } from "@/content/projects";
 import { sectionEyebrow, getSection } from "@/content/sections";
 import { ui } from "@/content/ui";
+import { SectionShell } from "@/components/SectionShell";
+
+function getCardSpanClass(index: number, total: number): string {
+  if (total === 4) {
+    return "lg:col-span-3";
+  }
+  if (total === 5) {
+    return index < 2 ? "lg:col-span-3" : "lg:col-span-2";
+  }
+  if (total % 3 === 0 || total === 6) {
+    return "lg:col-span-2";
+  }
+  if (total <= 2) {
+    return "lg:col-span-3";
+  }
+  return "lg:col-span-3";
+}
 
 export function Work() {
   const eyebrow = sectionEyebrow("work");
@@ -9,51 +26,55 @@ export function Work() {
   const featuredProjects = projects.filter((project) => project.featured);
 
   return (
-    <section
+    <SectionShell
       id="work"
-      className="max-w-[1240px] mx-auto px-5 sm:px-10 py-24 border-t border-rule scroll-mt-[88px]"
+      eyebrow={eyebrow}
+      heading={section?.heading}
+      intro={section?.intro}
+      tone="ground"
     >
-      <div className="font-mono text-[13px] uppercase tracking-[0.08em] text-system mb-[14px]">
-        {eyebrow}
-      </div>
-      <h2 className="font-semibold text-[32px] sm:text-[44px] leading-[1.1] tracking-[-0.03em] max-w-[760px] mb-12 text-ink">
-        {section?.heading}
-      </h2>
-      {section?.intro && (
-        <p className="text-[18px] text-muted max-w-[640px] mb-12 leading-[1.55]">
-          {section.intro}
-        </p>
-      )}
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] gap-5">
-        {featuredProjects.map((card) => (
-          <Link
-            key={card.slug}
-            href={`/work/${card.slug}`}
-            className="bg-surface border border-rule rounded-[20px] p-8 min-h-[280px] flex flex-col"
-          >
-            <div
-              className={`flex items-center justify-between font-mono text-[12px] uppercase ${
-                card.track === "systems" ? "text-system" : "text-muted"
-              } mb-4`}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 items-stretch">
+        {featuredProjects.map((card, index) => {
+          const isSystems = card.track === "systems";
+          const spanClass = getCardSpanClass(index, featuredProjects.length);
+
+          return (
+            <Link
+              key={card.slug}
+              href={`/work/${card.slug}`}
+              className={`group bg-surface border border-rule hover:border-system rounded-[16px] p-6 sm:p-7 flex flex-col justify-between transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-system h-full ${spanClass}`}
             >
-              <span>{card.tag}</span>
-              <span>{card.status}</span>
-            </div>
-            <h3 className="font-semibold text-[28px] tracking-[-0.02em] leading-tight text-ink mb-2">
-              {card.title}
-            </h3>
-            <p className="text-muted leading-[1.55] text-[15px]">
-              {card.proves}
-            </p>
-            <p className="text-ink leading-[1.55] text-[15px] mt-auto pt-6">
-              {card.problem}
-            </p>
-            <div className="font-semibold text-system text-[15px] mt-4 flex items-center gap-1">
-              {ui.readCase}
-            </div>
-          </Link>
-        ))}
+              <div>
+                <div className="flex items-center justify-between font-mono text-[13px] mb-4">
+                  <span
+                    className={
+                      isSystems ? "text-system font-medium" : "text-muted"
+                    }
+                  >
+                    {card.tag}
+                  </span>
+                  <span className="text-muted tabular-nums">{card.status}</span>
+                </div>
+                <h3 className="font-semibold text-[20px] tracking-[-0.02em] leading-tight text-ink mb-2.5 group-hover:text-system transition-colors">
+                  {card.title}
+                </h3>
+                <p className="text-muted text-[15px] leading-[1.55]">
+                  {card.proves}
+                </p>
+              </div>
+
+              <div className="mt-6 pt-5 border-t border-rule/60 flex flex-col gap-3">
+                <p className="text-ink text-[15px] leading-[1.55]">
+                  {card.problem}
+                </p>
+                <div className="font-semibold text-system text-[15px] inline-flex items-center gap-1">
+                  <span className="group-hover:underline">{ui.readCase}</span>
+                </div>
+              </div>
+            </Link>
+          );
+        })}
       </div>
-    </section>
+    </SectionShell>
   );
 }
