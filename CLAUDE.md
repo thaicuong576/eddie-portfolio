@@ -1,34 +1,18 @@
 # Eddie Portfolio v2 - Professional Developer Portfolio
 
-A high-impact, data-driven personal portfolio featuring 3D elements (Three.js), technical achievements, and startup experience.
+A personal portfolio for Eddie Phung: FP&A, Business Finance, and Finance Systems.
 
 ## Tech Stack
-- **Framework**: React 17
-- **Styling**: Bootstrap 5 + Custom CSS
-- **3D/Visuals**: Three.js, React-tsparticles
-- **Routing**: React Router 6
+- **Framework**: Next.js 15 (App Router, React 19, TypeScript)
+- **Styling**: Tailwind CSS v4 via `@tailwindcss/postcss` with `@theme` tokens in `app/globals.css`
+- **Typography**: `next/font/google` (`Geist` as `--font-sans`, `Geist_Mono` as `--font-mono`)
+- **Runtime & Deployment**: Node 22, npm, Vercel
 
-## Integrated Skills
-The project utilizes specialized agentic skills for enhanced development:
-
-### UI UX Pro Max
-- **Path**: [.claude/skills/ui-ux-pro-max/SKILL.md](.claude/skills/ui-ux-pro-max/SKILL.md)
-- **Description**: Comprehensive design intelligence for fintech, crypto, and professional portfolios.
-- **Usage**: When performing UI/UX work, reference this skill to get recommendations for palettes, typography, and accessibility.
+## Design System
+See [DESIGN.md](DESIGN.md) for design tokens, typography, and rules.
 
 ## Development Commands
-- **Start**: `npm start` (Runs the app in development mode)
-- **Build**: `npm run build` (Builds the app for production)
-- **Test**: `npm test` (Launches the test runner)
-
-## Specialized Tools
-### UI Search Script
-The `ui-ux-pro-max` skill includes a powerful search tool to find design guidelines:
-
-```powershell
-# Get a complete design system for a fintech crypto portfolio
-python .claude/skills/ui-ux-pro-max/scripts/search.py "fintech crypto portfolio" --design-system
-
-# Search specific UX domains
-python .claude/skills/ui-ux-pro-max/scripts/search.py "accessibility animation" --domain ux
-```
+- `npm run dev`: Start Next.js development server
+- `npm run build`: Production build (`next build`)
+- `npm start`: Start Next.js production server
+- `npx tsc --noEmit`: Typecheck codebase
