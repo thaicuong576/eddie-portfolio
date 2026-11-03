@@ -149,6 +149,10 @@ export function ScrollHero({ children }: { children?: React.ReactNode }) {
       wordRef.current.style.visibility = dock >= 1 ? "hidden" : "visible";
     }
 
+    if (stickyBoxRef.current) {
+      stickyBoxRef.current.style.zIndex = dock >= 1 ? "0" : "60";
+    }
+
     // 5. Header wordmark
     if (wordmarkRef.current) {
       wordmarkRef.current.style.opacity = dock >= 1 ? "1" : "0";
@@ -181,6 +185,7 @@ export function ScrollHero({ children }: { children?: React.ReactNode }) {
       window.removeEventListener("resize", onResize);
 
       if (heroRef.current) heroRef.current.style.marginTop = "";
+      if (stickyBoxRef.current) stickyBoxRef.current.style.zIndex = "";
       if (wordRef.current) {
         wordRef.current.style.transform = "";
         wordRef.current.style.visibility = "";
@@ -301,11 +306,11 @@ export function ScrollHero({ children }: { children?: React.ReactNode }) {
         <section
           id="top"
           ref={heroRef}
-          className="relative h-[300vh] -mt-[88px] z-[60] pointer-events-none motion-reduce:!mt-0 motion-reduce:!h-auto motion-reduce:!z-auto motion-reduce:!pointer-events-auto"
+          className="relative h-[300vh] -mt-[88px] pointer-events-none motion-reduce:!mt-0 motion-reduce:!h-auto motion-reduce:!pointer-events-auto"
         >
           <div
             ref={stickyBoxRef}
-            className="sticky top-0 h-screen overflow-hidden z-[60] pointer-events-none motion-reduce:!static motion-reduce:!h-auto motion-reduce:!min-h-[calc(100vh-88px)] motion-reduce:!flex motion-reduce:!flex-col motion-reduce:!justify-end motion-reduce:!p-10 motion-reduce:!overflow-visible motion-reduce:!z-auto motion-reduce:!pointer-events-auto"
+            className="sticky top-0 h-screen overflow-hidden pointer-events-none motion-reduce:!static motion-reduce:!h-auto motion-reduce:!min-h-[calc(100vh-88px)] motion-reduce:!flex motion-reduce:!flex-col motion-reduce:!justify-end motion-reduce:!p-10 motion-reduce:!overflow-visible motion-reduce:!pointer-events-auto"
           >
             {/* 1. Background grid */}
             <div
