@@ -7,4 +7,7 @@ export const ui = {
   outcomeLabel: "Outcome",
   toolsLabel: "Tools",
   linksLabel: "Links",
+  problemLabel: "Problem",
+  previousCase: "← Previous case",
+  nextCase: "Next case →",
 };

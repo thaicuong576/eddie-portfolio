@@ -1,59 +1,70 @@
 import { achievements } from "@/content/achievements";
 import { sectionEyebrow, getSection } from "@/content/sections";
 import { ui } from "@/content/ui";
+import { SectionShell } from "@/components/ui/SectionShell";
 
 export function Achievements() {
   const eyebrow = sectionEyebrow("achievements");
   const section = getSection("achievements");
 
   return (
-    <section
+    <SectionShell
       id="achievements"
-      className="max-w-[1240px] mx-auto px-5 sm:px-10 py-24 border-t border-rule scroll-mt-[88px]"
+      eyebrow={eyebrow}
+      heading={section?.heading}
+      intro={section?.intro}
     >
-      <div className="font-mono text-[13px] uppercase tracking-[0.08em] text-system mb-[14px]">
-        {eyebrow}
-      </div>
-      <h2 className="font-semibold text-[32px] sm:text-[44px] leading-[1.1] tracking-[-0.03em] max-w-[760px] mb-12 text-ink">
-        {section?.heading}
-      </h2>
-      <div>
+      <div className="border-t border-rule">
         {achievements.map((item, index) => {
-          const isLast = index === achievements.length - 1;
-          return (
-            <div
-              key={index}
-              className={`border-t border-rule py-7 flex flex-wrap gap-x-12 gap-y-4 ${
-                isLast ? "border-b" : ""
-              }`}
-            >
-              <div className="w-[200px] shrink-0 font-mono text-[14px] text-muted">
+          const hasLink = Boolean(item.href);
+          const Content = (
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-x-8 gap-y-2 items-baseline w-full">
+              <div className="font-mono text-[13px] sm:text-[14px] text-muted tabular-nums">
                 {item.year}
               </div>
-              <div className="flex-[1_1_480px] min-w-0 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+              <div className="min-w-0 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
                 <div>
-                  <h3 className="font-semibold text-[22px] leading-tight text-ink mb-2">
+                  <h3 className="font-semibold text-[18px] sm:text-[20px] leading-tight text-ink tracking-tight mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-muted leading-[1.55] text-[15px]">
+                  <p className="text-muted leading-[1.55] text-[14px] sm:text-[15px]">
                     {item.issuer}
                   </p>
                 </div>
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-system text-[15px] shrink-0"
-                  >
+                {hasLink && (
+                  <span className="font-semibold text-system text-[14px] shrink-0 group-hover:underline">
                     {ui.viewLabel}
-                  </a>
-                ) : null}
+                    <span className="sr-only">: {item.title}</span>
+                  </span>
+                )}
               </div>
+            </div>
+          );
+
+          return (
+            <div
+              key={index}
+              className="border-b border-rule py-5 sm:py-6"
+            >
+              {hasLink ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block -mx-3 px-3 py-1 rounded-lg transition-colors hover:bg-surface motion-reduce:transition-none"
+                  aria-label={`${ui.viewLabel}: ${item.title}`}
+                >
+                  {Content}
+                </a>
+              ) : (
+                <div className="px-0 py-1">
+                  {Content}
+                </div>
+              )}
             </div>
           );
         })}
       </div>
-    </section>
+    </SectionShell>
   );
 }

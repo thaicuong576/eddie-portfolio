@@ -46,7 +46,7 @@ export function ScrollHero({
 }: ScrollHeroProps) {
   const headerRef = useRef<HTMLElement | null>(null);
   const wordmarkRef = useRef<HTMLAnchorElement | null>(null);
-  const navRef = useRef<HTMLElement | null>(null);
+  const navRef = useRef<HTMLDivElement | null>(null);
 
   const heroRef = useRef<HTMLElement | null>(null);
   const stickyBoxRef = useRef<HTMLDivElement | null>(null);
@@ -61,6 +61,7 @@ export function ScrollHero({
     W: 0,
     H: 0,
     fs: 0,
+    targetFs: 26,
     ww: 0,
     x0: 0,
     y0: 0,
@@ -82,17 +83,31 @@ export function ScrollHero({
 
     const W = window.innerWidth;
     const H = window.innerHeight;
-    const fs = Math.min(0.19 * W, 0.36 * H);
 
+    let fs = Math.min(0.18 * W, 0.32 * H);
     wordRef.current.style.fontSize = `${fs}px`;
-    const ww = wordRef.current.offsetWidth;
+    let ww = wordRef.current.offsetWidth;
 
-    const headerH = headerRef.current ? headerRef.current.offsetHeight : 88;
+    const maxW = Math.max(120, W - 32);
+    if (ww > maxW && ww > 0) {
+      fs = fs * (maxW / ww);
+      wordRef.current.style.fontSize = `${fs}px`;
+      ww = wordRef.current.offsetWidth;
+    }
+
+    const headerH = headerRef.current
+      ? headerRef.current.offsetHeight
+      : W < 640
+      ? 56
+      : 72;
     heroRef.current.style.marginTop = `-${headerH}px`;
 
     const wmRect = wordmarkRef.current.getBoundingClientRect();
     const x1 = wmRect.left;
     const y1 = wmRect.top;
+
+    const wmStyle = window.getComputedStyle(wordmarkRef.current);
+    const targetFs = parseFloat(wmStyle.fontSize) || (W < 640 ? 22 : 26);
 
     const x0 = (W - ww) / 2;
     const y0 = (H - fs) / 2;
@@ -101,6 +116,7 @@ export function ScrollHero({
     s.W = W;
     s.H = H;
     s.fs = fs;
+    s.targetFs = targetFs;
     s.ww = ww;
     s.x0 = x0;
     s.y0 = y0;
@@ -117,16 +133,23 @@ export function ScrollHero({
       ? heroRef.current.getBoundingClientRect().top + scrollY
       : 0;
 
-    const p = clamp((scrollY - heroTop) / (2 * s.H));
-    const dock = ease(clamp((p - 0.62) / 0.33));
+    const heroHeight = heroRef.current ? heroRef.current.offsetHeight : 3 * s.H;
+    const scrollRange = Math.max(1, heroHeight - s.H);
+    const p = clamp((scrollY - heroTop) / scrollRange);
+
+    // Docking phase: starts after letters have fully converged
+    // Converge: p = 0 .. 0.44
+    // Pause / readable word: p = 0.44 .. 0.52
+    // Dock: p = 0.52 .. 0.94
+    const dock = ease(clamp((p - 0.52) / 0.42));
 
     // 1. Background grid
     if (gridRef.current) {
-      gridRef.current.style.opacity = (0.7 * (1 - dock)).toFixed(4);
+      gridRef.current.style.opacity = (0.35 * (1 - dock)).toFixed(4);
     }
 
     // 2. Hints & Readout
-    const hp = clamp(1 - 4 * p);
+    const hp = clamp(1 - 3.2 * p);
     if (hintsRef.current) {
       hintsRef.current.style.opacity = hp.toFixed(4);
     }
@@ -139,38 +162,44 @@ export function ScrollHero({
       }
     }
 
-    // 3. Letters
+    // 3. Letters convergence
+    const isMobile = s.W < 640;
+    const scatterScale = isMobile ? 0.45 : 0.85;
+    const maxBlur = isMobile ? 1.5 : 3.5;
+    const maxRotScale = isMobile ? 0.5 : 1;
+
     for (let i = 0; i < LETTERS.length; i++) {
       const span = letterSpansRef.current[i];
       if (!span) continue;
 
-      const lp = clamp((p / 0.55 - i * 0.04) / 0.76);
+      const lp = clamp((p / 0.42 - i * 0.03) / 0.82);
       const t = ease(lp);
       const r = 1 - t;
       const item = LETTERS[i];
-      const tx = item.sx * s.W * r;
-      const ty = item.sy * s.H * r;
-      const rot = item.rot * r;
-      const blur = 14 * r;
-      const op = 0.25 + 0.75 * t;
+      const tx = item.sx * s.W * scatterScale * r;
+      const ty = item.sy * s.H * scatterScale * r;
+      const rot = item.rot * maxRotScale * r;
+      const blur = maxBlur * r;
+      const op = 0.6 + 0.4 * t;
 
-      span.style.transform = `translate(${tx.toFixed(2)}px, ${ty.toFixed(2)}px) rotate(${rot.toFixed(2)}deg)`;
-      span.style.filter = blur > 0.001 ? `blur(${blur.toFixed(2)}px)` : "none";
+      span.style.transform = `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0) rotate(${rot.toFixed(2)}deg)`;
+      span.style.filter = blur > 0.05 ? `blur(${blur.toFixed(2)}px)` : "none";
       span.style.opacity = op.toFixed(4);
     }
 
     // 4. Word docking
+    const targetScale = s.fs > 0 ? s.targetFs / s.fs : 1;
+    const scale = 1 - dock * (1 - targetScale);
     const x = s.x0 + (s.x1 - s.x0) * dock;
     const y = s.y0 + (s.y1 - s.y0) * dock;
-    const scale = 1 - dock * (1 - 30 / s.fs);
 
     if (wordRef.current) {
-      wordRef.current.style.transform = `translate(${x.toFixed(2)}px, ${y.toFixed(2)}px) scale(${scale.toFixed(5)})`;
+      wordRef.current.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0) scale(${scale.toFixed(5)})`;
       wordRef.current.style.visibility = dock >= 1 ? "hidden" : "visible";
     }
 
     if (stickyBoxRef.current) {
-      stickyBoxRef.current.style.zIndex = dock >= 1 ? "0" : "60";
+      stickyBoxRef.current.style.zIndex = dock >= 1 ? "0" : "40";
     }
 
     // 5. Header wordmark
@@ -179,16 +208,16 @@ export function ScrollHero({
     }
 
     // 6. Header nav
-    const navOp = clamp((dock - 0.5) * 2);
+    const navOp = clamp((dock - 0.45) * 2.2);
     if (navRef.current) {
       navRef.current.style.opacity = navOp.toFixed(4);
-      navRef.current.style.pointerEvents = navOp > 0 ? "auto" : "none";
+      navRef.current.style.pointerEvents = navOp > 0.5 ? "auto" : "none";
     }
 
     // 7. Intro block
     if (introRef.current) {
       introRef.current.style.opacity = dock.toFixed(4);
-      introRef.current.style.transform = `translateY(${((1 - dock) * 24).toFixed(2)}px)`;
+      introRef.current.style.transform = `translate3d(0, ${((1 - dock) * 20).toFixed(2)}px, 0)`;
       introRef.current.style.pointerEvents = dock > 0.5 ? "auto" : "none";
     }
   };
@@ -286,44 +315,53 @@ export function ScrollHero({
     <>
       <header
         ref={headerRef}
-        className="sticky top-0 z-50 bg-ground border-b border-rule px-5 sm:px-10 sm:h-[88px] flex flex-col sm:flex-row sm:items-center justify-between py-4 sm:py-0 gap-y-3"
+        className="sticky top-0 z-50 bg-ground/95 backdrop-blur-sm border-b border-rule px-4 sm:px-8 lg:px-12 h-[56px] sm:h-[72px] flex items-center justify-between"
       >
         <a
           ref={wordmarkRef}
           href="#top"
           aria-label="FinTech, back to top"
-          className="text-[30px] font-bold leading-none tracking-[-0.045em] select-none opacity-0 motion-reduce:!opacity-100"
+          className="text-[22px] sm:text-[26px] font-bold leading-none tracking-[-0.045em] select-none shrink-0 opacity-0 motion-reduce:!opacity-100"
         >
           <span className="text-ink">Fin</span>
           <span className="text-system">Tech</span>
         </a>
-        <nav
+        <div
           ref={navRef}
-          className="flex flex-wrap items-center gap-x-4 sm:gap-x-8 gap-y-2 text-[15px] opacity-0 pointer-events-none motion-reduce:!opacity-100 motion-reduce:!pointer-events-auto"
+          className="flex items-center gap-2 sm:gap-6 min-w-0 opacity-0 pointer-events-none motion-reduce:!opacity-100 motion-reduce:!pointer-events-auto"
         >
-          {nav.map((item) => (
-            <a key={item.id} href={`#${item.id}`} className="text-ink">
-              {item.label}
-            </a>
-          ))}
+          <nav
+            aria-label="Primary"
+            className="overflow-x-auto no-scrollbar [mask-image:linear-gradient(to_right,black_calc(100%-16px),transparent_100%)] sm:[mask-image:none] flex items-center gap-3 sm:gap-6 text-[13px] sm:text-[14px] whitespace-nowrap scroll-smooth py-1"
+          >
+            {nav.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="font-medium text-ink hover:text-system transition-colors px-1 sm:px-0 py-2 inline-flex items-center"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
           <a
             href="#contact"
-            className="rounded-full bg-system text-on-system font-semibold px-[18px] py-[10px] leading-none"
+            className="shrink-0 rounded-full bg-system text-on-system font-medium px-3.5 py-1.5 sm:px-5 sm:py-2 text-[12px] sm:text-[14px] leading-none transition-opacity hover:opacity-90 inline-flex items-center justify-center min-h-[34px] sm:min-h-[40px]"
           >
             {contactLabel}
           </a>
-        </nav>
+        </div>
       </header>
 
       <main>
         <section
           id="top"
           ref={heroRef}
-          className="relative h-[300vh] -mt-[88px] pointer-events-none motion-reduce:!mt-0 motion-reduce:!h-auto motion-reduce:!pointer-events-auto"
+          className="relative h-[260vh] sm:h-[300vh] -mt-[56px] sm:-mt-[72px] pointer-events-none motion-reduce:!mt-0 motion-reduce:!h-auto motion-reduce:!pointer-events-auto"
         >
           <div
             ref={stickyBoxRef}
-            className="sticky top-0 h-screen overflow-hidden pointer-events-none motion-reduce:!static motion-reduce:!h-auto motion-reduce:!min-h-[calc(100vh-88px)] motion-reduce:!flex motion-reduce:!flex-col motion-reduce:!justify-end motion-reduce:!p-10 motion-reduce:!overflow-visible motion-reduce:!pointer-events-auto"
+            className="sticky top-0 h-screen overflow-hidden pointer-events-none motion-reduce:!static motion-reduce:!h-auto motion-reduce:!min-h-[calc(100vh-var(--header-h,72px))] motion-reduce:!flex motion-reduce:!flex-col motion-reduce:!justify-end motion-reduce:!px-5 sm:motion-reduce:!px-10 lg:motion-reduce:!px-12 motion-reduce:!py-16 motion-reduce:!overflow-visible motion-reduce:!pointer-events-auto"
           >
             {/* 1. Background grid */}
             <div
@@ -334,7 +372,7 @@ export function ScrollHero({
                 backgroundImage:
                   "linear-gradient(to right, var(--color-rule) 1px, transparent 1px), linear-gradient(to bottom, var(--color-rule) 1px, transparent 1px)",
                 backgroundSize: "80px 80px",
-                opacity: 0.7,
+                opacity: 0.35,
               }}
             />
 
@@ -342,7 +380,7 @@ export function ScrollHero({
             <div
               ref={hintsRef}
               aria-hidden="true"
-              className="absolute top-[120px] left-5 sm:left-10 font-mono text-[12px] uppercase tracking-[0.12em] text-muted pointer-events-none select-none motion-reduce:hidden flex flex-col gap-1 pr-5 sm:pr-0"
+              className="absolute top-[80px] sm:top-[100px] left-5 sm:left-10 lg:left-12 font-mono text-[11px] sm:text-[12px] uppercase tracking-[0.12em] text-muted pointer-events-none select-none motion-reduce:hidden flex flex-col gap-1 pr-5 sm:pr-0"
             >
               {hero.hints.map((hint, idx) => (
                 <div key={idx}>{hint}</div>
@@ -353,7 +391,7 @@ export function ScrollHero({
             <div
               ref={wordRef}
               aria-hidden="true"
-              className="absolute left-0 top-0 z-[60] whitespace-nowrap font-bold leading-none tracking-[-0.045em] pointer-events-none select-none motion-reduce:hidden [transform-origin:0_0] will-change-transform"
+              className="absolute left-0 top-0 z-[40] whitespace-nowrap font-bold leading-none tracking-[-0.045em] pointer-events-none select-none motion-reduce:hidden [transform-origin:0_0] will-change-transform"
             >
               {LETTERS.map((item, idx) => (
                 <span
@@ -371,15 +409,15 @@ export function ScrollHero({
             {/* 4. Intro block */}
             <div
               ref={introRef}
-              className="absolute bottom-12 left-5 sm:left-10 right-5 sm:right-auto max-w-[760px] flex flex-col gap-4 opacity-0 pointer-events-none motion-reduce:!static motion-reduce:!opacity-100 motion-reduce:!transform-none motion-reduce:!p-0 motion-reduce:!pointer-events-auto"
+              className="absolute bottom-8 sm:bottom-12 left-5 sm:left-10 lg:left-12 right-5 sm:right-auto max-w-[800px] flex flex-col gap-3 sm:gap-4 opacity-0 pointer-events-none motion-reduce:!static motion-reduce:!opacity-100 motion-reduce:!transform-none motion-reduce:!p-0 motion-reduce:!pointer-events-auto"
             >
-              <p className="font-mono text-[13px] uppercase tracking-[0.08em] text-muted">
+              <p className="font-mono text-[12px] sm:text-[13px] uppercase tracking-[0.1em] text-system font-medium select-none tabular-nums">
                 {hero.eyebrow}
               </p>
-              <h1 className="text-[40px] sm:text-[60px] font-semibold leading-[1.02] tracking-[-0.035em] text-ink">
+              <h1 className="text-[34px] sm:text-[52px] lg:text-[62px] font-semibold leading-[1.05] tracking-[-0.035em] text-ink">
                 {hero.name}
               </h1>
-              <p className="text-[18px] sm:text-[21px] leading-[1.5] text-ink">
+              <p className="text-[17px] sm:text-[20px] leading-[1.55] text-ink/90 font-normal max-w-[700px]">
                 {hero.paragraph}
               </p>
             </div>
@@ -388,7 +426,7 @@ export function ScrollHero({
             <div
               ref={readoutRef}
               aria-hidden="true"
-              className="absolute bottom-12 right-5 sm:right-10 font-mono text-[13px] text-muted pointer-events-none select-none motion-reduce:hidden"
+              className="absolute bottom-8 sm:bottom-12 right-5 sm:right-10 lg:right-12 font-mono text-[12px] sm:text-[13px] text-muted pointer-events-none select-none motion-reduce:hidden tabular-nums"
             >
               000 / 100
             </div>
