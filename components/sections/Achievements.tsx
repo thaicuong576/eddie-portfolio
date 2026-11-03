@@ -1,59 +1,63 @@
 import { achievements } from "@/content/achievements";
-import { sectionEyebrow, getSection } from "@/content/sections";
+import { getSection } from "@/content/sections";
 import { ui } from "@/content/ui";
+import { SectionFrame } from "@/components/SectionFrame";
+
+function toSentenceCase(str: string): string {
+  if (!str) return str;
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
 
 export function Achievements() {
-  const eyebrow = sectionEyebrow("achievements");
   const section = getSection("achievements");
 
   return (
-    <section
+    <SectionFrame
       id="achievements"
-      className="max-w-[1240px] mx-auto px-5 sm:px-10 py-24 border-t border-rule scroll-mt-[88px]"
+      label={section?.label ?? "Achievements"}
+      heading={section?.heading}
     >
-      <div className="font-mono text-[13px] uppercase tracking-[0.08em] text-system mb-[14px]">
-        {eyebrow}
-      </div>
-      <h2 className="font-semibold text-[32px] sm:text-[44px] leading-[1.1] tracking-[-0.03em] max-w-[760px] mb-12 text-ink">
-        {section?.heading}
-      </h2>
-      <div>
+      <div className="divide-y divide-rule border-y border-rule">
         {achievements.map((item, index) => {
-          const isLast = index === achievements.length - 1;
+          const kindLabel = toSentenceCase(item.kind);
           return (
             <div
               key={index}
-              className={`border-t border-rule py-7 flex flex-wrap gap-x-12 gap-y-4 ${
-                isLast ? "border-b" : ""
-              }`}
+              className="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 sm:gap-6"
             >
-              <div className="w-[200px] shrink-0 font-mono text-[14px] text-muted">
-                {item.year}
-              </div>
-              <div className="flex-[1_1_480px] min-w-0 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-                <div>
-                  <h3 className="font-semibold text-[22px] leading-tight text-ink mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted leading-[1.55] text-[15px]">
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-6 flex-1 min-w-0">
+                <div className="w-24 shrink-0 font-mono tabular-nums text-[14px] text-muted">
+                  {item.year}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <h3 className="font-semibold text-[17px] text-ink leading-snug">
+                      {item.title}
+                    </h3>
+                    <span className="font-sans text-[12px] text-muted border border-rule px-2 py-0.5 rounded-full leading-normal">
+                      {kindLabel}
+                    </span>
+                  </div>
+                  <p className="text-muted text-[14px] leading-normal">
                     {item.issuer}
                   </p>
                 </div>
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-system text-[15px] shrink-0"
-                  >
-                    {ui.viewLabel}
-                  </a>
-                ) : null}
               </div>
+
+              {item.href ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-system text-[14px] hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system rounded-sm shrink-0 self-start sm:self-center"
+                >
+                  {ui.viewLabel}
+                </a>
+              ) : null}
             </div>
           );
         })}
       </div>
-    </section>
+    </SectionFrame>
   );
 }

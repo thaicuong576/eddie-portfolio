@@ -7,4 +7,6 @@ export const ui = {
   outcomeLabel: "Outcome",
   toolsLabel: "Tools",
   linksLabel: "Links",
+  menu: "Menu",
+  skipToContent: "Skip to content",
 };
