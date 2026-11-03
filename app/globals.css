@@ -8,7 +8,7 @@
   --color-rule: #D9CFAE;
   --color-system: #0D5C63;
   --color-on-system: #FFFFFF;
-  --radius-card: 16px;
+  --radius-card: 12px;
 }
 
 @theme inline {
@@ -16,13 +16,42 @@
   --font-mono: var(--font-mono);
 }
 
+:root {
+  --header-h: 56px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-h: 64px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--color-ground);
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
-html {
-  scroll-behavior: smooth;
+:focus-visible {
+  outline: 2px solid var(--color-system);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
