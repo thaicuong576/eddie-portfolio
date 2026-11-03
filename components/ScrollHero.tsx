@@ -23,7 +23,27 @@ function clamp(v: number, min = 0, max = 1): number {
   return Math.max(min, Math.min(max, v));
 }
 
-export function ScrollHero({ children }: { children?: React.ReactNode }) {
+export interface ScrollHeroProps {
+  hero: {
+    eyebrow: string;
+    name: string;
+    paragraph: string;
+    hints: string[];
+  };
+  nav: {
+    id: string;
+    label: string;
+  }[];
+  contactLabel: string;
+  children?: React.ReactNode;
+}
+
+export function ScrollHero({
+  hero,
+  nav,
+  contactLabel,
+  children,
+}: ScrollHeroProps) {
   const headerRef = useRef<HTMLElement | null>(null);
   const wordmarkRef = useRef<HTMLAnchorElement | null>(null);
   const navRef = useRef<HTMLElement | null>(null);
@@ -281,23 +301,16 @@ export function ScrollHero({ children }: { children?: React.ReactNode }) {
           ref={navRef}
           className="flex flex-wrap items-center gap-x-4 sm:gap-x-8 gap-y-2 text-[15px] opacity-0 pointer-events-none motion-reduce:!opacity-100 motion-reduce:!pointer-events-auto"
         >
-          <a href="#approach" className="text-ink">
-            Approach
-          </a>
-          <a href="#work" className="text-ink">
-            Work
-          </a>
-          <a href="#toolkit" className="text-ink">
-            Toolkit
-          </a>
-          <a href="#experience" className="text-ink">
-            Experience
-          </a>
+          {nav.map((item) => (
+            <a key={item.id} href={`#${item.id}`} className="text-ink">
+              {item.label}
+            </a>
+          ))}
           <a
             href="#contact"
             className="rounded-full bg-system text-on-system font-semibold px-[18px] py-[10px] leading-none"
           >
-            Contact
+            {contactLabel}
           </a>
         </nav>
       </header>
@@ -331,8 +344,9 @@ export function ScrollHero({ children }: { children?: React.ReactNode }) {
               aria-hidden="true"
               className="absolute top-[120px] left-5 sm:left-10 font-mono text-[12px] uppercase tracking-[0.12em] text-muted pointer-events-none select-none motion-reduce:hidden flex flex-col gap-1 pr-5 sm:pr-0"
             >
-              <div>Fin · planning, performance, decisions</div>
-              <div>Tech · data, systems, automation</div>
+              {hero.hints.map((hint, idx) => (
+                <div key={idx}>{hint}</div>
+              ))}
             </div>
 
             {/* 3. Flying word */}
@@ -360,15 +374,13 @@ export function ScrollHero({ children }: { children?: React.ReactNode }) {
               className="absolute bottom-12 left-5 sm:left-10 right-5 sm:right-auto max-w-[760px] flex flex-col gap-4 opacity-0 pointer-events-none motion-reduce:!static motion-reduce:!opacity-100 motion-reduce:!transform-none motion-reduce:!p-0 motion-reduce:!pointer-events-auto"
             >
               <p className="font-mono text-[13px] uppercase tracking-[0.08em] text-muted">
-                {"FP&A · Business Finance · Finance Systems"}
+                {hero.eyebrow}
               </p>
               <h1 className="text-[40px] sm:text-[60px] font-semibold leading-[1.02] tracking-[-0.035em] text-ink">
-                Eddie Phung
+                {hero.name}
               </h1>
               <p className="text-[18px] sm:text-[21px] leading-[1.5] text-ink">
-                A finance professional who understands business performance,
-                builds data-driven financial systems, and turns financial
-                information into better business decisions.
+                {hero.paragraph}
               </p>
             </div>
 
