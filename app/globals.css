@@ -16,13 +16,45 @@
   --font-mono: var(--font-mono);
 }
 
+:root {
+  --header-h: 56px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-h: 72px;
+  }
+}
+
+html {
+  scroll-padding-top: var(--header-h);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--color-ground);
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
-html {
-  scroll-behavior: smooth;
+::selection {
+  background-color: var(--color-system);
+  color: var(--color-on-system);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-system);
+  outline-offset: 3px;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }

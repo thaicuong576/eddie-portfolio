@@ -7,4 +7,8 @@ export const ui = {
   outcomeLabel: "Outcome",
   toolsLabel: "Tools",
   linksLabel: "Links",
+  factSheetLabel: "Fact sheet",
+  trackLabel: "Track",
+  statusLabel: "Status",
 };
+
